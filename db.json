@@ -1,0 +1,329 @@
+{
+  "topbrands": [
+    {
+      "id": 1,
+      "img" : "https://images-static.nykaa.com/uploads/4ee1651c-47f6-4d8c-b067-2680d80c2453.jpg?tr=w-600,cm-pad_resize",
+      "desc1" : "Upto 28% Off",
+      "desc2" : ""
+    },
+
+    {
+      "id": 2,
+      "img" : "https://images-static.nykaa.com/uploads/618f1353-2975-4911-bb50-8effb9b9e171.jpg?tr=w-600,cm-pad_resize",
+      "desc1" : "Upto 40% Off",
+      "desc2" : ""
+    },
+
+    {
+      "id": 3,
+      "img" : "https://images-static.nykaa.com/uploads/0340eb20-80d5-4a58-9ba4-6095736c01c9.jpg?tr=w-600,cm-pad_resize",
+      "desc1" : "Upto 40% Off",
+      "desc2" : "Create Long-lasting Looks With Maybelline!"
+    },
+
+    {
+      "id": 4,
+      "img" : "https://images-static.nykaa.com/uploads/275211bc-417c-4c11-96c8-c682c15b047d.jpg?tr=w-600,cm-pad_resize",
+      "desc1" : "Pick A Free Gift (Worth Rs.2350)",
+      "desc2" : "On All Full Size Foundations"
+    },
+
+    {
+      "id": 5,
+      "img" : "https://images-static.nykaa.com/uploads/bdfb109c-accb-43c4-b1e4-4b16230ec5db.gif?tr=w-600,cm-pad_resize",
+      "desc1" : "Upto 50% Off",
+      "desc2" : "Free Mini Shampoo On Order Over Rs. 399"
+    },
+
+    {
+      "id": 6,
+      "img" : "https://images-static.nykaa.com/uploads/22f3a04a-bbaa-44d4-9a21-39af0be931c7.jpg?tr=w-600,cm-pad_resize",
+      "desc1" : "Upto 40% Off",
+      "desc2" : "New Salon-Like Smoothening Treatment At Home"
+    },
+
+    {
+      "id": 7,
+      "img" : "https://images-static.nykaa.com/uploads/28e41e57-2f58-4dbe-ba12-24104c598ab7.gif?tr=w-600,cm-pad_resize",
+      "desc1" : "Exciting Gifts On Purchases Of Luxe Makeups!",
+      "desc2" : ""
+    }
+  ],
+
+  "onlyAtNykaa" : [
+    {
+      "id" : 1,
+      "img" : "https://images-static.nykaa.com/uploads/bab8c4f5-e907-4024-b216-8e185541161f.gif?tr=w-600,cm-pad_resize",
+      "desc1": "Upto 30% Off",
+      "desc2": "Free Mini Shampoos On Order Over 399"
+
+    },
+
+    {
+      "id" : 2,
+      "img" : "https://images-static.nykaa.com/uploads/9d7fc752-f9c4-423d-98ba-609829494a5c.gif?tr=w-600,cm-pad_resize",
+      "desc1": "Free Full Size Lipstick",
+      "desc2": "Only Rs. 899!"
+
+    },
+
+    {
+      "id" : 3,
+      "img" : "https://images-static.nykaa.com/uploads/0eb9f1d8-5127-485e-9870-00c1cbbad998.jpg?tr=w-600,cm-pad_resize",
+      "desc1": "Upto 25% Off",
+      "desc2": "For More Than Just A Base-Ic Base"
+
+    },
+
+
+    {
+      "id" : 4,
+      "img" : "https://images-static.nykaa.com/uploads/6b6ca7f2-1e82-47cd-b857-78be837150cf.jpg?tr=w-600,cm-pad_resize",
+      "desc1": "Upto 25% Off",
+      "desc2": "On Katrina's Faves"
+
+    }
+  ],
+
+  "trendingStores" : [
+    {
+      "id": 1,
+      "img": "https://images-static.nykaa.com/uploads/cee3de00-3e33-462f-b633-3b307fbaa636.jpg?tr=w-600,cm-pad_resize"
+    },
+
+    {
+      "id": 2,
+      "img": "https://images-static.nykaa.com/uploads/f8008bff-51fb-4b91-be2a-77a986e4d08d.jpg?tr=w-600,cm-pad_resize"
+    },
+
+    {
+      "id": 3,
+      "img": "https://images-static.nykaa.com/uploads/1f89f0af-8b04-4c5c-8714-26db1c6fa246.gif?tr=w-600,cm-pad_resize"
+    },
+
+    {
+      "id": 4,
+      "img": "https://images-static.nykaa.com/uploads/235e192f-1b92-41fe-8409-9269d1adfd8c.gif?tr=w-600,cm-pad_resize"
+    },
+
+
+    {
+      "id": 5,
+      "img": "https://images-static.nykaa.com/uploads/7b433929-ea76-4c46-91e3-53bdb9aa7387.gif?tr=w-600,cm-pad_resize"
+    },
+
+
+    {
+      "id": 6,
+      "img": "https://images-static.nykaa.com/uploads/9426383a-2812-40c5-a812-bd40379c11d4.jpg?tr=w-600,cm-pad_resize"
+    },
+
+
+    {
+      "id": 7,
+      "img": "https://images-static.nykaa.com/uploads/c60dd828-5878-4c2c-9c9c-086a653854ef.jpg?tr=w-600,cm-pad_resize"
+    },
+
+    {
+      "id": 8,
+      "img": "https://images-static.nykaa.com/uploads/dac00fed-ecb3-4e53-af91-2811d02b8a4c.gif?tr=w-600,cm-pad_resize"
+    }
+    
+    
+  ],
+
+  "featuredBrands" : [
+    {
+      "id" : 1,
+      "img" : "https://images-static.nykaa.com/uploads/008b44b7-bd23-4aed-8a6e-da470ff8af68.jpg?tr=w-300,cm-pad_resize",
+      "desc1": "Upto 14% Off +",
+      "desc2": "Free 30ml Peptide Repair Rescue Mask On Rs.1100+"
+    },
+
+    {
+      "id" : 2,
+      "img" : "https://images-static.nykaa.com/uploads/eadc4524-6a38-43b5-9005-4c0959dd6816.gif?tr=w-300,cm-pad_resize",
+      "desc1": "Upto 40% Off",
+      "desc2": "Bestseller Trio Kit on orders of Rs.1299"
+    },
+
+    {
+      "id" : 3,
+      "img" : "https://images-static.nykaa.com/uploads/8ad4fe0a-607a-408c-9781-f7fbed166816.jpg?tr=w-300,cm-pad_resize",
+      "desc1": "Upto 25% Off +",
+      "desc2": "Free Moisturizer worth ₹149 on ₹549"
+    },
+
+    {
+      "id" : 4,
+      "img" : "https://images-static.nykaa.com/uploads/4bc7e417-4880-44ca-ad00-4f688743b9e7.jpg?tr=w-300,cm-pad_resize",
+      "desc1": "Upto 35% Off+",
+      "desc2": "The Moms Co. Vitamin-C Face Wash Toner On ₹599"
+    },
+
+    {
+      "id" : 5,
+      "img" : "https://images-static.nykaa.com/uploads/b89ca7d5-bc7c-44ee-9e03-a482e9b1cf09.jpg?tr=w-300,cm-pad_resize",
+      "desc1": "Upto 35% Off On New Launches!",
+      "desc2": "Upto 40% Off On Bestsellers!"
+    },
+
+
+    {
+      "id" : 6,
+      "img" : "https://images-static.nykaa.com/uploads/53dec53d-1804-403b-b903-9c6df3cd526f.jpg?tr=w-300,cm-pad_resize",
+      "desc1": "Buy 5 Get 5 Free",
+      "desc2": "Free Mini Shampoos On Order Over Rs.500"
+    },
+
+    {
+      "id" : 7,
+      "img" : "https://images-static.nykaa.com/uploads/ac42fade-261e-48d1-9a89-1cf36fec0805.gif?tr=w-300,cm-pad_resize",
+      "desc1": "On Rs. 1500: 2-Piece Facial Kit",
+      "desc2": "On Rs. 4000: 3-Piece Rose Kit"
+    },
+
+
+    {
+      "id" : 1,
+      "img" : "https://images-static.nykaa.com/uploads/1cf16f3f-5e2f-4ed8-90ff-d8069724aa1c.jpg?tr=w-300,cm-pad_resize",
+      "desc1": "Upto 30% Off",
+      "desc2": "Free Mini Shampoos On Order Over Rs.399"
+    }
+  ],
+
+  "budgetBuys": [
+    {
+      "id" : 1,
+      "img": "https://images-static.nykaa.com/uploads/14511dde-c35c-4595-a18e-332871383038.jpg?tr=w-300,cm-pad_resize"
+    },
+
+    {
+      "id" : 2,
+      "img": "https://images-static.nykaa.com/uploads/da336480-418a-40db-aa93-41c67ed756ac.jpg?tr=w-300,cm-pad_resize"
+    },
+
+    {
+      "id" : 3,
+      "img": "https://images-static.nykaa.com/uploads/a3a1ba0d-c71e-4a2d-a69a-5627db3d8075.jpg?tr=w-300,cm-pad_resize"
+    },
+
+    {
+      "id" : 4,
+      "img": "https://images-static.nykaa.com/uploads/8eaf466e-75d5-48ab-801a-61cfa2975897.jpg?tr=w-300,cm-pad_resize"
+    }
+  ],
+
+  "hiddenGems" : [
+    {
+      "id" :1,
+      "img" : "https://images-static.nykaa.com/uploads/831afa2d-9f51-44d7-b3fc-85ed87bbf252.jpg?tr=w-600,cm-pad_resize"
+    },
+
+    {
+      "id" :2,
+      "img" : "https://images-static.nykaa.com/uploads/259e04f9-f099-48b0-bf36-d4a834cc055d.gif?tr=w-600,cm-pad_resize"
+    },
+
+    {
+      "id" :3,
+      "img" : "https://images-static.nykaa.com/uploads/82b10b5c-a38a-416f-8ef2-1900b1a1f52b.jpg?tr=w-600,cm-pad_resize"
+    },
+
+    {
+      "id" :4,
+      "img" : "https://images-static.nykaa.com/uploads/ec7b1b20-2c63-4860-a7b1-87ace1b9ac4c.jpg?tr=w-600,cm-pad_resize"
+    }
+   
+  ],
+
+  "editorsChoice" : [
+    {
+      "id" :1,
+      "img": "https://images-static.nykaa.com/uploads/ebcff9d8-8958-477d-96d7-e6282b6be022.jpg?tr=w-300,cm-pad_resize"
+    },
+
+    {
+      "id" :2,
+      "img": "https://images-static.nykaa.com/uploads/c5bc7bb3-7586-4300-939f-d1748d3a87c6.jpg?tr=w-300,cm-pad_resize"
+    },
+
+    {
+      "id" :3,
+      "img": "https://images-static.nykaa.com/uploads/c5bc7bb3-7586-4300-939f-d1748d3a87c6.jpg?tr=w-300,cm-pad_resize"
+    },
+
+    {
+      "id" :4,
+      "img": "https://images-static.nykaa.com/uploads/320206be-82c2-48a0-91a8-3ae9d9304b40.png?tr=w-300,cm-pad_resize"
+    },
+
+    {
+      "id" :5,
+      "img": "https://images-static.nykaa.com/uploads/50e62b4e-a2a4-46e1-9d63-7c75ca05fd68.png?tr=w-300,cm-pad_resize"
+    }
+    
+  ],
+
+  "offerscantMiss": [
+    {
+      "id" : 1,
+      "img" : "https://images-static.nykaa.com/uploads/91e0732d-3cd8-400e-8823-418e9dd44da4.jpg?tr=w-300,cm-pad_resize",
+      "desc1" : "",
+      "desc2" : ""
+    },
+
+    {
+      "id" : 1,
+      "img" : "https://images-static.nykaa.com/uploads/91e0732d-3cd8-400e-8823-418e9dd44da4.jpg?tr=w-300,cm-pad_resize",
+      "desc1" : "",
+      "desc2" : ""
+    },
+
+    {
+      "id" : 1,
+      "img" : "https://images-static.nykaa.com/uploads/8da79659-298b-42a9-85d5-8573fd9a6d96.jpg?tr=w-300,cm-pad_resize",
+      "desc1" : "",
+      "desc2" : ""
+    },
+
+
+    {
+      "id" : 1,
+      "img" : "https://images-static.nykaa.com/uploads/231c8493-439a-40da-9d1e-f26300e27afe.JPG?tr=w-300,cm-pad_resize",
+      "desc1" : "",
+      "desc2" : ""
+    },
+
+    {
+      "id" : 1,
+      "img" : "https://images-static.nykaa.com/uploads/437fa662-0fb9-44da-ae1f-214af05eacf7.jpg?tr=w-300,cm-pad_resize",
+      "desc1" : "",
+      "desc2" : ""
+    },
+
+
+     {
+      "id" : 1,
+      "img" : "https://images-static.nykaa.com/uploads/8fd69881-16e5-4a72-8bdb-19b600bee115.jpg?tr=w-300,cm-pad_resize",
+      "desc1" : "",
+      "desc2" : ""
+    },
+
+    {
+      "id" : 1,
+      "img" : "https://images-static.nykaa.com/uploads/608badda-2178-453b-9225-93b5b24c5488.jpg?tr=w-300,cm-pad_resize",
+      "desc1" : "",
+      "desc2" : ""
+    },
+
+    {
+      "id" : 1,
+      "img" : "https://images-static.nykaa.com/uploads/8b754274-3b22-4069-9e37-81f4dfe63c1c.jpg?tr=w-300,cm-pad_resize",
+      "desc1" : "",
+      "desc2" : ""
+    }
+
+  ]
+ 
+}

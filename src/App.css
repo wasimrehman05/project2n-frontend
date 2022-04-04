@@ -1,0 +1,31 @@
+.App {
+  text-align: center;
+}
+
+.home-container{
+  width: 90%;
+  /* border: 1px solid black; */
+  margin: auto;
+}
+
+.top-brands, .only-at-nykaa, .trending-store{
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap:17px;
+ 
+}
+
+img{
+  width: 100%;
+  border-radius: 1.2%;
+
+}
+
+.featured-brands{
+  display: grid;
+  grid-gap: 17px;
+  grid-template-columns: repeat(4,1fr);
+}
+
+
