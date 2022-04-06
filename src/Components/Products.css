@@ -1,0 +1,71 @@
+.carousel {
+    align-items: center;
+    display: flex;
+    overflow: hidden;
+    margin: 2rem 0rem;
+    position: relative;
+}
+.carousel__images {
+    display: flex;
+    transform: translateX(0);
+    transition: transform ease 2s;
+}
+.carousel__button {
+    background: white;
+    border: 0;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 1.5rem;
+    font-weight: lighter;
+    height: 3rem;
+    position: absolute;
+    width: 3rem;
+    z-index: 1;
+}
+.previous {
+    top: 80px;
+    left: 5px;
+}
+
+.next {
+    right: 5px;
+}
+
+.banner {
+    display: flex;
+    background-color: rgb(202, 202, 202);
+}
+.banner-info {
+    padding: 5% 10%;
+}
+.banner-img {
+    height: 350px;
+}
+.banner-img > img {
+    height: 350px;
+}
+
+.Content {
+    display: flex;
+    columns: auto auto;
+    padding: 0rem 1rem;
+    gap: 1rem;
+}
+
+.Content > div {
+    /* background-color: aquamarine; */
+    /* height: 500px; */
+}
+.Content > div:nth-child(1) {
+    width: 25%;
+}
+
+.Content > div:nth-child(2) {
+    width: 75%;
+}
+
+.func {
+    gap: 2rem;
+    display: flex;
+    flex-direction: column;
+}
