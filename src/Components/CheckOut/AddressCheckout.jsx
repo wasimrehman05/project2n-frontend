@@ -2,21 +2,27 @@ import React from "react";
 import { Div } from "../StyledComponents/NykaaStyles";
 import Nav from './Nav'
 import SideBarRight from "./SideBarRight";
-const Login = () => {
-   
+const Address = () => {
+    function tabHandler(e) {
+        const lis = e.currentTarget.parentNode.childNodes;
+        lis.forEach(e => e.classList.remove("active"))
+        e.currentTarget.classList.add("active");
+    }
     return (
         <Div >
-            <Nav active="login" />
+            <Nav active="address" />
             <div className="row">
                 <div className="col-md-4">
                     <ul className='tabs'>
-                        <li className='active'>Login/Register</li>
-                       
+                        <li onClick={tabHandler} className='active'>Content 1</li>
+                        <li onClick={tabHandler} >Content 2</li>
+                        <li onClick={tabHandler} >Content 3</li>
+                        <li onClick={tabHandler} >Content 4</li>
                     </ul>
                 </div>
                 <div className="col-md-4">
                     <div className="card">
-                        <h5>Login or Register</h5>
+                        <h5>Address or Register</h5>
                         <hr />
                         <div className="subHeading">
                             <div><i className="fa fa-check"></i> Get Reward Points on new registration</div>
@@ -42,4 +48,4 @@ const Login = () => {
     )
 }
 
-export default Login
+export default Address

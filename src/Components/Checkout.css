@@ -2,6 +2,14 @@
     --theme-color: #fc2779
 }
 
+.main {
+    background-color: grey;
+}
+
+.checkout {
+    background-color: #f3f3f3;
+}
+
 .navbar {
     height: 100px;
     background-color: #fff !important;
@@ -21,18 +29,91 @@
 }
 
 .inner-nav {
-    width: 350px;
+    width: 320px;
 }
 
 .inner-nav .heading {
     font-weight: bold;
     color: #3f414d;
+    font-size: 18px;
 }
 
 .active {
     border-bottom: 3px solid var(--theme-color);
     color: var(--theme-color);
 }
-.active .heading{
+
+.active .heading {
     color: var(--theme-color);
+}
+
+.tabs {
+    list-style: none;
+    margin: 5px;
+    padding: 10px;
+    background-color: #fff;
+}
+
+.tabs>li {
+    padding: 10px;
+    border-bottom: 1px solid #ebebeb;
+    font-size: 16px;
+    font-weight: 600;
+    color: #3f414d;
+    cursor: pointer;
+}
+.tabs>li:hover {
+    color: #ebebeb;
+}
+
+.tabs>li.active {
+    color: var(--theme-color);
+    border-right: 3px solid var(--theme-color) !important;
+}
+.card{
+    background-color: white;
+    margin: 5px;
+    color: #3f414d;
+    padding: 25px;
+}
+.logos{
+    margin: 10px 0;
+}
+.logos >img{
+    width: 130px;
+}
+.subHeading{
+    font-size: 15px;
+    padding-bottom: 10px;
+    color:#3f414d;
+}
+.subHeading .fa{
+    color: green;
+}
+.card > .button {
+    background-color: var(--theme-color);
+    color: white;
+    padding: 10px;
+    font-weight: 500;
+}
+.card .subHeadingText{
+    margin-top: 20px;
+    border-bottom: 1px solid #ebebeb;
+    font-size: 16px;
+    font-weight: 600;
+}
+.bottomText{
+    margin-top: 20px;
+    padding-bottom: 20px;
+}
+.button2{
+    color: var(--theme-color);
+    /* color: white; */
+    text-align: center;
+    border: 1px solid var(--theme-color);
+    padding: 10px;
+    font-weight: 500;
+    cursor: pointer;
+    user-select: none;
+    font-weight: 500;
 }
