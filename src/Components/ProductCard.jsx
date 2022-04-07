@@ -1,6 +1,9 @@
-import React from "react";
-import { useSelector } from "react-redux";
+import React, { useState } from "react";
+import { addingToBag, showItem } from "../Redux/action";
+import { useSelector, useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
 import { StarRatingShow } from "./StarRatings";
+import axios from "axios";
 import styled from "styled-components";
 
 const Div = styled.div`
@@ -11,6 +14,8 @@ const Div = styled.div`
 
     & .card {
         background-color: #ffffff;
+        height: fit-content;
+        overflow: hidden;
     }
     & > div > div:nth-child(1) {
         padding: 0 10%;
@@ -72,6 +77,11 @@ const Div = styled.div`
         bottom: 0;
         height: 3rem;
     }
+    & .btn > div {
+        display: none;
+        bottom: 0;
+        height: 3rem;
+    }
 
     & .btn > button {
         border: none;
@@ -103,17 +113,72 @@ const Div = styled.div`
         & .btn {
             display: flex;
         }
+        & .btn > div {
+            display: flex;
+            width: 100%;
+            padding: 14px;
+            background-color: #f06418;
+            justify-content: center;
+            padding: auto 0;
+            font-size: 17px;
+            font-weight: 600;
+            color: white;
+        }
     }
 `;
 
 export const ProductCard = () => {
-    const data = useSelector((state) => state.products);
+    const [cartstatus, setCartstatus] = useState(false);
+    const [cartmessage, setCartmessage] = useState("ADDED TO BAG");
+
+    let data;
+
+    const products = useSelector((state) => state.products);
+
+    const filter = useSelector((state) => state.filter);
+    const cartProducts = useSelector((state) => state.cartProducts);
+
+    if (filter.length === 0) {
+        data = products;
+    } else {
+        data = filter;
+    }
+
+    const dispatch = useDispatch();
+
+    const navigate = useNavigate();
+
+    // opening OneItem Page
+    const sendItem = (item) => {
+        dispatch(showItem(item));
+        // console.log(item)
+        navigate(`/item/${item.id}`);
+    };
+
+    // Add to cart
+    const addtobag = (item) => {
+        setCartstatus(true);
+        for (var i = 0; i < cartProducts.length; i++) {
+            if (cartProducts[i].id === item.id) {
+                setCartmessage("ALREADY IN THE BAG");
+                return;
+            }
+        }
+        axios
+            .post("http://localhost:3005/cartProducts", item)
+            .then((res) => dispatch(addingToBag(item)));
+    };
+
+    const changeState = () => {
+        setCartstatus(false);
+        setCartmessage("ADDED TO BAG");
+    };
 
     return (
         <Div>
             {data.map((item) => (
-                <div key={item.id} className="card">
-                    <div>
+                <div key={item.id} className="card" onMouseLeave={changeState}>
+                    <div onClick={() => sendItem(item)}>
                         <div>BESTSELLER</div>
                         <img src={item.image1} alt="product_img" />
                         <div className="title">
@@ -129,15 +194,33 @@ export const ProductCard = () => {
                             <div>({item.ratingNum})</div>
                         </div>
                     </div>
-                    <div className="btn">
-                        <button>
-                            <img
-                                src="https://cdn1.iconfinder.com/data/icons/valentine-s-day-21/100/heart-256.png"
-                                alt="favourite"
-                            />
-                        </button>
-                        <button>ADD TO BAG</button>
-                    </div>
+                    {cartstatus ? (
+                        <div className="btn">
+                            <div
+                                style={{
+                                    backgroundColor: `${
+                                        cartmessage === "ADDED TO BAG"
+                                            ? "#f06418"
+                                            : "black"
+                                    }`,
+                                }}
+                            >
+                                {cartmessage}
+                            </div>
+                        </div>
+                    ) : (
+                        <div className="btn">
+                            <button>
+                                <img
+                                    src="https://cdn1.iconfinder.com/data/icons/valentine-s-day-21/100/heart-256.png"
+                                    alt="favourite"
+                                />
+                            </button>
+                            <button onClick={() => addtobag(item)}>
+                                ADD TO BAG
+                            </button>
+                        </div>
+                    )}
                 </div>
             ))}
         </Div>

@@ -55,7 +55,17 @@ export const ProductsPage = () => {
 
     const [slideImgIndex, setSlideImgIndex] = useState(0);
 
-    const data = useSelector((state) => state.products);
+    let data;
+
+    const products = useSelector((state) => state.products);
+
+    const filter = useSelector((state) => state.filter);
+
+    if (filter.length === 0) {
+        data = products;
+    } else {
+        data = filter;
+    }
 
     const slideImg = (val) => {
         let index = slideImgIndex + val;
@@ -69,6 +79,7 @@ export const ProductsPage = () => {
 
         setSlideImgIndex(index);
     };
+
     return (
         <Div>
             <h2>

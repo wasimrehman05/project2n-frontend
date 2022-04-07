@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import { Collapisble, Collapisble2 } from "./Collapisble";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
+import { filterData } from "../Redux/action";
 
 const FilterDiv = styled.div`
     position: sticky;
@@ -24,6 +25,17 @@ const Check = styled.div`
         border-radius: 50%;
     }
 `;
+const SortCheck = styled.div`
+    display: flex;
+    font-size: 14px;
+    justify-content: space-between;
+    background-color: white;
+    padding: 0.8rem 1rem;
+
+    & > input[type="checkbox"] {
+        border-radius: 50%;
+    }
+`;
 
 const Hr1 = styled.div`
     width: 80%;
@@ -38,159 +50,311 @@ const Hr2 = styled.div`
     margin: auto;
 `;
 export const Sort = () => {
-    const data = useSelector((state) => state.products);
+    let data;
+    const products = useSelector((state) => state.products);
+    const filter = useSelector((state) => state.filter);
 
-    return <Collapisble name="Sort By : ">fdsfklhlkfasdjb</Collapisble>;
+    const dispatch = useDispatch();
+
+    if (filter.length === 0) {
+        data = products;
+    } else {
+        data = filter;
+    }
+    const [status, setStatus] = useState(true);
+
+    const sortfunc = (e) => {
+        // let option = document.getElementsByName("toSort");
+
+        setStatus(false);
+        let toSort = e.value;
+        if (e.checked === false) {
+            setStatus(true);
+            toSort = "Popularity";
+        }
+
+        // for (var i = 0; i < option.size; i++) {
+        //     if (option[i].value != e.value) {
+        //         option[i].checked = false;
+        //     }
+        //     console.log(option[i].value);
+        // }
+
+        var arr = [...data];
+
+        if (toSort === "LtoH") {
+            arr.sort((a, b) => a.off_price - b.off_price);
+            dispatch(filterData(arr));
+        } else if (toSort === "HtoL") {
+            arr.sort((a, b) => b.off_price - a.off_price);
+            dispatch(filterData(arr));
+        } else if (toSort === "Discount") {
+            arr.sort((a, b) => b.offer - a.offer);
+            dispatch(filterData(arr));
+        } else if (toSort === "rating") {
+            arr.sort((a, b) => b.rating - a.rating);
+            dispatch(filterData(arr));
+        } else {
+            dispatch(filterData(products));
+        }
+    };
+
+    return (
+        <Collapisble name="Sort">
+            <div>
+                <SortCheck>
+                    <label htmlFor="Popularity">Popularity</label>
+                    <input
+                        type="checkbox"
+                        name="toSort"
+                        value="Popularity"
+                        checked={status}
+                        onClick={() => setStatus(true)}
+                    />
+                </SortCheck>
+                <SortCheck>
+                    <label htmlFor="Discount">Discount</label>
+                    <input
+                        type="checkbox"
+                        name="toSort"
+                        value="Discount"
+                        onClick={(e) => sortfunc(e.target)}
+                    />
+                </SortCheck>
+                <SortCheck>
+                    <label htmlFor="rating">Customer Top Rated</label>
+                    <input
+                        type="checkbox"
+                        name="toSort"
+                        value="rating"
+                        onClick={(e) => sortfunc(e.target)}
+                    />
+                </SortCheck>
+                <SortCheck>
+                    <label htmlFor="HtoL">Price: High To Low</label>
+                    <input
+                        type="checkbox"
+                        name="toSort"
+                        value="HtoL"
+                        onClick={(e) => sortfunc(e.target)}
+                    />
+                </SortCheck>
+                <SortCheck>
+                    <label htmlFor="LtoH">Price: Low To High</label>
+                    <input
+                        type="checkbox"
+                        name="toSort"
+                        value="LtoH"
+                        onClick={(e) => sortfunc(e.target)}
+                    />
+                </SortCheck>
+            </div>
+        </Collapisble>
+    );
 };
 
 export const Filter = () => {
+    // let data;
+
     const data = useSelector((state) => state.products);
-    let brand = [];
-    data.forEach((ele) => {
-        brand.push(ele.brand);
-    });
-    brand = new Set(brand);
-    console.log(brand);
+
+    // const filter = useSelector((state) => state.filter);
+
+    // if (filter.length === 0) {
+    //     data = products;
+    // } else {
+    //     data = filter;
+    // }
+
+    const dispatch = useDispatch();
+
+    //filter and Sort
+
+    const filterfunc = () => {
+        let option = document.getElementsByName("sub_category");
+        let filterStatus = false;
+        var arr;
+        for (var checkbox of option) {
+            if (checkbox.checked) {
+                arr = [];
+                for (let i = 1; i < data.length; i++) {
+                    if (data[i].sub_category === checkbox.value) {
+                        arr.push(data[i]);
+                    }
+                }
+                filterStatus = true;
+                console.log(checkbox.value);
+            }
+        }
+        if (!filterStatus) {
+            dispatch(filterData(data));
+        } else {
+            dispatch(filterData(arr));
+        }
+    };
+
     return (
         <FilterDiv>
             <Collapisble name="Category">
                 <Div>
                     <Collapisble2 name="Hair Styling Tools">
                         <Hr1 />
-                        <Check>
-                            <label htmlFor="Straighteners">Straighteners</label>
-                            <input
-                                type="checkbox"
-                                name="sub_category"
-                                value="Straighteners"
-                            />
-                        </Check>
-                        <Check>
-                            <label htmlFor="Curling_Irons/Stylers">
-                                Curling Irons/Stylers
-                            </label>
-                            <input
-                                type="checkbox"
-                                name="sub_category"
-                                value="Curling_Irons/Stylers"
-                            />
-                        </Check>
-                        <Check>
-                            <label htmlFor="Hair_Dryers">Hair Dryers</label>
-                            <input
-                                type="checkbox"
-                                name="sub_category"
-                                value="Hair_Dryers"
-                            />
-                        </Check>
-                        <Check>
-                            <label htmlFor="Multi_Stylers">Multi Stylers</label>
-                            <input
-                                type="checkbox"
-                                name="sub_category"
-                                value="Multi_Stylers"
-                            />
-                        </Check>
+                        <div onChange={filterfunc}>
+                            <Check>
+                                <label htmlFor="Straighteners">
+                                    Straighteners
+                                </label>
+                                <input
+                                    type="checkbox"
+                                    name="sub_category"
+                                    value="Straighteners"
+                                />
+                            </Check>
+                            <Check>
+                                <label htmlFor="Curling_Irons/Stylers">
+                                    Curling Irons/Stylers
+                                </label>
+                                <input
+                                    type="checkbox"
+                                    name="sub_category"
+                                    value="Curling_Irons/Stylers"
+                                />
+                            </Check>
+                            <Check>
+                                <label htmlFor="Hair_Dryers">Hair Dryers</label>
+                                <input
+                                    type="checkbox"
+                                    name="sub_category"
+                                    value="Hair_Dryers"
+                                />
+                            </Check>
+                            <Check>
+                                <label htmlFor="Multi_Stylers">
+                                    Multi Stylers
+                                </label>
+                                <input
+                                    type="checkbox"
+                                    name="sub_category"
+                                    value="Multi_Stylers"
+                                />
+                            </Check>
+                        </div>
                         <Hr2 />
                     </Collapisble2>
                     <Collapisble2 name="Massage Tools">
                         <Hr1 />
-                        <Check>
-                            <label htmlFor="Massagers">Massagers</label>
-                            <input
-                                type="checkbox"
-                                name="sub_category"
-                                value="Massagers"
-                            />
-                        </Check>
+                        <div onChange={filterfunc}>
+                            <Check>
+                                <label htmlFor="Massagers">Massagers</label>
+                                <input
+                                    type="checkbox"
+                                    name="sub_category"
+                                    value="Massagers"
+                                />
+                            </Check>
+                        </div>
                         <Hr2 />
                     </Collapisble2>
                     <Collapisble2 name="Shaving Tools">
                         <Hr1 />
-                        <Check>
-                            <label htmlFor="Trimmers">Trimmers</label>
-                            <input
-                                type="checkbox"
-                                name="sub_category"
-                                value="Trimmers"
-                            />
-                        </Check>
-                        <Check>
-                            <label htmlFor="Shavers">Shavers</label>
-                            <input
-                                type="checkbox"
-                                name="sub_category"
-                                value="Shavers"
-                            />
-                        </Check>
+                        <div onChange={filterfunc}>
+                            <Check>
+                                <label htmlFor="Trimmers">Trimmers</label>
+                                <input
+                                    type="checkbox"
+                                    name="sub_category"
+                                    value="Trimmers"
+                                />
+                            </Check>
+                            <Check>
+                                <label htmlFor="Shavers">Shavers</label>
+                                <input
+                                    type="checkbox"
+                                    name="sub_category"
+                                    value="Shavers"
+                                />
+                            </Check>
+                        </div>
                         <Hr2 />
                     </Collapisble2>
                     <Collapisble2 name="Face/Skin Tools">
                         <Hr1 />
-                        <Check>
-                            <label htmlFor="Dermarollers">Dermarollers</label>
-                            <input
-                                type="checkbox"
-                                name="sub_category"
-                                value="Dermarollers"
-                            />
-                        </Check>
-                        <Check>
-                            <label htmlFor="Cleansing_Brushes">
-                                Cleansing Brushes
-                            </label>
-                            <input
-                                type="checkbox"
-                                name="sub_category"
-                                value="Cleansing_Brushes"
-                            />
-                        </Check>
-                        <Check>
-                            <label htmlFor="Face_Epilator">Face Epilator</label>
-                            <input
-                                type="checkbox"
-                                name="sub_category"
-                                value="Face_Epilator"
-                            />
-                        </Check>
-                        <Check>
-                            <label htmlFor="Acne_Removal">Acne Removal</label>
-                            <input
-                                type="checkbox"
-                                name="sub_category"
-                                value="Acne_Removal"
-                            />
-                        </Check>
+                        <div onChange={filterfunc}>
+                            <Check>
+                                <label htmlFor="Dermarollers">
+                                    Dermarollers
+                                </label>
+                                <input
+                                    type="checkbox"
+                                    name="sub_category"
+                                    value="Dermarollers"
+                                />
+                            </Check>
+                            <Check>
+                                <label htmlFor="Cleansing_Brushes">
+                                    Cleansing Brushes
+                                </label>
+                                <input
+                                    type="checkbox"
+                                    name="sub_category"
+                                    value="Cleansing_Brushes"
+                                />
+                            </Check>
+                            <Check>
+                                <label htmlFor="Face_Epilator">
+                                    Face Epilator
+                                </label>
+                                <input
+                                    type="checkbox"
+                                    name="sub_category"
+                                    value="Face_Epilator"
+                                />
+                            </Check>
+                            <Check>
+                                <label htmlFor="Acne_Removal">
+                                    Acne Removal
+                                </label>
+                                <input
+                                    type="checkbox"
+                                    name="sub_category"
+                                    value="Acne_Removal"
+                                />
+                            </Check>
+                        </div>
                         <Hr2 />
                     </Collapisble2>
                     <Collapisble2 name="Hair Removal Tools">
                         <Hr1 />
-                        <Check>
-                            <label htmlFor="Epilators">Epilators</label>
-                            <input
-                                type="checkbox"
-                                name="sub_category"
-                                value="Epilators"
-                            />
-                        </Check>
-                        <Check>
-                            <label htmlFor="Body_Groomers">Body Groomers</label>
-                            <input
-                                type="checkbox"
-                                name="sub_category"
-                                value="Body_Groomers"
-                            />
-                        </Check>
-                        <Check>
-                            <label htmlFor="Bikini_Trimmers">
-                                Bikini Trimmers
-                            </label>
-                            <input
-                                type="checkbox"
-                                name="sub_category"
-                                value="Bikini_Trimmers"
-                            />
-                        </Check>
+                        <div onChange={filterfunc}>
+                            <Check>
+                                <label htmlFor="Epilators">Epilators</label>
+                                <input
+                                    type="checkbox"
+                                    name="sub_category"
+                                    value="Epilators"
+                                />
+                            </Check>
+                            <Check>
+                                <label htmlFor="Body_Groomers">
+                                    Body Groomers
+                                </label>
+                                <input
+                                    type="checkbox"
+                                    name="sub_category"
+                                    value="Body_Groomers"
+                                />
+                            </Check>
+                            <Check>
+                                <label htmlFor="Bikini_Trimmers">
+                                    Bikini Trimmers
+                                </label>
+                                <input
+                                    type="checkbox"
+                                    name="sub_category"
+                                    value="Bikini_Trimmers"
+                                />
+                            </Check>
+                        </div>
                         <Hr2 />
                     </Collapisble2>
                 </Div>
