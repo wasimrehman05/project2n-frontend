@@ -1,0 +1,152 @@
+.contact-wrapper {
+    display: flex;
+    padding-right: 0%;
+    padding-left: 4%;
+    padding-bottom: 2%;
+
+}
+.navbar2-container{
+    width: 90%;
+
+    margin: auto;
+}
+.navbar2-wrapper{
+    width: 100%;
+}
+.footer-terms{
+    background-color: #fc2779;
+    margin-bottom: 5%;
+}
+.terms-wrapper{
+    margin: auto;
+   padding: 0.7%;
+    
+}
+.categories-wrapper{
+    display: flex;
+    padding: 4%;
+}
+
+.services-wrapper{
+    padding: 2%;
+    display: flex;
+}
+
+.footer-categories{
+    background-color: #8c8d94;
+}
+.nykaa-wrapper,.help-wrapper,.quicklinks-wrapper,.topcategories-wrapper,.inspire-wrapper{
+    width: 100%;
+    text-align: left;
+    padding: 2%;
+}
+
+.category-nykaa, .category-help, .category-quicklinks ,.category-topcategories, .category-inspireMe{
+    width: 60%;
+}
+
+.category-nykaa, .category-help, .category-quicklinks , .category-inspireMe, .category-topcategories{
+ 
+    color: azure;
+    
+}
+
+.footer-text:hover{
+    color: hsl(337, 89%, 64%);
+    transition-duration: 0.3s;
+    cursor: pointer;
+
+}
+.card-block :hover{
+    box-shadow: 1px 1px 6px 1.5px rgba(138, 138, 141, 0.877);
+}
+
+.footer-text{
+    color: white;
+    font-size: 14px;
+}
+.contact-div {
+    width: 100%;
+    margin: auto;
+    text-align: left;
+    background-color:#3f414d;
+
+}
+
+.email {
+    width: 28%;
+}
+
+.app {
+    width: 22%;
+    text-align: center;
+}
+.app-img{
+    width: 10%;
+}
+.phone {
+    width: 27%;
+}
+.phone-text{
+    font-size: 16px;
+}
+
+.phone-text-div{
+    width: 110%;
+}
+.email,
+.phone,
+.app {
+    margin: 10px;
+    /* border: 1px solid black; */
+    padding-left: 1%;
+}
+
+.service{
+    display: flex;
+    width: 16%;
+    margin: 20px;
+    text-align: left;
+}
+
+
+.desc-service{
+    font-size: small;
+    color:rgb(70, 69, 69)
+}
+
+.service-icon{
+    width: 90%;
+    height: 50px;
+}
+.social-icon{
+    width: 17%;
+}
+
+.service-authentic{
+    width: 20%;
+}
+
+
+.terms1-wrapper{
+    display: flex;
+    width: 100%;
+ 
+}
+.terms1{
+    width: 40%;
+    margin: auto;
+}
+.terms-text{
+    margin-left: 20px;
+    font-size: small;
+    font-weight:600;
+    color: white;
+}
+
+.trc{
+    width: 100%;
+    font-size: 14px;
+    font-weight:600;
+    color: white;
+}

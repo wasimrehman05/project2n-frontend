@@ -2,14 +2,20 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import {App} from './App';
-// import {BrowserRouter} from "react-router-dom"
+import 'font-awesome/css/font-awesome.min.css';
+// import { ChakraProvider } from '@chakra-ui/react'
+
+import {BrowserRouter} from "react-router-dom"
 
 ReactDOM.render(
   <React.StrictMode>
-    {/* <BrowserRouter> */}
+    {/* <ChakraProvider> */}
+      <BrowserRouter>
       <App />
-    {/* </BrowserRouter> */}
+      </BrowserRouter>
+    {/* </ChakraProvider> */}
   </React.StrictMode>,
+  
   document.getElementById('root')
 );
 

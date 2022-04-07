@@ -324,6 +324,619 @@
       "desc2" : ""
     }
 
+  ],
+
+  "footer" : [
+    {
+      "name" : "nyka",
+      "text" : "who are we?"
+    },
+
+    {
+      "name" : "nyka",
+      "text" : "Careers"
+    },
+
+    {
+      "name" : "nyka",
+      "text" : "Authenticity"
+    },
+
+    {
+      "name" : "nyka",
+      "text" : "Press"
+    },
+
+    {
+      "name" : "nyka",
+      "text" : "Testimonials"
+    },
+
+    {
+      "name" : "nyka",
+      "text" : "Nykaa CSR"
+    },
+
+
+    {
+      "name" : "nyka",
+      "text" : "Responsible Disclosure"
+    },
+
+    {
+      "name" : "nyka",
+      "text" : "Investor Relations"
+    },
+
+    {
+      "name" : "help",
+      "text" : "Contact Us"
+    },
+
+
+    {
+      "name" : "help",
+      "text" : "Frequently asked Questions"
+    },
+
+    {
+      "name" : "help",
+      "text" : "Store Locator"
+    },
+
+    {
+      "name" : "help",
+      "text" : "Cancellation & Return"
+    },
+
+    {
+      "name" : "help",
+      "text" : "Shipping & Delivery"
+    },
+
+    {
+      "name" : "help",
+      "text" : "Sell on Nykaa"
+    },
+    
+    {
+      "name" : "inspireMe",
+      "text" : "Beauty Book"
+    },
+
+    {
+      "name" : "inspireMe",
+      "text" : "Nykaa TV"
+    },
+
+    {
+      "name" : "inspireMe",
+      "text" : "Nykaa Network"
+    },
+
+    {
+      "name" : "inspireMe",
+      "text" : "Buying Guides"
+    },
+
+    {
+      "name" : "quicklinks",
+      "text" : "Offer Zone"
+    },
+
+    {
+      "name" : "quicklinks",
+      "text" : "New Launches"
+    },
+
+    {
+      "name" : "quicklinks",
+      "text" : "Nykaa Man"
+    },
+
+    {
+      "name" : "quicklinks",
+      "text" : "Nykaa Fashion"
+    },
+
+    {
+      "name" : "quicklinks",
+      "text" : "Nykaa Pro"
+    },
+
+    {
+      "name" : "quicklinks",
+      "text" : "Nyka femina beauty awards"
+    },
+
+    {
+      "name" : "quicklinks",
+      "text" : "Sitemap"
+    },
+
+    {
+      "name" : "topcategories",
+      "text" : "Makeup"
+    },
+
+    {
+      "name" : "topcategories",
+      "text" : "Skin"
+    },
+
+    {
+      "name" : "topcategories",
+      "text" : "Hair"
+    },
+
+    {
+      "name" : "topcategories",
+      "text" : "Personal Care"
+    },
+
+    
+    {
+      "name" : "topcategories",
+      "text" : "Appliances"
+    },
+
+    
+    {
+      "name" : "topcategories",
+      "text" : "Mom and Baby"
+    },
+
+    
+    {
+      "name" : "topcategories",
+      "text" : "Fragrance"
+    },
+
+    
+    {
+      "name" : "topcategories",
+      "text" : "Luxe"
+    }
+
+  ],
+
+
+    
+    "brands" :[
+      {
+        "popular" :[
+          {
+            "img" : "https://adn-static2.nykaa.com/media/wysiwyg/2019/Maybelline1211.png"
+          },
+          {
+            "img" : "https://adn-static2.nykaa.com/media/wysiwyg/lakme_mega_menu_header.png"
+          },
+          {
+            "img" : "https://adn-static2.nykaa.com/media/wysiwyg/For-Nykaa-Megamenu-New.png"
+          },
+          {
+            "img": "https://adn-static2.nykaa.com/media/wysiwyg/Header/mac.png"
+          },
+
+          {
+            "img": "https://adn-static2.nykaa.com/media/wysiwyg/2019/lorealparis.png"
+          },
+
+          {
+            "img": "https://adn-static2.nykaa.com/media/wysiwyg/2020/BrandslogoMenubar/Huda.png"
+          },
+
+          {
+            "img": "https://adn-static2.nykaa.com/media/wysiwyg/2018/Biotique_new.png"
+          },
+
+          {
+            "img": "https://adn-static2.nykaa.com/media/wysiwyg/2019/NATURAL-LOGO.png"
+          },
+
+          {
+            "img": "https://adn-static2.nykaa.com/media/wysiwyg/2018/Brandslogo/FacesCanadaa.png"
+          },
+
+          {
+            "img": "https://adn-static2.nykaa.com/media/wysiwyg/HeaderIcons/The-Face-Shop.png"
+          },
+
+          {
+            "img": "https://adn-static2.nykaa.com/media/wysiwyg/2018/colorbar-logoforui.png"
+          },
+
+          {
+            "img": "https://adn-static2.nykaa.com/media/wysiwyg/2018/Brandslogo/nyx_New.png"
+          },
+          {
+            "img" : "https://images-static.naikaa.com/media/wysiwyg/2020/CT-Newlaunches-118x55.png"
+          },
+
+          {
+            "img" : "https://adn-static1.nykaa.com/media/wysiwyg/2020/Dior%20logo_118x55.jpg?1?lkkl"
+          },
+
+          {
+            "img" : "https://adn-static1.nykaa.com/media/wysiwyg/NFBA2020/TooFaced_logos.png?1?lk"
+          },
+
+          {
+            "img" : "https://adn-static2.nykaa.com/media/wysiwyg/MegaMenuImages/Kaybeauty-new-launch-logo.png"
+          },
+
+          {
+            "img" : "https://adn-static2.nykaa.com/media/wysiwyg/2020/JML-Logo.png"
+          },
+
+          {
+            "img" : "https://adn-static2.nykaa.com/media/wysiwyg/2021/Minimalist_logos.png?agg"
+          },
+
+          {
+            "img" : "https://adn-static2.nykaa.com/media/wysiwyg/2020/Pixi%20Logo_118px%20X%2055px.png"
+          },
+
+          {
+            "img" : "https://adn-static1.nykaa.com/media/wysiwyg/2021/SDJ-Logo-118-x-55-px.png"
+          },
+
+          {
+            "img" : "https://adn-static2.nykaa.com/media/wysiwyg/2020/BrandslogoMenubar/Prada.png"
+          },
+
+          
+          {
+            "img" : "https://adn-static2.nykaa.com/media/wysiwyg/2020/BrandslogoMenubar/rsvp.png"
+          },
+
+          
+          {
+            "img" : "https://adn-static2.nykaa.com/media/wysiwyg/2020/BrandslogoMenubar/mondano.png"
+          },
+
+          
+          {
+            "img" : "https://adn-static2.nykaa.com/media/wysiwyg/2021/Elf-New-launches-118x55.png?agg"
+          },
+
+          
+          {
+            "img" : "https://adn-static2.nykaa.com/media/wysiwyg/ABCD-Two/See-All_CTA.png"
+          }
+        ],
+
+        "featured" : [
+          {
+            "img": "https://adn-static2.nykaa.com/media/wysiwyg/2019/Mamaearth.png"
+          },
+
+          {
+            "img": "https://adn-static2.nykaa.com/media/wysiwyg/2020/BrandslogoMenubar/mcaffeine.png"
+          },
+
+          {
+            "img": "https://adn-static2.nykaa.com/media/wysiwyg/2020/BrandslogoMenubar/skinrx_logo.png"
+          },
+
+          {
+            "img": "https://adn-static2.nykaa.com/media/wysiwyg/2021/Moi.png"
+          },
+
+          {
+            "img": "https://adn-static2.nykaa.com/media/wysiwyg/2020/Wow.png"
+          },
+
+          {
+            "img": "https://adn-static2.nykaa.com/media/wysiwyg/2020/BrandslogoMenubar/Sugar.png"
+          },
+
+          {
+            "img": "https://adn-static2.nykaa.com/media/wysiwyg/2020/BrandslogoMenubar/MakeupRevolution.png"
+          },
+
+          {
+            "img": "https://adn-static2.nykaa.com/media/wysiwyg/2018/Vaseline.png"
+          },
+
+          {
+            "img": "https://adn-static2.nykaa.com/media/wysiwyg/2019/kamaaurvedaa.png"
+          },
+
+          {
+            "img": "https://adn-static2.nykaa.com/media/wysiwyg/2018/Brandslogo/Ponds.png"
+          },
+
+          {
+            "img" : "https://adn-static2.nykaa.com/media/wysiwyg/2020/BrandslogoMenubar/pac.png"
+          },
+
+          {
+            "img" : "https://adn-static2.nykaa.com/media/wysiwyg/2020/BrandslogoMenubar/Benefit.png"
+          },
+
+          {
+            "img" : "https://adn-static2.nykaa.com/media/wysiwyg/2018/Brandslogo/o3.png"
+          },
+
+          {
+            "img" : "https://adn-static2.nykaa.com/media/wysiwyg/2019/innisfree_New.png"
+          },
+
+          {
+            "img" : "https://adn-static2.nykaa.com/media/wysiwyg/2018/megamenu-logo-_forest.png"
+          },
+
+          
+          {
+            "img" : "https://adn-static2.nykaa.com/media/wysiwyg/2020/BrandslogoMenubar/mondano.png"
+          },
+
+          
+          {
+            "img" : "https://adn-static2.nykaa.com/media/wysiwyg/2021/Elf-New-launches-118x55.png?agg"
+          },
+
+          
+          {
+            "img" : "https://adn-static2.nykaa.com/media/wysiwyg/ABCD-Two/See-All_CTA.png"
+          }
+        ],
+
+        "onlyAtNyka" :[
+          {
+            "img": "https://adn-static2.nykaa.com/media/wysiwyg/2019/NATURAL-LOGO.png"
+          },
+
+          {
+            "img": "https://adn-static2.nykaa.com/media/wysiwyg/2018/Brandslogo/FacesCanadaa.png"
+          },
+
+          {
+            "img": "https://adn-static2.nykaa.com/media/wysiwyg/HeaderIcons/The-Face-Shop.png"
+          },
+
+          {
+            "img": "https://adn-static2.nykaa.com/media/wysiwyg/2018/colorbar-logoforui.png"
+          },
+
+          {
+            "img": "https://adn-static2.nykaa.com/media/wysiwyg/2018/Brandslogo/nyx_New.png"
+          },
+          {
+            "img" : "https://images-static.naikaa.com/media/wysiwyg/2020/CT-Newlaunches-118x55.png"
+          },
+
+          {
+            "img" : "https://adn-static1.nykaa.com/media/wysiwyg/2020/Dior%20logo_118x55.jpg?1?lkkl"
+          },
+
+          {
+            "img" : "https://adn-static1.nykaa.com/media/wysiwyg/NFBA2020/TooFaced_logos.png?1?lk"
+          },
+
+          {
+            "img" : "https://adn-static2.nykaa.com/media/wysiwyg/MegaMenuImages/Kaybeauty-new-launch-logo.png"
+          },
+
+          {
+            "img" : "https://adn-static2.nykaa.com/media/wysiwyg/2019/innisfree_New.png"
+          },
+
+          {
+            "img" : "https://adn-static2.nykaa.com/media/wysiwyg/2018/megamenu-logo-_forest.png"
+          },
+
+          
+          {
+            "img" : "https://adn-static2.nykaa.com/media/wysiwyg/2020/BrandslogoMenubar/mondano.png"
+          },
+
+          
+          {
+            "img" : "https://adn-static2.nykaa.com/media/wysiwyg/2021/Elf-New-launches-118x55.png?agg"
+          },
+
+          
+          {
+            "img" : "https://adn-static2.nykaa.com/media/wysiwyg/ABCD-Two/See-All_CTA.png"
+          } 
+          
+        ],
+
+        "newLaunches" :[
+          {
+            "img" : "https://adn-static2.nykaa.com/media/wysiwyg/2019/Maybelline1211.png"
+          },
+          {
+            "img" : "https://adn-static2.nykaa.com/media/wysiwyg/lakme_mega_menu_header.png"
+          },
+          {
+            "img" : "https://adn-static2.nykaa.com/media/wysiwyg/For-Nykaa-Megamenu-New.png"
+          },
+          {
+            "img": "https://adn-static2.nykaa.com/media/wysiwyg/Header/mac.png"
+          },
+
+          {
+            "img": "https://adn-static2.nykaa.com/media/wysiwyg/2019/lorealparis.png"
+          },
+
+          {
+            "img": "https://adn-static2.nykaa.com/media/wysiwyg/2020/BrandslogoMenubar/Huda.png"
+          },
+
+          {
+            "img": "https://adn-static2.nykaa.com/media/wysiwyg/2018/Biotique_new.png"
+          },
+
+          {
+            "img": "https://adn-static2.nykaa.com/media/wysiwyg/2019/NATURAL-LOGO.png"
+          },
+
+          {
+            "img": "https://adn-static2.nykaa.com/media/wysiwyg/2018/Brandslogo/FacesCanadaa.png"
+          },
+
+          {
+            "img": "https://adn-static2.nykaa.com/media/wysiwyg/HeaderIcons/The-Face-Shop.png"
+          },
+
+          {
+            "img": "https://adn-static2.nykaa.com/media/wysiwyg/2018/colorbar-logoforui.png"
+          },
+
+          {
+            "img": "https://adn-static2.nykaa.com/media/wysiwyg/2018/Brandslogo/nyx_New.png"
+          },
+          {
+            "img" : "https://images-static.naikaa.com/media/wysiwyg/2020/CT-Newlaunches-118x55.png"
+          },
+
+          {
+            "img" : "https://adn-static1.nykaa.com/media/wysiwyg/2020/Dior%20logo_118x55.jpg?1?lkkl"
+          },
+
+          {
+            "img" : "https://adn-static1.nykaa.com/media/wysiwyg/NFBA2020/TooFaced_logos.png?1?lk"
+          },
+
+          {
+            "img" : "https://adn-static2.nykaa.com/media/wysiwyg/MegaMenuImages/Kaybeauty-new-launch-logo.png"
+          },
+
+          {
+            "img" : "https://adn-static2.nykaa.com/media/wysiwyg/2020/JML-Logo.png"
+          },
+
+          {
+            "img" : "https://adn-static2.nykaa.com/media/wysiwyg/2021/Minimalist_logos.png?agg"
+          },
+
+          {
+            "img" : "https://adn-static2.nykaa.com/media/wysiwyg/2020/Pixi%20Logo_118px%20X%2055px.png"
+          },
+
+          {
+            "img" : "https://adn-static1.nykaa.com/media/wysiwyg/2021/SDJ-Logo-118-x-55-px.png"
+          },
+
+          {
+            "img" : "https://adn-static2.nykaa.com/media/wysiwyg/2020/BrandslogoMenubar/Prada.png"
+          },
+
+          
+          {
+            "img" : "https://adn-static2.nykaa.com/media/wysiwyg/2020/BrandslogoMenubar/rsvp.png"
+          },
+
+          
+          {
+            "img" : "https://adn-static2.nykaa.com/media/wysiwyg/2020/BrandslogoMenubar/mondano.png"
+          },
+
+          
+          {
+            "img" : "https://adn-static2.nykaa.com/media/wysiwyg/2021/Elf-New-launches-118x55.png?agg"
+          },
+
+          
+          {
+            "img" : "https://adn-static2.nykaa.com/media/wysiwyg/ABCD-Two/See-All_CTA.png"
+          }
+        ]
+      }
+    ],
+
+  "navbar2":[
+     {
+      "id" : "a1",
+      "title": "Brands",
+      "status" : false
+    },
+
+    {
+      "id" : "a2",
+      "title": "Nykaa Fashion",
+      "status" : false
+    },
+
+    {
+      "id" : "a3",
+      "title": "Beauty Advice",
+      "status" : false
+    },
+
+    {
+      "id" : "a4",
+      "title": "Nykaa Network",
+      "status" : false
+    },
+
+    {
+      "id" : "a5",
+      "title": "Makeup",
+      "status" : false
+    },
+
+    {
+      "id" : "a6",
+      "title": "Skin",
+      "status" : false
+    },
+
+    {
+      "id" : "a7",
+      "title": "Appliances",
+      "status" : false
+    },
+
+    {
+      "id" : "a8",
+      "title": "Personal Care",
+      "status" : false
+    },
+
+    {
+      "id" : "a9",
+      "title": "Natural",
+      "status" : false
+    },
+
+    {
+      "id" : "a10",
+      "title": "Mom & Baby",
+      "status" : false
+    },
+
+    
+    {
+      "id" : "a11",
+      "title": "Helth & Wellness",
+      "status" : false
+    },
+
+    
+    {
+      "id" : "a12",
+      "title": "Men",
+      "status" : false
+    },
+
+    
+    {
+      "id" : "a13",
+      "title": "Fragrance",
+      "status" : false
+    },
+
+    
+    {
+      "id" : "a14",
+      "title": "Luxe",
+      "status" : false
+    }
+
   ]
  
 }
