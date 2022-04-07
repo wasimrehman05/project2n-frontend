@@ -1,0 +1,38 @@
+:root {
+    --theme-color: #fc2779
+}
+
+.navbar {
+    height: 100px;
+    background-color: #fff !important;
+}
+
+.nav-item {
+    margin: 8px;
+    border-right: 1px solid #ebebeb;
+    padding: 10px;
+    min-width: 100px;
+}
+
+.item1 {
+    border-left: 1px solid #ebebeb;
+    padding-right: 5px;
+
+}
+
+.inner-nav {
+    width: 350px;
+}
+
+.inner-nav .heading {
+    font-weight: bold;
+    color: #3f414d;
+}
+
+.active {
+    border-bottom: 3px solid var(--theme-color);
+    color: var(--theme-color);
+}
+.active .heading{
+    color: var(--theme-color);
+}

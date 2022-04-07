@@ -1,6 +1,9 @@
 import React from "react";
+
 import ReactDOM from "react-dom/client";
 import "./index.css";
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 import App from "./App";
 import { Provider } from "react-redux";
 import { store } from "./Redux/store";
@@ -10,7 +13,6 @@ import reportWebVitals from "./reportWebVitals";
 const root = document.getElementById("root");
 
 const ReactRoot = ReactDOM.createRoot(root);
-
 ReactRoot.render(
     <React.StrictMode>
         <BrowserRouter>

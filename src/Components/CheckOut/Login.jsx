@@ -1,9 +1,14 @@
-import React from 'react'
-
+import React, { useState } from "react";
+import { Div } from "../StyledComponents/NykaaStyles";
+import Nav from './Nav'
 const Login = () => {
-  return (
-    <div>Login</div>
-  )
+
+
+    return (
+        <Div>
+            <Nav />
+        </Div>
+    )
 }
 
 export default Login
