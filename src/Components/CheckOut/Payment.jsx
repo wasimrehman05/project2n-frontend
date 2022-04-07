@@ -7,7 +7,13 @@ const Payment = () => {
   return (
     <Div>
       <Nav active="payment" />
-
+      <div class="notification">
+              <span class="noti-icon">i</span>
+              <span>
+                Please use a digital payment method & help us ensure contactless
+                delivery for your safety
+              </span>
+            </div>
       <div className="row">
         <div className="col-md-4">
           <ul className='tabs'>
@@ -18,6 +24,7 @@ const Payment = () => {
         <div className="col-md-4">
           <div className="card">
             <h5>payment or Register</h5>
+          
             <hr />
             <div className="subHeading">
               <div><i className="fa fa-check"></i> Get Reward Points on new registration</div>

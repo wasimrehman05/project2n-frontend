@@ -8,7 +8,7 @@ const Login = () => {
         <Div >
             <Nav active="login" />
             <div className="row">
-                <div className="col-md-4">
+                <div className="col-md-4 col1">
                     <ul className='tabs'>
                         <li className='active'>Login/Register</li>
                        

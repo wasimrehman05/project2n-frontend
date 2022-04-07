@@ -12,8 +12,7 @@ const Nav = ({ active }) => {
               <ul className="navbar-nav me-auto mb-2 mb-lg-0">
                 <li className={"nav-item item1 " + (active == 'login' ? 'active' : null)}>
                   <div className="inner-nav">
-                    <div className="heading">1 - LOGIN</div>
-                    <div >saifhussainansari...</div>
+                    <div className="heading">1 - GUEST CHECKOUT</div>
                   </div>
                 </li>
 
