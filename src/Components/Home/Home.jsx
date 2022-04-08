@@ -81,6 +81,7 @@ export const Home = () => {
   return (
     <div className="App" >
       {/* <Navbar /> */}
+      
       <div className="home-container" style={{paddingTop:"10%"}} >
 
 

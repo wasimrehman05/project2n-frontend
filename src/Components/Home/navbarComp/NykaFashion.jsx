@@ -8,6 +8,7 @@ export const NykaFashion = ({ status, handleToggle }) => {
       <div className='colored-div'>
         <h1 className='heading-nav'>Hair Styling Tools</h1>
         <ul>
+          
           <input type="text" placeholder='SEARCH BRANDS' />
           <li className='nav-desc'>Hair Dryers</li>
           <li className='nav-desc'>Straightners</li>
