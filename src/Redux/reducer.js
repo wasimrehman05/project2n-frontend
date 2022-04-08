@@ -4,15 +4,14 @@ import {
     FILTER_DATA,
     ADD_TO_BAG,
     RELOAD_BAG,
+    UPDATE_QUANTITY,
+    DELETE_FROM_BAG,
 } from "./action";
 
-export const reducer = (
-    store = { products: [], item: [], filter: [], cartProducts: [] },
-    action
-) => {
+const initState = { products: [], item: [], filter: [], cartProducts: [] };
+
+export const reducer = (store = initState, action) => {
     switch (action.type) {
-        default:
-            return store;
         case STORE_PRODUCTS:
             return {
                 ...store,
@@ -38,5 +37,28 @@ export const reducer = (
                 ...store,
                 cartProducts: action.payload,
             };
+        case UPDATE_QUANTITY:
+            let updatedarr = [...store.cartProducts];
+
+            updatedarr.map((ele) => {
+                if (ele.id === action.payload.id) {
+                    ele.quan = action.payload.val;
+                }
+            });
+
+            return {
+                ...store,
+                cartProducts: updatedarr,
+            };
+        case DELETE_FROM_BAG:
+            const updated_arr = store.cartProducts.filter((item) => {
+                return item.id !== action.payload;
+            });
+            return {
+                ...store,
+                cartProducts: updated_arr,
+            };
+        default:
+            return store;
     }
 };

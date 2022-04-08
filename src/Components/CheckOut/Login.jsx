@@ -1,9 +1,19 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { Link } from "react-router-dom";
 import { Div } from "../StyledComponents/NykaaStyles";
+import { useDispatch, useSelector } from "react-redux";
 import Nav from './Nav'
-import SideBarRight from "./SideBarRight";
+import { getCartData } from "../../Redux/action";
+
+
 const Login = () => {
-   
+    const dispatch = useDispatch();
+
+    useEffect(() => {
+        dispatch(getCartData());
+    }, []);
+    const cartProducts = useSelector((state) => state.cartProducts);
+    console.log(cartProducts);
     return (
         <Div >
             <Nav active="login" />
@@ -11,7 +21,6 @@ const Login = () => {
                 <div className="col-md-4 col1">
                     <ul className='tabs'>
                         <li className='active'>Login/Register</li>
-                       
                     </ul>
                 </div>
                 <div className="col-md-4">
@@ -32,10 +41,61 @@ const Login = () => {
                         <div className="bottomText">
                             I do not want any more benefits from Nykaa
                         </div>
-                        <div className="button2">CONTINUE AS GUEST &gt;</div>
+                        <Link className='button2' to='/address'>CONTINUE AS GUEST &gt;</Link>
                     </div>
                 </div>
-                <SideBarRight />
+                {/* sidebar right */}
+                <div className="col-md-4">
+                    <div className="card">
+                        <div className='sideHeading'>1 Items in your Bag
+                            <span>Edit</span>
+                        </div>
+                        <div className="products row">
+                            <img src="/product1.jpg" alt="product" className='col-md-4' />
+                            <div className="col-md-8">
+                                <div className="productNmae">Ponds Bright Beauty Vitamin C Face Serum Infused With Lemon .</div>
+                                <div className="quantity">3ml</div>
+                                <hr />
+                                <div className="productFooter row">
+                                    <div className="qty col-md-6">Qty : 1</div>
+                                    <div className="price col-md-6">
+                                        <strike>499</strike>
+                                        &nbsp;
+                                        <span>424</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div className="bill">
+                            <div className="content">
+                                Sub Total
+                                <span>424</span>
+                            </div>
+                            <div className="content">
+                                Shipping Charge
+                                <span>Free</span>
+                            </div>
+                            <div className="content">
+                                Discount
+                                <span>-0</span>
+                            </div>
+                            <div className="content">
+                                Grand Total
+                                <span>424</span>
+                            </div>
+                        </div>
+                        <div className="address">
+                            <div className="heading">
+                                SHIPPING ADDRESS
+                                <span>CHANGE</span>
+                            </div>
+                            <p>ulb
+                                MS bhavan Room number 05, First floor, MS Bhavan , near modern pulic school, nathupur, Gurgao , Hariyana - 122002,  Gurgaon  -  122002,  , India</p>
+                            <div className="subHeading">9897270083</div>
+                        </div>
+                    </div>
+                </div>
 
             </div>
         </Div>

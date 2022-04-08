@@ -16,12 +16,12 @@ export const Home = () => {
     }, []);
     const getData = () => {
         axios
-            .get("http://localhost:3000/data")
+            .get("http://localhost:3005/data")
             .then((res) => setAllData(res.data));
     };
     const getCartData = () => {
         axios
-            .get("http://localhost:3000/cartProducts")
+            .get("http://localhost:3005/cartProducts")
             .then((res) => dispatch(reloadBag(res.data)));
     };
 

@@ -2,6 +2,14 @@
     --theme-color: #fc2779
 }
 
+a {
+    text-decoration: none;
+}
+
+a:hover {
+    color: var(--theme-color);
+}
+
 .main {
     background-color: grey;
 }
@@ -156,28 +164,33 @@
 
 .quantity {
 
-    margin-top: 5px;
+    margin-top: 1px;
 }
 
 .content>span {
     float: right;
 }
+
 .heading {
-  margin-top: 30px;
+    margin-top: 30px;
     font-weight: 500;
 }
-.heading > span{
+
+.heading>span {
     float: right;
     color: var(--theme-color);
     font-weight: 500;
 }
-.subHeading{
+
+.subHeading {
     margin-top: 10px;
     font-weight: 500;
 }
-.address > p {
+
+.address>p {
     margin-top: 10px;
 }
+
 .notification {
     margin: 15px auto;
     height: 60px;
@@ -188,6 +201,7 @@
     align-items: center;
     justify-content: flex-start;
 }
+
 .noti-icon {
     margin: 10px;
     padding: 10px;
@@ -202,55 +216,71 @@
     align-items: center;
     justify-content: center;
 }
-.address input,textarea{
+
+.address input,
+textarea {
     width: 100%;
     margin: 10px auto;
     border: none;
     border-bottom: 1px solid #ebebeb;
     margin-right: 2px;
 }
-.address input:focus,textarea:focus{
+
+.address input:focus,
+textarea:focus {
 
     border: none;
-    border-bottom: 1px solid  var(--theme-color);
+    border-bottom: 1px solid var(--theme-color);
 
 }
-.address textarea{
+
+.address textarea {
     border: 1px solid #ebebeb;
 }
-.payment .card  {
+
+.payment .card {
     display: none;
 }
+
 .payment .active {
     display: block;
 }
-.payment input,textarea{
+
+.payment input,
+textarea {
     width: 100%;
     margin: 10px auto;
     border: none;
     border-bottom: 1px solid #ebebeb;
     margin-right: 2px;
 }
-.payment input:focus,textarea:focus{
+
+.payment input:focus,
+textarea:focus {
 
     border: none;
-    border-bottom: 1px solid  var(--theme-color);
+    border-bottom: 1px solid var(--theme-color);
 
 }
-.payment textarea{
+
+.payment textarea {
     border: 1px solid #ebebeb;
 }
-.payment .expiry{
+
+.payment .expiry {
     display: flex;
 }
-.payment .text-muted{
-   margin-bottom: 0px;
+
+.payment .text-muted {
+    margin-bottom: 0px;
 }
-.payment p .fa{
-   color: #ffe700;
+
+.payment p .fa {
+    color: #ffe700;
 }
-.payment .other{
-   background: #f3f3f3;
-   font-weight: 500;
-   padding: 10px;
+
+.payment .other {
+    background: #f3f3f3;
+    font-weight: 500;
+    padding: 10px;
 }
