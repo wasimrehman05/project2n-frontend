@@ -2,9 +2,9 @@ import "./App.css";
 import React, { useEffect } from "react";
 
 import { Routes, Route } from "react-router-dom";
-import { Home } from "./Components/Home";
-import { ProductsPage } from "./Components/ProductsPage";
-import { Item } from "./Components/Item";
+import { Home } from "./Components/Home_Page/Home";
+import { ProductsPage } from "./Components/Products_Page/ProductsPage";
+import { Item } from "./Components/One_Item_Page/Item";
 // import { Cart } from "./Components/Cart";
 import { useDispatch } from "react-redux";
 import { getCartData, getData } from "./Redux/action";

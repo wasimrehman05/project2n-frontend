@@ -1,0 +1,273 @@
+.itemPage {
+    top: 0;
+    margin-top: 15vh;
+    background-color: whitesmoke;
+}
+
+.main_div {
+    height: 400px;
+    width: 1140px;
+    margin: auto;
+    background-color: rgb(243, 243, 243);
+    display: flex;
+    gap: 2px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px,
+        rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+    overflow: hidden;
+}
+.left {
+    background-color: white;
+    width: 428px;
+    display: flex;
+}
+.right {
+    background-color: white;
+    width: 712px;
+    /* display: block; */
+}
+.small_photo {
+    background-color: white;
+    width: 21%;
+    /* padding-top: 4rem; */
+    margin: auto;
+}
+.small_photo > div {
+    margin: 3px;
+    border: 0.5px solid gray;
+    height: 18%;
+    padding: auto;
+    background-color: white;
+}
+.large_photo {
+    background-color: white;
+    width: 75%;
+    display: block;
+}
+.large_photo > .Photo {
+    background-color: white;
+    height: 40%;
+    width: 95%;
+    margin: auto;
+    padding-top: 3rem;
+}
+.Photo > img {
+    height: 150%;
+    width: 100%;
+}
+.large_photo > div {
+    background-color: white;
+    width: 25px;
+    margin-left: 85%;
+    padding-top: 1rem;
+    margin-bottom: 8px;
+}
+.left_image > img {
+    height: 80%;
+    width: 80%;
+    margin-top: 5px;
+}
+.heart > img {
+    height: 100%;
+    width: 100%;
+    background-color: white;
+}
+
+.right_upper {
+    height: 88%;
+}
+.right_down {
+    height: 12%;
+}
+.right_down > img {
+    width: 100%;
+    height: 100%;
+}
+.inside_right_1 {
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    height: 42%;
+    text-align: left;
+    padding: 2rem 1rem 0rem 1rem;
+}
+.inside_right_1 > div {
+    padding-bottom: 1rem;
+    background-color: white;
+}
+.inside_right_1 span {
+    background-color: white;
+}
+.inside_right_1 > div:nth-child(3) {
+    display: flex;
+    gap: 0.3rem;
+}
+.inside_right_1 > div:nth-child(2) {
+    display: flex;
+    gap: 1rem;
+}
+.inside_right_2 {
+    display: flex;
+    gap: 2px;
+    height: 70%;
+}
+.inside_right_2_button {
+    background-color: white;
+    width: 50%;
+    height: 90%;
+}
+.inside_right_2_button > button {
+    border: none;
+    background-color: rgb(252, 39, 121);
+    color: white;
+    font-size: 17px;
+    font-weight: 600;
+    width: 75%;
+    height: 50px;
+    margin-top: 4.3rem;
+}
+.inside_right_2_search {
+    background-color: white;
+    width: 50%;
+    height: 90%;
+}
+.inside_right_2_search > div > span,
+.inside_right_2_search > div,
+.inside_right_2_search > div > span > img {
+    background-color: white;
+    float: left;
+    margin-left: 10px;
+}
+.location_tag > span {
+    margin-top: 3rem;
+}
+.searh_pincode {
+    border: none;
+    background-color: white;
+    font-size: 17px;
+    font-weight: 600;
+    width: 75%;
+    margin-top: 0.8rem;
+    position: relative;
+}
+.searh_pincode > input {
+    margin: 0px;
+    padding: 0px;
+    width: 100%;
+    background-color: white;
+    height: 40px;
+    border: 1px solid rgba(186, 184, 184, 0.781);
+    margin-left: 1rem;
+}
+
+.searh_pincode > button {
+    position: absolute;
+    top: 0;
+    right: 0px;
+    z-index: 2;
+    border: none;
+    top: 2px;
+    height: 40px;
+    cursor: pointer;
+    /* border-bottom: 1px solid gray; */
+    color: rgb(252, 39, 121);
+    background-color: white;
+    transform: translateX(2px);
+    font-size: 15px;
+}
+
+.chnge_div {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    gap: 6px;
+    font-size: 14px;
+    background-color: white;
+    padding-left: 10px;
+}
+.chnge_div > div > span {
+    background-color: white;
+}
+.chnge_div > div > span > img {
+    background-color: white;
+}
+.chnge_div > div {
+    background-color: white;
+    vertical-align: middle;
+}
+.check_btn {
+    top: 2px;
+    height: 30px;
+    cursor: pointer;
+    border: 1px solid rgb(252, 39, 121);
+    color: rgb(252, 39, 121);
+    background-color: white;
+    transform: translateX(2px);
+}
+.footer_div {
+    /* border:1px solid red; */
+    padding: 5px;
+    width: 73%;
+    margin: auto;
+    margin-top: 20px;
+    text-align: left;
+    font-size: 22px;
+}
+
+.final_div {
+    display: flex;
+    gap: 10px;
+    display: flex;
+    justify-content: center;
+    text-align: left;
+    margin-top: 10px;
+}
+
+.Description_div {
+    /* border: 1px solid black; */
+    height: 220px;
+    width: 59%;
+    background-color: white;
+    padding: 10px;
+}
+.Description_div > span {
+    padding: 9px;
+    background-color: white;
+    cursor: pointer;
+}
+.Product_div {
+    /* border: 1px solid black; */
+    height: 320px;
+    width: 15%;
+    text-align: center;
+    background-color: white;
+}
+.decs_text {
+    padding: 5px;
+    color: gray;
+    text-align: justify;
+    background-color: white;
+}
+.decs_text > p {
+    background-color: white;
+}
+.Product_div > button {
+    border: none;
+    background-color: rgb(252, 39, 121);
+    color: white;
+    font-size: 17px;
+    font-weight: 600;
+    width: 100%;
+    height: 30px;
+    margin-top: 1rem;
+}
+.Product_div > img {
+    height: 50%;
+    width: 80%;
+}
+.title_item > h4,
+.price_item > span {
+    background-color: white;
+}
+.price_item {
+    background-color: white;
+}

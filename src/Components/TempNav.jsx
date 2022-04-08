@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
-import { Cart } from "./Cart";
+import { Cart } from "./Cart_Page/Cart";
 
 const Div2 = styled.div`
     background-color: black;
@@ -40,6 +40,7 @@ const Div = styled.div`
 
     .display {
         width: 26%;
+        min-width:400px;
         height: 100%;
         background-color: white;
         margin: 1px;
@@ -53,6 +54,7 @@ const Div = styled.div`
 
         & > header {
             width: 24.85%;
+            min-width:400px;
             height: 2.6rem;
             display: flex;
             text-align: center;
@@ -146,6 +148,7 @@ const Div = styled.div`
 
         & > footer {
             width: 24.85%;
+            min-width:400px;
             height: 3.3rem;
             position: fixed;
             bottom: 0;
@@ -180,6 +183,40 @@ const Div = styled.div`
                 color: white;
                 background-color: rgb(252, 39, 121);
             }
+
+            
+    }
+    @media all and (max-width: 1280px) {
+        .transparent {
+            width: 70%;
+        }
+        .display {
+            width: 30%;
+        }
+
+    }
+    @media all and (max-width: 1024px) {
+        .transparent {
+            width: 60%;
+        }
+        .display {
+            width: 40%;
+        }
+    }
+    @media all and (max-width: 768px) {
+        .transparent {
+            width: 55%;
+        }
+        .display {
+            width: 45%;
+        }
+    }
+    @media all and (max-width: 480px) {
+        .transparent {
+            width: 50%;
+        }
+        .display {
+            width: 50%;
         }
     }
 `;
