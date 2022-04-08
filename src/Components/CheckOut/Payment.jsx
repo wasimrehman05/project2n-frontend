@@ -37,7 +37,7 @@ const Payment = () => {
         <div className="col-md-4 payment" ref={ref}>
           <div id="credit" className="card active">
             <div>
-              <h6>Credit/Debit Card tabsContent</h6>
+              <h6>Credit/Debit Card </h6>
             </div>
           </div>
           <div id="upi" className="card ">
