@@ -38,33 +38,86 @@ const Payment = () => {
           <div id="credit" className="card active">
             <div>
               <h6>Credit/Debit Card </h6>
+              <div className="payment">
+                <form>
+                  <input type="country" name="cardNumber" placeholder="Card Number" />
+                  <p className="text-muted">expiry</p>
+                  <div className="expiry">
+                    <input type="country" name="MM" placeholder="MM" />
+                    <input type="country" name="YY" placeholder="/ YY" />
+                    <input type="country" name="CVV" placeholder="CVV" />
+                  </div>
+                </form>
+                <div className="button">SHIP TO THIS ADDRESS  &gt;</div>
+              </div>
             </div>
           </div>
           <div id="upi" className="card ">
             <div>
               <h6>BHIM UPI</h6>
+              <div className="payment">
+                <form>
+                  <input type="country" name="cardNumber" placeholder="VPA/UPI ID (eg. 9876543210@upi)" />
+                </form>
+                <div className="button">Pay 424 Now</div>
+              </div>
             </div>
           </div>
           <div id="google" className="card ">
             <div>
               <h6>Google Pay</h6>
+              <div className="payment">
+                <form>
+                  <input type="country" name="cardNumber" placeholder="Enter Mobile Number/ Google Pay UPI ID" />
+                </form>
+                <div className="button">SEND PAYMENT REQUEST</div>
+              </div>
             </div>
           </div>
           <div id="net" className="card ">
             <div>
               <h6>Net Banking</h6>
+              <div className="payment">
+                <p><i className="fa fa-exclamation-triangle"></i> &nbsp; KOTAK, Canara, Vijaya, Punjab & Sind & Syndicate are down for maintenance. Kindly try other option</p>
+                <div className="bamkCards">
+                  <div className="row">
+                    <img src="/axis.png" className="col-md-4" alt="card1" />
+                    <img src="/hdfc.png" className="col-md-4" alt="card1" />
+                    <img src="/icic.png" className="col-md-4" alt="card1" />
+                  </div>
+                  <div className="row">
+                    <img src="/kotak.png" className="col-md-4" alt="card1" />
+                    <img src="/sbi.png" className="col-md-4" alt="card1" />
+                    <img src="/yes.png" className="col-md-4" alt="card1" />
+                  </div>
+                </div>
+                <form>
+                  <input type="text" name="otherBank" className="other" placeholder="OTHER BANKS" />
+                </form>
+                <div className="button">Pay 424 Now</div>
+              </div>
             </div>
           </div>
 
           <div id="mobile" className="card ">
             <div>
               <h6>Mobile Wallets</h6>
+              <div className="payment">
+                <img src="/paytm.png" alt="card" />
+              </div>
             </div>
           </div>
 
           <div id="gift" className="card ">
             <div>
               <h6>Redeem Gift Card</h6>
+              <div className="payment">
+                <form>
+                  <input type="country" name="gift" placeholder="Gift Card Number" />
+                  <input type="country" name="pin" placeholder="PIN" />
+                </form>
+                <div className="button">Submit</div>
+              </div>
             </div>
           </div>
 

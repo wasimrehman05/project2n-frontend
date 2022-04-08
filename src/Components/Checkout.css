@@ -224,3 +224,33 @@
 .payment .active {
     display: block;
 }
+.payment input,textarea{
+    width: 100%;
+    margin: 10px auto;
+    border: none;
+    border-bottom: 1px solid #ebebeb;
+    margin-right: 2px;
+}
+.payment input:focus,textarea:focus{
+
+    border: none;
+    border-bottom: 1px solid  var(--theme-color);
+
+}
+.payment textarea{
+    border: 1px solid #ebebeb;
+}
+.payment .expiry{
+    display: flex;
+}
+.payment .text-muted{
+   margin-bottom: 0px;
+}
+.payment p .fa{
+   color: #ffe700;
+}
+.payment .other{
+   background: #f3f3f3;
+   font-weight: 500;
+   padding: 10px;
+}

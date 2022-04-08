@@ -20,12 +20,12 @@ const Address = () => {
                         <hr />
                         <div className="address">
                             <form>
-                                <input type="country" name="country" placeholder="Country" />
-                                <input type="country" name="name" placeholder="Name" />
-                                <input type="country" name="email" placeholder="Email" />
-                                <input type="country" name="email" placeholder="Email" />
-                                <input type="country" name="phone" placeholder="Phone" />
-                                <input type="country" name="postalCode" placeholder="Postal Code" />
+                                <input type="text" name="country" placeholder="Country" />
+                                <input type="text" name="name" placeholder="Name" />
+                                <input type="text" name="email" placeholder="Email" />
+                                <input type="text" name="email" placeholder="Email" />
+                                <input type="text" name="phone" placeholder="Phone" />
+                                <input type="text" name="postalCode" placeholder="Postal Code" />
                                 <textarea name="address" id="address" cols="30" rows="5" placeholder="Address"></textarea>
                             </form>
                             <div className="button">SHIP TO THIS ADDRESS  &gt;</div>
