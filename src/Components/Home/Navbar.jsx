@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import './home.css'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
-// import { NykaFashion } from './navbarComp/NykaFashion'
+
+import { NykaFashion } from './navbarComp/NykaFashion'
 import { NykaNetwork } from './navbarComp/NykaNetwork'
 
 export const Navbar = () => {
@@ -34,7 +36,8 @@ export const Navbar = () => {
 
     return (
         <div >
-            <div style={{display: "flex", width: "95%", margin: "auto", position: "fixed", marginTop: "-50px", background: "white"}}>
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+            {/* <div style={{display: "flex", width: "95%", margin: "auto", position: "fixed", marginTop: "-50px", background: "white"}}>
 
             <ul>
                 <li>
@@ -55,7 +58,6 @@ export const Navbar = () => {
                 <h4>Brands</h4>
                  </Link>
 
-                {/* <NykaNetwork {...navdata[0]} handleToggle={handleToggle} /> */}
                 </li>
             </ul>
             <ul >
@@ -64,7 +66,6 @@ export const Navbar = () => {
                 <h4>Nykaa Fashion</h4>
                  </Link>
 
-                {/* <NykaFashion {...navdata[1]} handleToggle={handleToggle} /> */}
                 </li>
             </ul>
 
@@ -89,7 +90,12 @@ export const Navbar = () => {
             <ul>
                 <li>
                     <div style={{marginTop: "20px"}}>
-                        <img src="" alt="image" />
+                        <span>
+
+                        <i className ="fa-dark fa-magnifying-glass"></i>
+                        </span>
+                        
+                        <FontAwesomeIcon icon="fa-light fa-magnifying-glass" />
                     <input type="text" placeholder='Search On Nykaa' />
                     </div>
                 </li>
@@ -111,11 +117,11 @@ export const Navbar = () => {
 
                     </li>
                 </ul>
-        </div>
+        </div> */}
 
 
         
-        <div className='nav2' style={{position: "relative", marginTop: "50px"}}>
+        <div class='nav2' style={{position: "absolute", marginTop: "100px", width:"90%"}}>
             <div style={{display: "flex"}}>
                 <ul>
                     <li>

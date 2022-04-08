@@ -59,6 +59,7 @@
 }
 .card-block :hover{
     box-shadow: 1px 1px 6px 1.5px rgba(138, 138, 141, 0.877);
+    cursor: pointer;
 }
 
 .footer-text{
@@ -149,4 +150,12 @@
     font-size: 14px;
     font-weight:600;
     color: white;
+}
+
+.home-heading{
+    font-size: 30px;
+    font-weight: 400;
+    letter-spacing: .1rem;
+    color:rgb(70, 69, 69)
+
 }

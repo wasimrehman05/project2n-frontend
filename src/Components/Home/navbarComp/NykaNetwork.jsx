@@ -1,5 +1,6 @@
 import React from 'react'
-import { Brands } from './Brands'
+import { AppliancesSec } from './AppliancesSec'
+// import { Brands } from './Brands'
 
 export const NykaNetwork = ({status,handleToggle}) => {
   
@@ -13,7 +14,7 @@ export const NykaNetwork = ({status,handleToggle}) => {
 
       <div>
         {
-          status ? <Brands /> : ""
+          status ? <AppliancesSec /> : ""
         }
       </div>
       <div onMouseEnter={()=> handleToggle("a1")} >Toggle Todo</div>

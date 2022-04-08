@@ -1,8 +1,8 @@
 import React from 'react'
 import './Nav.css'
-export const Brands = () => {
+export const AppliancesSec = () => {
   return (
-    <div className='appliances-div' style={{position: "relative"}}>
+    // <div className='appliances-div' style={{position: "relative"}}>
       <div className='appliance-wrapper'>
       <div className='colored-div'>
        <h1 className='heading-nav'>Hair Styling Tools</h1>
@@ -66,6 +66,6 @@ export const Brands = () => {
         </ul>
       </div>
       </div>
-    </div>
+    // </div>
   )
 }
