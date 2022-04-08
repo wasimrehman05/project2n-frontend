@@ -1,8 +1,9 @@
-import React, { useState } from "react";
-import { addingToBag, showItem } from "../Redux/action";
+import React, { useState, useEffect } from "react";
+import { addingToBag, getCartData, getData, showItem } from "../Redux/action";
 import { useSelector, useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { StarRatingShow } from "./StarRatings";
+
 import axios from "axios";
 import styled from "styled-components";
 
@@ -58,6 +59,10 @@ const Div = styled.div`
         justify-content: center;
         gap: 5px;
         font-size: 15px;
+
+        @media all and (max-width: 1280px) {
+            gap: px;
+        }
     }
 
     & .price > span:nth-child(1) {
@@ -125,18 +130,31 @@ const Div = styled.div`
             color: white;
         }
     }
+
+    @media all and (max-width: 1024px) {
+        grid-template-columns: repeat(2, 1fr);
+    }
 `;
 
 export const ProductCard = () => {
     const [cartstatus, setCartstatus] = useState(false);
     const [cartmessage, setCartmessage] = useState("ADDED TO BAG");
 
+    const navigate = useNavigate();
+    const dispatch = useDispatch();
+
+    useEffect(() => {
+        dispatch(getData());
+        dispatch(getCartData());
+    }, []);
+
+    const cartProducts = useSelector((state) => state.cartProducts);
+
+    //checking current data
     let data;
 
     const products = useSelector((state) => state.products);
-
     const filter = useSelector((state) => state.filter);
-    const cartProducts = useSelector((state) => state.cartProducts);
 
     if (filter.length === 0) {
         data = products;
@@ -144,14 +162,9 @@ export const ProductCard = () => {
         data = filter;
     }
 
-    const dispatch = useDispatch();
-
-    const navigate = useNavigate();
-
     // opening OneItem Page
     const sendItem = (item) => {
         dispatch(showItem(item));
-        // console.log(item)
         navigate(`/item/${item.id}`);
     };
 
@@ -168,6 +181,8 @@ export const ProductCard = () => {
             .post("http://localhost:3005/cartProducts", item)
             .then((res) => dispatch(addingToBag(item)));
     };
+
+    // addtobag btn status change
 
     const changeState = () => {
         setCartstatus(false);

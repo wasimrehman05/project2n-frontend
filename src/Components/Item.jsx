@@ -41,7 +41,7 @@ export const Item = () => {
     let howtouse = item.how_to_use;
     howtouse = howtouse.split(".");
     return (
-        <div>
+        <div className="itemPage">
             <div className="main_div">
                 <div className="left">
                     <div className="small_photo">
@@ -271,17 +271,21 @@ export const Item = () => {
                     </span>
                     <hr />
                     {desc ? (
-                        <div className="decs_text">{item.description}</div>
+                        <p className="decs_text">{item.description}</p>
                     ) : (
                         <div className="decs_text">
-                            {howtouse.map((e) => (
-                                <p> • {e}</p>
-                            ))}
+                            {howtouse.map((e) =>
+                                e.length > 1 ? (
+                                    <p> • {e}.</p>
+                                ) : (
+                                    "• Read more on Product Description."
+                                )
+                            )}
                         </div>
                     )}
                 </div>
 
-                <div className="Product_div" onMouseLeave={changeState}>
+                <div className="Product_div">
                     <img src={item.image1} alt="product_img" />
                     <div className="title_item">
                         <h4>{item.card_title}</h4>
@@ -297,7 +301,9 @@ export const Item = () => {
                         </span>
                     </div>
 
-                    <button>ADD TO BAG</button>
+                    <button style={{ bottom: "0", height: "2.6rem" }}>
+                        ADD TO BAG
+                    </button>
                 </div>
             </div>
         </div>

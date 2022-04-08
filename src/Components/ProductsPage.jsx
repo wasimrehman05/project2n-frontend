@@ -9,6 +9,7 @@ const Div = styled.div`
     width: 78.1%;
     background-color: rgb(243, 243, 243);
     margin: auto;
+    margin-top: 15vh;
 
     & > h2 {
         display: flex;
@@ -31,6 +32,13 @@ const Div = styled.div`
     & .dot:active,
     & .dot:hover {
         background-color: rgb(250, 90, 152);
+    }
+
+    @media all and (max-width: 1500px) {
+        width: 85%;
+    }
+    @media all and (max-width: 1280px) {
+        width: 90%;
     }
 `;
 

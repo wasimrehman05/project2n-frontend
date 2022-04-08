@@ -6,9 +6,27 @@ import { filterData } from "../Redux/action";
 
 const FilterDiv = styled.div`
     position: sticky;
-    top: 1rem;
+    top: 5.2rem;
+    z-index: 2;
 `;
 
+const SortCheck = styled.div`
+    display: flex;
+    font-size: 14px;
+    justify-content: space-between;
+    background-color: white;
+    padding: 0.8rem 1rem;
+
+    // & > input[type="checkbox"] {
+    //     border-radius: 50%;
+    // }
+`;
+const Hr2 = styled.div`
+    width: 100%;
+    height: 2px;
+    background-color: rgb(243, 243, 243);
+    margin: auto;
+`;
 const Div = styled.div`
     width: 100%
     padding: 0 1.5rem;
@@ -21,30 +39,13 @@ const Check = styled.div`
     background-color: white;
     padding: 0.7rem 1rem 0.7rem 3rem;
 
-    & > input[type="checkbox"] {
-        border-radius: 50%;
-    }
-`;
-const SortCheck = styled.div`
-    display: flex;
-    font-size: 14px;
-    justify-content: space-between;
-    background-color: white;
-    padding: 0.8rem 1rem;
-
-    & > input[type="checkbox"] {
-        border-radius: 50%;
-    }
+    // & > input[type="checkbox"] {
+    //     border-radius: 50%;
+    // }
 `;
 
 const Hr1 = styled.div`
     width: 80%;
-    height: 2px;
-    background-color: rgb(243, 243, 243);
-    margin: auto;
-`;
-const Hr2 = styled.div`
-    width: 100%;
     height: 2px;
     background-color: rgb(243, 243, 243);
     margin: auto;
@@ -363,9 +364,8 @@ export const Filter = () => {
                 <Hr1 />
                 <div
                     style={{
-                        height: "fit-content",
-                        maxHeigth: "10rem",
-                        overflow: "hidden",
+                        height: "15rem",
+                        overflowY: "scroll",
                     }}
                 >
                     <Check>
