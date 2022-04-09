@@ -7,7 +7,7 @@ import { filterData } from "../../Redux/action";
 const FilterDiv = styled.div`
     position: sticky;
     top: 5.2rem;
-    z-index: 2;
+    z-index: 1;
 `;
 
 const SortCheck = styled.div`

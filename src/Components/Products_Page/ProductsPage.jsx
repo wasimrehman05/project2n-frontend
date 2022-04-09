@@ -1,15 +1,18 @@
 import React, { useState } from "react";
+import { Footer } from "../Home_Page/Footer";
 import styled from "styled-components";
 import { ProductCard } from "./ProductCard";
 import { Sort, Filter } from "./Sort-Filter";
 import { useSelector } from "react-redux";
+import { Navbar2 } from "../navbarComp/Navbar2";
 import "./Products.css";
+// import { getCartData, getData } from "../../Redux/action";
 
 const Div = styled.div`
     width: 78.1%;
     background-color: rgb(243, 243, 243);
     margin: auto;
-    margin-top: 15vh;
+    // margin-top: 15vh;
 
     & > h2 {
         display: flex;
@@ -63,9 +66,19 @@ export const ProductsPage = () => {
 
     const [slideImgIndex, setSlideImgIndex] = useState(0);
 
+    // const dispatch = useDispatch();
+
+    // useEffect(() => {
+    //     dispatch(getData());
+    //     dispatch(getCartData());
+    // }, []);
+
     let data;
 
     const products = useSelector((state) => state.products);
+
+    // const { products } = Alldata;
+    console.log(products);
 
     const filter = useSelector((state) => state.filter);
 
@@ -89,79 +102,86 @@ export const ProductsPage = () => {
     };
 
     return (
-        <Div>
-            <h2>
-                Appliances <div>({data.length})</div>
-            </h2>
-            <section>
-                <div className="carousel">
-                    <div className="pre-next">
+        <>
+            <Navbar2 />
+            <Div>
+                <h2>
+                    Appliances <div>({data.length})</div>
+                </h2>
+                <section>
+                    <div className="carousel">
+                        <div className="pre-next">
+                            <button
+                                onClick={() => slideImg(-1)}
+                                className="carousel__button previous"
+                            >
+                                ❮
+                            </button>
+                        </div>
+                        <a className="carousel__images" href="/">
+                            <img
+                                src={imgForSlide[slideImgIndex]}
+                                alt="slide-img"
+                            />
+                        </a>
                         <button
-                            onClick={() => slideImg(-1)}
-                            className="carousel__button previous"
+                            onClick={() => slideImg(1)}
+                            className="carousel__button next"
                         >
-                            ❮
+                            ❯
                         </button>
                     </div>
-                    <a className="carousel__images" href="/">
-                        <img src={imgForSlide[slideImgIndex]} alt="slide-img" />
-                    </a>
-                    <button
-                        onClick={() => slideImg(1)}
-                        className="carousel__button next"
-                    >
-                        ❯
-                    </button>
-                </div>
 
-                <div id="main-sliding-dot">
-                    <span
-                        onClick={() => setSlideImgIndex(0)}
-                        className="dot"
-                    ></span>
-                    <span
-                        onClick={() => setSlideImgIndex(1)}
-                        className="dot"
-                    ></span>
-                    <span
-                        onClick={() => setSlideImgIndex(2)}
-                        className="dot"
-                    ></span>
-                    <span
-                        onClick={() => setSlideImgIndex(3)}
-                        className="dot"
-                    ></span>
-                </div>
-            </section>
-            <section>
-                <div className="banner">
-                    <div className="banner-info">
-                        <P1>The Must-Have Beauty Tools Guide</P1>
-                        <p>
-                            Beauty appliances are essential in every beauty
-                            wardrobe! Check out these beauty tools that simplify
-                            (and beautify) your life.
-                        </p>
-                        <A href="/">{shop}</A>
+                    <div id="main-sliding-dot">
+                        <span
+                            onClick={() => setSlideImgIndex(0)}
+                            className="dot"
+                        ></span>
+                        <span
+                            onClick={() => setSlideImgIndex(1)}
+                            className="dot"
+                        ></span>
+                        <span
+                            onClick={() => setSlideImgIndex(2)}
+                            className="dot"
+                        ></span>
+                        <span
+                            onClick={() => setSlideImgIndex(3)}
+                            className="dot"
+                        ></span>
                     </div>
-                    <div className="banner-img">
-                        <img
-                            src="https://www.nykaa.com/media/categoryInfo/art_banner_image/musthavebeautytoolscontentbanner.jpg"
-                            alt="ad-banner"
-                        />
+                </section>
+                <section>
+                    <div className="banner">
+                        <div className="banner-info">
+                            <P1>The Must-Have Beauty Tools Guide</P1>
+                            <p>
+                                Beauty appliances are essential in every beauty
+                                wardrobe! Check out these beauty tools that
+                                simplify (and beautify) your life.
+                            </p>
+                            <A href="/">{shop}</A>
+                        </div>
+                        <div className="banner-img">
+                            <img
+                                src="https://www.nykaa.com/media/categoryInfo/art_banner_image/musthavebeautytoolscontentbanner.jpg"
+                                alt="ad-banner"
+                            />
+                        </div>
                     </div>
-                </div>
-            </section>
-            <section>
-                <h2>All Products</h2>
-                <div className="Content">
-                    <div className="func">
-                        <Sort />
-                        <Filter />
+                </section>
+                <section>
+                    <h2>All Products</h2>
+                    <div className="Content">
+                        <div className="func">
+                            <Sort />
+                            <Filter />
+                        </div>
+                        <ProductCard />
                     </div>
-                    <ProductCard />
-                </div>
-            </section>
-        </Div>
+                </section>
+            </Div>
+            <Footer />
+        </>
     );
 };

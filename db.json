@@ -542,27 +542,7 @@
       "description": "Straighten and style your hair with this easy to use Philips HP8302/00 Selfie Straightener. With silkpro care technology and advanced keratin ceramic coating, the plates of this straighter are smoother than silk, resulting in less heat exposure and minimal friction. 210 degree C professional styling temperature gives you that perfect look like you've just come from the salon.",
       "how_to_use": "Warranty: 2 years Philips India warranty from the date of purchase",
       "id": 1,
-      "quan": "6"
-    },
-    {
-      "card_title": "Ikonic Professional Hair Staightner Pro Titanium Shine",
-      "title": "Ikonic Professional Hair Staightner Pro Titanium Shine (PTS)",
-      "rating": "4.2",
-      "ratingNum": "306",
-      "reviews": "79",
-      "price": "7000",
-      "off_price": "6300",
-      "offer": "10",
-      "image1": "https://images-static.nykaa.com/media/catalog/product/7/d/7d5f64a8904231000124_1.jpg?tr=w-344,h-344,cm-pad_resize",
-      "image2": "https://images-static.nykaa.com/media/catalog/product/7/d/7d5f64a8904231000124_2.jpg?tr=w-344,h-344,cm-pad_resize",
-      "image3": "https://images-static.nykaa.com/media/catalog/product/7/d/7d5f64a8904231000124_3.jpg?tr=w-344,h-344,cm-pad_resize",
-      "brand": "Ikonic Professional",
-      "category": "Hair_Styling_Tools",
-      "sub_category": "Straighteners",
-      "description": "Ikonic Pro Titanium Shine comes with wider plates, allowing you to style all types of hair with ease. It heats up in 10 seconds to give you straight and shiny hair in a short time. Its advanced floating titanium plates heat the hair from the inside out, producing a long-lasting, glossy, sleek and shiny finish.  Titanium plates emit gentle, far-infrared heat that is kinder to hair and eliminates frizz, leaving it soft and shiny. LED display with adjustable temperature range from 130 C to 230 C Professional PTC Heater and Dual Ceramic Heaters for immediate heat up and rapid heat recovery Beveled edges for straightening, styling, and volumizing",
-      "how_to_use": "Additional Information: Ikonic Professional is a leading brand of professional styling tools and accessories in India. With an extensive product range Ikonic has been successfully catering to professionals with varied requirements. All the tools are designed with cutting-edge technology to bring you style, control and flexibility.",
-      "id": 2,
-      "quan": 1
+      "quan": "7"
     },
     {
       "card_title": "Ikonic Professional Pro Curler - Black",
@@ -582,87 +562,773 @@
       "description": "Ikonic Pro Curl is an easy-to-operate curling tool with ceramic infrared plates that instantly heat up to provide an even heat distribution. Its adjustable temperature setting and temperature lock feature allows you for a customized hair styling session. This styling tool has a cool LCD digital temperature display shows you the temperature and a cool shot option to set your curls for a long-lasting look.",
       "how_to_use": "Use on dry hair, after applying heat protectant. Apply hair setting spray for a long lasting hair style.",
       "id": 5,
-      "quan": 1
+      "quan": "5"
     },
     {
-      "card_title": "CARRERA 421 Professional Rechargeable Wireless...",
-      "title": "CARRERA 421 Professional Rechargeable Wireless Electric Shaver and Precision Trimmer (Unisex)",
-      "rating": "5",
-      "ratingNum": "3",
-      "reviews": "1",
-      "price": "6990",
-      "off_price": "4790",
-      "offer": "31",
-      "image1": "https://images-static.nykaa.com/media/catalog/product/d/b/db72c458903558284545__1_.jpg?tr=w-344,h-344,cm-pad_resize",
-      "image2": "https://images-static.nykaa.com/media/catalog/product/d/b/db72c458903558284545__2_.jpg?tr=w-344,h-344,cm-pad_resize",
-      "image3": "https://images-static.nykaa.com/media/catalog/product/d/b/db72c458903558284545__4_.jpg?tr=w-344,h-344,cm-pad_resize",
-      "brand": "CARRERA",
-      "category": "Shaving_Tools",
-      "sub_category": "Shavers",
-      "description": "CARRERA 421 Professional Rechargeable Wireless Electric Shaver is smaller version of Shaver No. 521, but don't be fooled. The two precision shaving foils show stubble no mercy, while the integrated trimmer catches longer hairs too. Pre-shave? Done. Skin? Smooth.",
-      "how_to_use": "Set the trimmer according to the desired length and run over your stubble/beard. Detach the head and rinse it under the tap for easy cleaning. Dry it before you put it back on the appliance.",
-      "id": 9,
+      "card_title": "Philips Hair Dryer (HP8120/00)",
+      "title": "Philips Hair Dryer (HP8120/00)",
+      "rating": "4.4",
+      "ratingNum": "341",
+      "reviews": "101",
+      "price": "1345",
+      "off_price": "967",
+      "offer": "28",
+      "image1": "https://images-static.nykaa.com/media/catalog/product/b/d/bdd7491nyphilips0009as__1_.jpg?tr=w-344,h-344,cm-pad_resize",
+      "image2": "https://images-static.nykaa.com/media/catalog/product/b/d/bdd7491nyphilips0009as__2_.jpg?tr=w-344,h-344,cm-pad_resize",
+      "image3": "https://images-static.nykaa.com/media/catalog/product/b/d/bdd7491nyphilips0009as__4_.jpg?tr=w-344,h-344,cm-pad_resize",
+      "brand": "Philips India",
+      "category": "Hair_Styling_Tools",
+      "sub_category": "Hair_Dryers",
+      "description": "Philips HP8120/00 EssentialCare Hair Dryer is cute, compact and powerful. 1200W power enables you to dry hair gently and quickly. Flexible caring settings are designed to meet different drying needs and offer extra care.",
+      "how_to_use": "ThermoProtect temperature setting: Provides the optimal drying temperature while giving additional protection. The ThermoProtect optimal airflow and heat combination allows you to quickly dry your hair without overheating, maintaining your hair's natural moisture level, for shiny healthy looking hair.",
+      "id": 3,
       "quan": 1
+    }
+  ],
+  "One_Item": {
+    "card_title": "Philips Selfie Straightener (HP8302/06)",
+    "title": "Philips Selfie Straightener (HP8302/06)",
+    "rating": "4.2",
+    "ratingNum": "2751",
+    "reviews": "655",
+    "price": "1295",
+    "off_price": "1099",
+    "offer": "15",
+    "image1": "https://images-static.nykaa.com/media/catalog/product/2/9/29cd491nyphilips0015as__1_.jpg?tr=w-344,h-344,cm-pad_resize",
+    "image2": "https://images-static.nykaa.com/media/catalog/product/2/9/29cd491nyphilips0015as__2_.jpg?tr=w-344,h-344,cm-pad_resize",
+    "image3": "https://images-static.nykaa.com/media/catalog/product/2/9/29cd491nyphilips0015as__3_.jpg?tr=w-344,h-344,cm-pad_resize",
+    "brand": "Philips India",
+    "category": "Hair_Styling_Tools",
+    "sub_category": "Straighteners",
+    "description": "Straighten and style your hair with this easy to use Philips HP8302/00 Selfie Straightener. With silkpro care technology and advanced keratin ceramic coating, the plates of this straighter are smoother than silk, resulting in less heat exposure and minimal friction. 210 degree C professional styling temperature gives you that perfect look like you've just come from the salon.",
+    "how_to_use": "Warranty: 2 years Philips India warranty from the date of purchase",
+    "id": 1,
+    "quan": 1
+  },
+  "topbrands": [
+    {
+      "id": 1,
+      "img": "https://images-static.nykaa.com/uploads/4ee1651c-47f6-4d8c-b067-2680d80c2453.jpg?tr=w-600,cm-pad_resize",
+      "desc1": "Upto 28% Off",
+      "desc2": ""
     },
     {
-      "card_title": "Bronson Professional Derma Roller Bronson Professional",
-      "title": "Bronson Professional Derma Roller Bronson Professional 0.50mm 540 Needles",
-      "rating": "4",
-      "ratingNum": "720",
-      "reviews": "201",
-      "price": "360",
-      "off_price": "284",
-      "offer": "21",
-      "image1": "https://images-static.nykaa.com/media/catalog/product/b/d/bd99534nybronson002_br__1_.jpg?tr=w-344,h-344,cm-pad_resize",
-      "image2": "https://images-static.nykaa.com/media/catalog/product/b/d/bd99534nybronson002_br__2_.jpg?tr=w-344,h-344,cm-pad_resize",
-      "image3": "https://images-static.nykaa.com/media/catalog/product/b/d/bd99534nybronson002_br__3_.jpg?tr=w-344,h-344,cm-pad_resize",
-      "brand": "Bronson Professional",
-      "category": "Face/Skin_Tools",
-      "sub_category": "Dermarollers",
-      "description": "Microneedling with dermaroller is a new treatment for treatment of scars, especially acne scars, stretch marks, wrinkles, and for facial rejuvenation. The Bronson Professional Titanium Derma Roller is one of the strongest derma rollers available in the market. It has a nice curved design that's pretty easy to hold and use. The handle is made of colored plastic, and the roller head holds 540 micro needles. These needles are really tough and durable, so they suit well for needling large and small areas and make this dermaroller one of the longest lasting beauty tools. Effective on all skin types, dermaroller is ideal for stretch mark removal and scar reduction treatments on any part of the body, the titanium body of the needles will ensure many months of micro needling pleasure!",
-      "how_to_use": "Step 1: The roller is moved across the area of skin to be treated in a series of sequential movements. Step 2: Press firmly but do not overdo this to avoid any unnecessary discomfort. Step 3: One way of using a roller is to imitate the points of a compass and roll it front, left, right and then backwards. This ensures even coverage without overdoing it. Step 4: Your skin will feel warm and tight after use and will have a reddish color similar to a case of mild sunburn. This is entirely normal and will ease within 24 hours. You can apply a skin care product to your skin which will help with this. Step 5: There should be no pain associated with the derma roller but what you will experience is a tickling sensation as you move the roller over your skin.",
-      "id": 11,
-      "quan": 1
+      "id": 2,
+      "img": "https://images-static.nykaa.com/uploads/618f1353-2975-4911-bb50-8effb9b9e171.jpg?tr=w-600,cm-pad_resize",
+      "desc1": "Upto 40% Off",
+      "desc2": ""
     },
     {
-      "card_title": "Flawless 3 in 1 electric facial cleanser and massager brush",
-      "title": "Flawless 3 in 1 electric facial cleanser and massager brush",
-      "rating": "1",
-      "ratingNum": "1",
-      "reviews": "1",
-      "price": "5500",
-      "off_price": "4125",
-      "offer": "25",
-      "image1": "https://images-static.nykaa.com/media/catalog/product/6/7/6725084754502044672%20(2).jpg?tr=w-344,h-344,cm-pad_resize",
-      "image2": "https://images-static.nykaa.com/media/catalog/product/6/7/6725084754502044672%20(2).jpg?tr=w-344,h-344,cm-pad_resize",
-      "image3": "https://images-static.nykaa.com/media/catalog/product/6/7/6725084754502044672%20(3).jpg?tr=w-344,h-344,cm-pad_resize",
-      "brand": "Flawless",
-      "category": "Face/Skin_Tools",
-      "sub_category": "Cleansing_Brushes",
-      "description": "Flawless Cleanse Facial Cleanser and Massager with its silicone head is an ultra-hygienic cleanser and massager that promotes the appearance of radiant, clean, more youthful skin. Flawless Cleanse has 4 modes, gentle cleansing, pulsating, massage, and deep cleanse for the ultimate facial cleaning experience.",
-      "how_to_use": "Wet Face. Rince unit under wet water. Apply desired cleanser to unit. Place unit against skin and turn unit on.",
-      "id": 14,
-      "quan": 1
+      "id": 3,
+      "img": "https://images-static.nykaa.com/uploads/0340eb20-80d5-4a58-9ba4-6095736c01c9.jpg?tr=w-600,cm-pad_resize",
+      "desc1": "Upto 40% Off",
+      "desc2": "Create Long-lasting Looks With Maybelline!"
     },
     {
-      "card_title": "IGRiD Blackhead Remover, Acne Extractor Tool",
-      "title": "IGRiD Blackhead Remover, Acne Extractor Tool, Black Head & White Head Remover",
-      "rating": "1",
-      "ratingNum": "5",
-      "reviews": "1",
-      "price": "2999",
-      "off_price": "1529",
-      "offer": "49",
-      "image1": "https://images-static.nykaa.com/media/catalog/product/a/f/af080f1697521184700__2_.jpg?tr=w-344,h-344,cm-pad_resize",
-      "image2": "https://images-static.nykaa.com/media/catalog/product/a/f/af080f1697521184700__6_.jpg?tr=w-344,h-344,cm-pad_resize",
-      "image3": "https://images-static.nykaa.com/media/catalog/product/a/f/af080f1697521184700__7_.jpg?tr=w-344,h-344,cm-pad_resize",
-      "brand": "IGRiD",
-      "category": "Face/Skin_Tools",
-      "sub_category": "Acne_Removal",
-      "description": "The iGRiD IG-3012 powerful deep pore cleanser uses vacuum technology for pore cleansing, and leaves your facial skin looking healthy and ready for the world. It is suitable for all skin types and its range of 3 different attachments makes it a multi-purpose device.",
-      "how_to_use": "Open pores with hot water or steamer for 3-5 mins. Apply moisturizer to avoid skin irritation. Clean pores with iGRiD blackhead remover tool with a suitable level. Close pore with the mask or use cold water.",
-      "id": 17,
-      "quan": "3"
+      "id": 4,
+      "img": "https://images-static.nykaa.com/uploads/275211bc-417c-4c11-96c8-c682c15b047d.jpg?tr=w-600,cm-pad_resize",
+      "desc1": "Pick A Free Gift (Worth Rs.2350)",
+      "desc2": "On All Full Size Foundations"
+    },
+    {
+      "id": 5,
+      "img": "https://images-static.nykaa.com/uploads/bdfb109c-accb-43c4-b1e4-4b16230ec5db.gif?tr=w-600,cm-pad_resize",
+      "desc1": "Upto 50% Off",
+      "desc2": "Free Mini Shampoo On Order Over Rs. 399"
+    },
+    {
+      "id": 6,
+      "img": "https://images-static.nykaa.com/uploads/22f3a04a-bbaa-44d4-9a21-39af0be931c7.jpg?tr=w-600,cm-pad_resize",
+      "desc1": "Upto 40% Off",
+      "desc2": "New Salon-Like Smoothening Treatment At Home"
+    },
+    {
+      "id": 7,
+      "img": "https://images-static.nykaa.com/uploads/28e41e57-2f58-4dbe-ba12-24104c598ab7.gif?tr=w-600,cm-pad_resize",
+      "desc1": "Exciting Gifts On Purchases Of Luxe Makeups!",
+      "desc2": ""
+    }
+  ],
+  "onlyAtNykaa": [
+    {
+      "id": 1,
+      "img": "https://images-static.nykaa.com/uploads/bab8c4f5-e907-4024-b216-8e185541161f.gif?tr=w-600,cm-pad_resize",
+      "desc1": "Upto 30% Off",
+      "desc2": "Free Mini Shampoos On Order Over 399"
+    },
+    {
+      "id": 2,
+      "img": "https://images-static.nykaa.com/uploads/9d7fc752-f9c4-423d-98ba-609829494a5c.gif?tr=w-600,cm-pad_resize",
+      "desc1": "Free Full Size Lipstick",
+      "desc2": "Only Rs. 899!"
+    },
+    {
+      "id": 3,
+      "img": "https://images-static.nykaa.com/uploads/0eb9f1d8-5127-485e-9870-00c1cbbad998.jpg?tr=w-600,cm-pad_resize",
+      "desc1": "Upto 25% Off",
+      "desc2": "For More Than Just A Base-Ic Base"
+    },
+    {
+      "id": 4,
+      "img": "https://images-static.nykaa.com/uploads/6b6ca7f2-1e82-47cd-b857-78be837150cf.jpg?tr=w-600,cm-pad_resize",
+      "desc1": "Upto 25% Off",
+      "desc2": "On Katrina's Faves"
+    }
+  ],
+  "trendingStores": [
+    {
+      "id": 1,
+      "img": "https://images-static.nykaa.com/uploads/cee3de00-3e33-462f-b633-3b307fbaa636.jpg?tr=w-600,cm-pad_resize"
+    },
+    {
+      "id": 2,
+      "img": "https://images-static.nykaa.com/uploads/f8008bff-51fb-4b91-be2a-77a986e4d08d.jpg?tr=w-600,cm-pad_resize"
+    },
+    {
+      "id": 3,
+      "img": "https://images-static.nykaa.com/uploads/1f89f0af-8b04-4c5c-8714-26db1c6fa246.gif?tr=w-600,cm-pad_resize"
+    },
+    {
+      "id": 4,
+      "img": "https://images-static.nykaa.com/uploads/235e192f-1b92-41fe-8409-9269d1adfd8c.gif?tr=w-600,cm-pad_resize"
+    },
+    {
+      "id": 5,
+      "img": "https://images-static.nykaa.com/uploads/7b433929-ea76-4c46-91e3-53bdb9aa7387.gif?tr=w-600,cm-pad_resize"
+    },
+    {
+      "id": 6,
+      "img": "https://images-static.nykaa.com/uploads/9426383a-2812-40c5-a812-bd40379c11d4.jpg?tr=w-600,cm-pad_resize"
+    },
+    {
+      "id": 7,
+      "img": "https://images-static.nykaa.com/uploads/c60dd828-5878-4c2c-9c9c-086a653854ef.jpg?tr=w-600,cm-pad_resize"
+    },
+    {
+      "id": 8,
+      "img": "https://images-static.nykaa.com/uploads/dac00fed-ecb3-4e53-af91-2811d02b8a4c.gif?tr=w-600,cm-pad_resize"
+    }
+  ],
+  "featuredBrands": [
+    {
+      "id": 1,
+      "img": "https://images-static.nykaa.com/uploads/008b44b7-bd23-4aed-8a6e-da470ff8af68.jpg?tr=w-300,cm-pad_resize",
+      "desc1": "Upto 14% Off +",
+      "desc2": "Free 30ml Peptide Repair Rescue Mask On Rs.1100+"
+    },
+    {
+      "id": 2,
+      "img": "https://images-static.nykaa.com/uploads/eadc4524-6a38-43b5-9005-4c0959dd6816.gif?tr=w-300,cm-pad_resize",
+      "desc1": "Upto 40% Off",
+      "desc2": "Bestseller Trio Kit on orders of Rs.1299"
+    },
+    {
+      "id": 3,
+      "img": "https://images-static.nykaa.com/uploads/8ad4fe0a-607a-408c-9781-f7fbed166816.jpg?tr=w-300,cm-pad_resize",
+      "desc1": "Upto 25% Off +",
+      "desc2": "Free Moisturizer worth ₹149 on ₹549"
+    },
+    {
+      "id": 4,
+      "img": "https://images-static.nykaa.com/uploads/4bc7e417-4880-44ca-ad00-4f688743b9e7.jpg?tr=w-300,cm-pad_resize",
+      "desc1": "Upto 35% Off+",
+      "desc2": "The Moms Co. Vitamin-C Face Wash Toner On ₹599"
+    },
+    {
+      "id": 5,
+      "img": "https://images-static.nykaa.com/uploads/b89ca7d5-bc7c-44ee-9e03-a482e9b1cf09.jpg?tr=w-300,cm-pad_resize",
+      "desc1": "Upto 35% Off On New Launches!",
+      "desc2": "Upto 40% Off On Bestsellers!"
+    },
+    {
+      "id": 6,
+      "img": "https://images-static.nykaa.com/uploads/53dec53d-1804-403b-b903-9c6df3cd526f.jpg?tr=w-300,cm-pad_resize",
+      "desc1": "Buy 5 Get 5 Free",
+      "desc2": "Free Mini Shampoos On Order Over Rs.500"
+    },
+    {
+      "id": 7,
+      "img": "https://images-static.nykaa.com/uploads/ac42fade-261e-48d1-9a89-1cf36fec0805.gif?tr=w-300,cm-pad_resize",
+      "desc1": "On Rs. 1500: 2-Piece Facial Kit",
+      "desc2": "On Rs. 4000: 3-Piece Rose Kit"
+    },
+    {
+      "id": 1,
+      "img": "https://images-static.nykaa.com/uploads/1cf16f3f-5e2f-4ed8-90ff-d8069724aa1c.jpg?tr=w-300,cm-pad_resize",
+      "desc1": "Upto 30% Off",
+      "desc2": "Free Mini Shampoos On Order Over Rs.399"
+    }
+  ],
+  "budgetBuys": [
+    {
+      "id": 1,
+      "img": "https://images-static.nykaa.com/uploads/14511dde-c35c-4595-a18e-332871383038.jpg?tr=w-300,cm-pad_resize"
+    },
+    {
+      "id": 2,
+      "img": "https://images-static.nykaa.com/uploads/da336480-418a-40db-aa93-41c67ed756ac.jpg?tr=w-300,cm-pad_resize"
+    },
+    {
+      "id": 3,
+      "img": "https://images-static.nykaa.com/uploads/a3a1ba0d-c71e-4a2d-a69a-5627db3d8075.jpg?tr=w-300,cm-pad_resize"
+    },
+    {
+      "id": 4,
+      "img": "https://images-static.nykaa.com/uploads/8eaf466e-75d5-48ab-801a-61cfa2975897.jpg?tr=w-300,cm-pad_resize"
+    }
+  ],
+  "hiddenGems": [
+    {
+      "id": 1,
+      "img": "https://images-static.nykaa.com/uploads/831afa2d-9f51-44d7-b3fc-85ed87bbf252.jpg?tr=w-600,cm-pad_resize"
+    },
+    {
+      "id": 2,
+      "img": "https://images-static.nykaa.com/uploads/259e04f9-f099-48b0-bf36-d4a834cc055d.gif?tr=w-600,cm-pad_resize"
+    },
+    {
+      "id": 3,
+      "img": "https://images-static.nykaa.com/uploads/82b10b5c-a38a-416f-8ef2-1900b1a1f52b.jpg?tr=w-600,cm-pad_resize"
+    },
+    {
+      "id": 4,
+      "img": "https://images-static.nykaa.com/uploads/ec7b1b20-2c63-4860-a7b1-87ace1b9ac4c.jpg?tr=w-600,cm-pad_resize"
+    }
+  ],
+  "editorsChoice": [
+    {
+      "id": 1,
+      "img": "https://images-static.nykaa.com/uploads/ebcff9d8-8958-477d-96d7-e6282b6be022.jpg?tr=w-300,cm-pad_resize"
+    },
+    {
+      "id": 2,
+      "img": "https://images-static.nykaa.com/uploads/c5bc7bb3-7586-4300-939f-d1748d3a87c6.jpg?tr=w-300,cm-pad_resize"
+    },
+    {
+      "id": 3,
+      "img": "https://images-static.nykaa.com/uploads/c5bc7bb3-7586-4300-939f-d1748d3a87c6.jpg?tr=w-300,cm-pad_resize"
+    },
+    {
+      "id": 4,
+      "img": "https://images-static.nykaa.com/uploads/320206be-82c2-48a0-91a8-3ae9d9304b40.png?tr=w-300,cm-pad_resize"
+    },
+    {
+      "id": 5,
+      "img": "https://images-static.nykaa.com/uploads/50e62b4e-a2a4-46e1-9d63-7c75ca05fd68.png?tr=w-300,cm-pad_resize"
+    }
+  ],
+  "offerscantMiss": [
+    {
+      "id": 1,
+      "img": "https://images-static.nykaa.com/uploads/91e0732d-3cd8-400e-8823-418e9dd44da4.jpg?tr=w-300,cm-pad_resize",
+      "desc1": "",
+      "desc2": ""
+    },
+    {
+      "id": 1,
+      "img": "https://images-static.nykaa.com/uploads/91e0732d-3cd8-400e-8823-418e9dd44da4.jpg?tr=w-300,cm-pad_resize",
+      "desc1": "",
+      "desc2": ""
+    },
+    {
+      "id": 1,
+      "img": "https://images-static.nykaa.com/uploads/8da79659-298b-42a9-85d5-8573fd9a6d96.jpg?tr=w-300,cm-pad_resize",
+      "desc1": "",
+      "desc2": ""
+    },
+    {
+      "id": 1,
+      "img": "https://images-static.nykaa.com/uploads/231c8493-439a-40da-9d1e-f26300e27afe.JPG?tr=w-300,cm-pad_resize",
+      "desc1": "",
+      "desc2": ""
+    },
+    {
+      "id": 1,
+      "img": "https://images-static.nykaa.com/uploads/437fa662-0fb9-44da-ae1f-214af05eacf7.jpg?tr=w-300,cm-pad_resize",
+      "desc1": "",
+      "desc2": ""
+    },
+    {
+      "id": 1,
+      "img": "https://images-static.nykaa.com/uploads/8fd69881-16e5-4a72-8bdb-19b600bee115.jpg?tr=w-300,cm-pad_resize",
+      "desc1": "",
+      "desc2": ""
+    },
+    {
+      "id": 1,
+      "img": "https://images-static.nykaa.com/uploads/608badda-2178-453b-9225-93b5b24c5488.jpg?tr=w-300,cm-pad_resize",
+      "desc1": "",
+      "desc2": ""
+    },
+    {
+      "id": 1,
+      "img": "https://images-static.nykaa.com/uploads/8b754274-3b22-4069-9e37-81f4dfe63c1c.jpg?tr=w-300,cm-pad_resize",
+      "desc1": "",
+      "desc2": ""
+    }
+  ],
+  "footer": [
+    {
+      "name": "nyka",
+      "text": "who are we?"
+    },
+    {
+      "name": "nyka",
+      "text": "Careers"
+    },
+    {
+      "name": "nyka",
+      "text": "Authenticity"
+    },
+    {
+      "name": "nyka",
+      "text": "Press"
+    },
+    {
+      "name": "nyka",
+      "text": "Testimonials"
+    },
+    {
+      "name": "nyka",
+      "text": "Nykaa CSR"
+    },
+    {
+      "name": "nyka",
+      "text": "Responsible Disclosure"
+    },
+    {
+      "name": "nyka",
+      "text": "Investor Relations"
+    },
+    {
+      "name": "help",
+      "text": "Contact Us"
+    },
+    {
+      "name": "help",
+      "text": "Frequently asked Questions"
+    },
+    {
+      "name": "help",
+      "text": "Store Locator"
+    },
+    {
+      "name": "help",
+      "text": "Cancellation & Return"
+    },
+    {
+      "name": "help",
+      "text": "Shipping & Delivery"
+    },
+    {
+      "name": "help",
+      "text": "Sell on Nykaa"
+    },
+    {
+      "name": "inspireMe",
+      "text": "Beauty Book"
+    },
+    {
+      "name": "inspireMe",
+      "text": "Nykaa TV"
+    },
+    {
+      "name": "inspireMe",
+      "text": "Nykaa Network"
+    },
+    {
+      "name": "inspireMe",
+      "text": "Buying Guides"
+    },
+    {
+      "name": "quicklinks",
+      "text": "Offer Zone"
+    },
+    {
+      "name": "quicklinks",
+      "text": "New Launches"
+    },
+    {
+      "name": "quicklinks",
+      "text": "Nykaa Man"
+    },
+    {
+      "name": "quicklinks",
+      "text": "Nykaa Fashion"
+    },
+    {
+      "name": "quicklinks",
+      "text": "Nykaa Pro"
+    },
+    {
+      "name": "quicklinks",
+      "text": "Nyka femina beauty awards"
+    },
+    {
+      "name": "quicklinks",
+      "text": "Sitemap"
+    },
+    {
+      "name": "topcategories",
+      "text": "Makeup"
+    },
+    {
+      "name": "topcategories",
+      "text": "Skin"
+    },
+    {
+      "name": "topcategories",
+      "text": "Hair"
+    },
+    {
+      "name": "topcategories",
+      "text": "Personal Care"
+    },
+    {
+      "name": "topcategories",
+      "text": "Appliances"
+    },
+    {
+      "name": "topcategories",
+      "text": "Mom and Baby"
+    },
+    {
+      "name": "topcategories",
+      "text": "Fragrance"
+    },
+    {
+      "name": "topcategories",
+      "text": "Luxe"
+    }
+  ],
+  "brands": [
+    {
+      "popular": [
+        {
+          "img": "https://adn-static2.nykaa.com/media/wysiwyg/2019/Maybelline1211.png"
+        },
+        {
+          "img": "https://adn-static2.nykaa.com/media/wysiwyg/lakme_mega_menu_header.png"
+        },
+        {
+          "img": "https://adn-static2.nykaa.com/media/wysiwyg/For-Nykaa-Megamenu-New.png"
+        },
+        {
+          "img": "https://adn-static2.nykaa.com/media/wysiwyg/Header/mac.png"
+        },
+        {
+          "img": "https://adn-static2.nykaa.com/media/wysiwyg/2019/lorealparis.png"
+        },
+        {
+          "img": "https://adn-static2.nykaa.com/media/wysiwyg/2020/BrandslogoMenubar/Huda.png"
+        },
+        {
+          "img": "https://adn-static2.nykaa.com/media/wysiwyg/2018/Biotique_new.png"
+        },
+        {
+          "img": "https://adn-static2.nykaa.com/media/wysiwyg/2019/NATURAL-LOGO.png"
+        },
+        {
+          "img": "https://adn-static2.nykaa.com/media/wysiwyg/2018/Brandslogo/FacesCanadaa.png"
+        },
+        {
+          "img": "https://adn-static2.nykaa.com/media/wysiwyg/HeaderIcons/The-Face-Shop.png"
+        },
+        {
+          "img": "https://adn-static2.nykaa.com/media/wysiwyg/2018/colorbar-logoforui.png"
+        },
+        {
+          "img": "https://adn-static2.nykaa.com/media/wysiwyg/2018/Brandslogo/nyx_New.png"
+        },
+        {
+          "img": "https://images-static.naikaa.com/media/wysiwyg/2020/CT-Newlaunches-118x55.png"
+        },
+        {
+          "img": "https://adn-static1.nykaa.com/media/wysiwyg/2020/Dior%20logo_118x55.jpg?1?lkkl"
+        },
+        {
+          "img": "https://adn-static1.nykaa.com/media/wysiwyg/NFBA2020/TooFaced_logos.png?1?lk"
+        },
+        {
+          "img": "https://adn-static2.nykaa.com/media/wysiwyg/MegaMenuImages/Kaybeauty-new-launch-logo.png"
+        },
+        {
+          "img": "https://adn-static2.nykaa.com/media/wysiwyg/2020/JML-Logo.png"
+        },
+        {
+          "img": "https://adn-static2.nykaa.com/media/wysiwyg/2021/Minimalist_logos.png?agg"
+        },
+        {
+          "img": "https://adn-static2.nykaa.com/media/wysiwyg/2020/Pixi%20Logo_118px%20X%2055px.png"
+        },
+        {
+          "img": "https://adn-static1.nykaa.com/media/wysiwyg/2021/SDJ-Logo-118-x-55-px.png"
+        },
+        {
+          "img": "https://adn-static2.nykaa.com/media/wysiwyg/2020/BrandslogoMenubar/Prada.png"
+        },
+        {
+          "img": "https://adn-static2.nykaa.com/media/wysiwyg/2020/BrandslogoMenubar/rsvp.png"
+        },
+        {
+          "img": "https://adn-static2.nykaa.com/media/wysiwyg/2020/BrandslogoMenubar/mondano.png"
+        },
+        {
+          "img": "https://adn-static2.nykaa.com/media/wysiwyg/2021/Elf-New-launches-118x55.png?agg"
+        },
+        {
+          "img": "https://adn-static2.nykaa.com/media/wysiwyg/ABCD-Two/See-All_CTA.png"
+        }
+      ],
+      "featured": [
+        {
+          "img": "https://adn-static2.nykaa.com/media/wysiwyg/2019/Mamaearth.png"
+        },
+        {
+          "img": "https://adn-static2.nykaa.com/media/wysiwyg/2020/BrandslogoMenubar/mcaffeine.png"
+        },
+        {
+          "img": "https://adn-static2.nykaa.com/media/wysiwyg/2020/BrandslogoMenubar/skinrx_logo.png"
+        },
+        {
+          "img": "https://adn-static2.nykaa.com/media/wysiwyg/2021/Moi.png"
+        },
+        {
+          "img": "https://adn-static2.nykaa.com/media/wysiwyg/2020/Wow.png"
+        },
+        {
+          "img": "https://adn-static2.nykaa.com/media/wysiwyg/2020/BrandslogoMenubar/Sugar.png"
+        },
+        {
+          "img": "https://adn-static2.nykaa.com/media/wysiwyg/2020/BrandslogoMenubar/MakeupRevolution.png"
+        },
+        {
+          "img": "https://adn-static2.nykaa.com/media/wysiwyg/2018/Vaseline.png"
+        },
+        {
+          "img": "https://adn-static2.nykaa.com/media/wysiwyg/2019/kamaaurvedaa.png"
+        },
+        {
+          "img": "https://adn-static2.nykaa.com/media/wysiwyg/2018/Brandslogo/Ponds.png"
+        },
+        {
+          "img": "https://adn-static2.nykaa.com/media/wysiwyg/2020/BrandslogoMenubar/pac.png"
+        },
+        {
+          "img": "https://adn-static2.nykaa.com/media/wysiwyg/2020/BrandslogoMenubar/Benefit.png"
+        },
+        {
+          "img": "https://adn-static2.nykaa.com/media/wysiwyg/2018/Brandslogo/o3.png"
+        },
+        {
+          "img": "https://adn-static2.nykaa.com/media/wysiwyg/2019/innisfree_New.png"
+        },
+        {
+          "img": "https://adn-static2.nykaa.com/media/wysiwyg/2018/megamenu-logo-_forest.png"
+        },
+        {
+          "img": "https://adn-static2.nykaa.com/media/wysiwyg/2020/BrandslogoMenubar/mondano.png"
+        },
+        {
+          "img": "https://adn-static2.nykaa.com/media/wysiwyg/2021/Elf-New-launches-118x55.png?agg"
+        },
+        {
+          "img": "https://adn-static2.nykaa.com/media/wysiwyg/ABCD-Two/See-All_CTA.png"
+        }
+      ],
+      "onlyAtNyka": [
+        {
+          "img": "https://adn-static2.nykaa.com/media/wysiwyg/2019/NATURAL-LOGO.png"
+        },
+        {
+          "img": "https://adn-static2.nykaa.com/media/wysiwyg/2018/Brandslogo/FacesCanadaa.png"
+        },
+        {
+          "img": "https://adn-static2.nykaa.com/media/wysiwyg/HeaderIcons/The-Face-Shop.png"
+        },
+        {
+          "img": "https://adn-static2.nykaa.com/media/wysiwyg/2018/colorbar-logoforui.png"
+        },
+        {
+          "img": "https://adn-static2.nykaa.com/media/wysiwyg/2018/Brandslogo/nyx_New.png"
+        },
+        {
+          "img": "https://images-static.naikaa.com/media/wysiwyg/2020/CT-Newlaunches-118x55.png"
+        },
+        {
+          "img": "https://adn-static1.nykaa.com/media/wysiwyg/2020/Dior%20logo_118x55.jpg?1?lkkl"
+        },
+        {
+          "img": "https://adn-static1.nykaa.com/media/wysiwyg/NFBA2020/TooFaced_logos.png?1?lk"
+        },
+        {
+          "img": "https://adn-static2.nykaa.com/media/wysiwyg/MegaMenuImages/Kaybeauty-new-launch-logo.png"
+        },
+        {
+          "img": "https://adn-static2.nykaa.com/media/wysiwyg/2019/innisfree_New.png"
+        },
+        {
+          "img": "https://adn-static2.nykaa.com/media/wysiwyg/2018/megamenu-logo-_forest.png"
+        },
+        {
+          "img": "https://adn-static2.nykaa.com/media/wysiwyg/2020/BrandslogoMenubar/mondano.png"
+        },
+        {
+          "img": "https://adn-static2.nykaa.com/media/wysiwyg/2021/Elf-New-launches-118x55.png?agg"
+        },
+        {
+          "img": "https://adn-static2.nykaa.com/media/wysiwyg/ABCD-Two/See-All_CTA.png"
+        }
+      ],
+      "newLaunches": [
+        {
+          "img": "https://adn-static2.nykaa.com/media/wysiwyg/2019/Maybelline1211.png"
+        },
+        {
+          "img": "https://adn-static2.nykaa.com/media/wysiwyg/lakme_mega_menu_header.png"
+        },
+        {
+          "img": "https://adn-static2.nykaa.com/media/wysiwyg/For-Nykaa-Megamenu-New.png"
+        },
+        {
+          "img": "https://adn-static2.nykaa.com/media/wysiwyg/Header/mac.png"
+        },
+        {
+          "img": "https://adn-static2.nykaa.com/media/wysiwyg/2019/lorealparis.png"
+        },
+        {
+          "img": "https://adn-static2.nykaa.com/media/wysiwyg/2020/BrandslogoMenubar/Huda.png"
+        },
+        {
+          "img": "https://adn-static2.nykaa.com/media/wysiwyg/2018/Biotique_new.png"
+        },
+        {
+          "img": "https://adn-static2.nykaa.com/media/wysiwyg/2019/NATURAL-LOGO.png"
+        },
+        {
+          "img": "https://adn-static2.nykaa.com/media/wysiwyg/2018/Brandslogo/FacesCanadaa.png"
+        },
+        {
+          "img": "https://adn-static2.nykaa.com/media/wysiwyg/HeaderIcons/The-Face-Shop.png"
+        },
+        {
+          "img": "https://adn-static2.nykaa.com/media/wysiwyg/2018/colorbar-logoforui.png"
+        },
+        {
+          "img": "https://adn-static2.nykaa.com/media/wysiwyg/2018/Brandslogo/nyx_New.png"
+        },
+        {
+          "img": "https://images-static.naikaa.com/media/wysiwyg/2020/CT-Newlaunches-118x55.png"
+        },
+        {
+          "img": "https://adn-static1.nykaa.com/media/wysiwyg/2020/Dior%20logo_118x55.jpg?1?lkkl"
+        },
+        {
+          "img": "https://adn-static1.nykaa.com/media/wysiwyg/NFBA2020/TooFaced_logos.png?1?lk"
+        },
+        {
+          "img": "https://adn-static2.nykaa.com/media/wysiwyg/MegaMenuImages/Kaybeauty-new-launch-logo.png"
+        },
+        {
+          "img": "https://adn-static2.nykaa.com/media/wysiwyg/2020/JML-Logo.png"
+        },
+        {
+          "img": "https://adn-static2.nykaa.com/media/wysiwyg/2021/Minimalist_logos.png?agg"
+        },
+        {
+          "img": "https://adn-static2.nykaa.com/media/wysiwyg/2020/Pixi%20Logo_118px%20X%2055px.png"
+        },
+        {
+          "img": "https://adn-static1.nykaa.com/media/wysiwyg/2021/SDJ-Logo-118-x-55-px.png"
+        },
+        {
+          "img": "https://adn-static2.nykaa.com/media/wysiwyg/2020/BrandslogoMenubar/Prada.png"
+        },
+        {
+          "img": "https://adn-static2.nykaa.com/media/wysiwyg/2020/BrandslogoMenubar/rsvp.png"
+        },
+        {
+          "img": "https://adn-static2.nykaa.com/media/wysiwyg/2020/BrandslogoMenubar/mondano.png"
+        },
+        {
+          "img": "https://adn-static2.nykaa.com/media/wysiwyg/2021/Elf-New-launches-118x55.png?agg"
+        },
+        {
+          "img": "https://adn-static2.nykaa.com/media/wysiwyg/ABCD-Two/See-All_CTA.png"
+        }
+      ]
+    }
+  ],
+  "navbar2": [
+    {
+      "id": "a1",
+      "title": "Brands",
+      "status": false
+    },
+    {
+      "id": "a2",
+      "title": "Nykaa Fashion",
+      "status": false
+    },
+    {
+      "id": "a3",
+      "title": "Beauty Advice",
+      "status": false
+    },
+    {
+      "id": "a4",
+      "title": "Nykaa Network",
+      "status": false
+    },
+    {
+      "id": "a5",
+      "title": "Makeup",
+      "status": false
+    },
+    {
+      "id": "a6",
+      "title": "Skin",
+      "status": false
+    },
+    {
+      "id": "a7",
+      "title": "Appliances",
+      "status": false
+    },
+    {
+      "id": "a8",
+      "title": "Personal Care",
+      "status": false
+    },
+    {
+      "id": "a9",
+      "title": "Natural",
+      "status": false
+    },
+    {
+      "id": "a10",
+      "title": "Mom & Baby",
+      "status": false
+    },
+    {
+      "id": "a11",
+      "title": "Helth & Wellness",
+      "status": false
+    },
+    {
+      "id": "a12",
+      "title": "Men",
+      "status": false
+    },
+    {
+      "id": "a13",
+      "title": "Fragrance",
+      "status": false
+    },
+    {
+      "id": "a14",
+      "title": "Luxe",
+      "status": false
     }
   ]
 }

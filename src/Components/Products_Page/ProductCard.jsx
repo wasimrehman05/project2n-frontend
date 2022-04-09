@@ -159,6 +159,7 @@ export const ProductCard = () => {
     let data;
 
     const products = useSelector((state) => state.products);
+    // const { products } = Alldata;
     const filter = useSelector((state) => state.filter);
 
     if (filter.length === 0) {
@@ -170,6 +171,7 @@ export const ProductCard = () => {
     // opening OneItem Page
     const sendItem = (item) => {
         dispatch(showItem(item));
+
         navigate(`/item/${item.id}`);
     };
 

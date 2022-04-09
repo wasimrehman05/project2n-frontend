@@ -1,18 +1,31 @@
 import {
-    STORE_PRODUCTS,
+    STORE_DATA,
     SHOW_ITEM,
     FILTER_DATA,
     ADD_TO_BAG,
     RELOAD_BAG,
     UPDATE_QUANTITY,
     DELETE_FROM_BAG,
+    SET_USER,
 } from "./action";
 
-const initState = { products: [], item: [], filter: [], cartProducts: [] };
+const initState = {
+    products: [],
+    item: {},
+    filter: [],
+    cartProducts: [],
+    user: {
+        id: "",
+        address: "",
+        payment: false,
+        paymentType: "",
+        amount: "",
+    },
+};
 
 export const reducer = (store = initState, action) => {
     switch (action.type) {
-        case STORE_PRODUCTS:
+        case STORE_DATA:
             return {
                 ...store,
                 products: action.payload.products,
@@ -57,6 +70,11 @@ export const reducer = (store = initState, action) => {
             return {
                 ...store,
                 cartProducts: updated_arr,
+            };
+        case SET_USER:
+            return {
+                ...store,
+                user: { ...store.user, ...action.payload },
             };
         default:
             return store;
