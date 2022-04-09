@@ -1,14 +1,21 @@
 .heading-nav{
-    font-size: 15px;
-    color: rgba(49, 49, 54, 0.829);
+    color: rgba(3, 2, 26, 0.8);
     text-align:start;
     margin-left: 20px;
-    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    font-family: inherit;
+    font-weight: 600;
+    letter-spacing: -0.1px;
 }
 .nav-desc{
     color: rgb(119, 116, 111);
     text-align: start;
     margin-left: -20px;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20px;
+    letter-spacing: 0;
+    font-family: inherit;
 
 }
 
@@ -61,6 +68,8 @@ ul{
 .img-div-brands div{
     margin: 30px;
 }
+
+
 
 .img-div-brands{
     overflow: hidden;

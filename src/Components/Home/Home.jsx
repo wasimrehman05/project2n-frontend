@@ -14,7 +14,7 @@ export const Home = () => {
   const [TrendingStores, setTrendingStores] = useState([])
   const [FeaturedBrands, setFeaturedBrands] = useState([])
   const [BudgetBuys, setBudgetBuys] = useState([])
-  const [HiddenGems, setHiddenGems] = useState([])
+  const [beautyadvice, setBeautyadvice] = useState([])
   const [EditorsChoice, setEditorsChoice] = useState([])
 
   useEffect(() => {
@@ -23,7 +23,7 @@ export const Home = () => {
     getTrendingStores()
     getFeaturedBrands()
     getBudgetBuys()
-    getHiddenGems()
+    getbeautyadvice()
     getEditorsChoice()
   }, [])
 
@@ -65,10 +65,10 @@ export const Home = () => {
   }
 
 
-  const getHiddenGems = () => {
-    fetch("http://localhost:3002/hiddenGems")
+  const getbeautyadvice = () => {
+    fetch("http://localhost:3002/beautyadvice")
       .then((res) => (res = res.json()))
-      .then((res) => setHiddenGems(res))
+      .then((res) => setBeautyadvice(res))
   }
 
   const getEditorsChoice = () => {
@@ -82,7 +82,7 @@ export const Home = () => {
     <div className="App" >
       {/* <Navbar /> */}
       
-      <div className="home-container" style={{paddingTop:"10%"}} >
+      <div className="home-container"  >
 
 
         {/* <Carousels /> */}
@@ -161,6 +161,45 @@ export const Home = () => {
             ))
           }
         </div>
+
+          
+        <h1 className="home-heading">Budget Buys</h1>
+        <div className="featured-brands">
+          {
+            BudgetBuys.map((item) => (
+              <div>
+                <div style={{ display: "block" }} className="card-block">
+                  <img src={item.img} alt={item.desc1} />
+                </div>
+              </div>
+            ))
+          }
+        </div>
+
+
+        <h1 className="home-heading">Editors Choice</h1>
+        <div className="featured-brands">
+          {
+            EditorsChoice.map((item) => (
+              <div>
+                <div style={{ display: "block" }} className="card-block">
+                  <img src={item.img} alt={item.desc1} />
+                </div>
+              </div>
+            ))
+          }
+        </div>
+
+        <h1 className="home-heading">SPECIAL CURATIONS</h1>
+        <div className="card-block" style={{ textAlign:"center", marginLeft:"100px", marginBottom:"100px"}}>
+          <img src="https://images-static.nykaa.com/uploads/10a78a97-6172-4ebe-bec9-fa89d095d640.jpg?tr=w-600,cm-pad_resize" style={{display:"block", width:"50%", height:"300px" ,marginLeft:"200px"}} alt="" />
+        </div>
+
+
+          <div className="card-block" style={{marginBottom:"60px"}}>
+            <img src="https://images-static.nykaa.com/uploads/58c1c0b0-5a0b-4614-acfc-3205e669d8a7.jpg?tr=w-1200,cm-pad_resize" alt="" />
+          </div>
+
       </div>
 
 
