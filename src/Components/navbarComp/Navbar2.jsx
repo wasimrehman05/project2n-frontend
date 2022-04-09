@@ -299,7 +299,7 @@ export const Navbar2 = () => {
                 </Div>
             )}
             <div>
-                <div className="navbar">
+                <div className="navbar5">
                     <div className="nav-bar-wrapper">
                         <a
                             href="#home"

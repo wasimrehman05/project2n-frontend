@@ -1,7 +1,7 @@
 * {
     font-family: Inter, sans-serif;
 }
-.navbar {
+.navbar5 {
     overflow: hidden;
     background-color: white;
     position: fixed;
@@ -17,7 +17,7 @@
     margin-left: 40px;
 }
 
-.navbar a {
+.navbar5 a {
     float: left;
     font-size: 16px;
     color: black;
@@ -43,7 +43,7 @@
     margin: 0;
 }
 
-.navbar a:hover,
+.navbar5 a:hover,
 .subnav:hover .subnavbtn {
     background-color: white;
     font-weight: 600;
