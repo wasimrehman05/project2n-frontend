@@ -1,5 +1,7 @@
 import React from 'react'
+import 'bootstrap/dist/css/bootstrap.min.css';
 import('../Checkout.css');
+
 const Nav = ({ active, login, address }) => {
   return (
     <nav className="navbar navbar-expand-lg navbar-light bg-light">
