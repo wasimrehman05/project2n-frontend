@@ -10,17 +10,13 @@ import {
 } from "./action";
 
 const initState = {
-    products: [],
-    item: {},
-    filter: [],
-    cartProducts: [],
-    user: {
-        id: "",
-        address: "",
+    products: [], item: [], filter: [], cartProducts: [], user: {
+        id: '',
+        address: '',
         payment: false,
-        paymentType: "",
-        amount: "",
-    },
+        paymentType: '',
+        amount: '',
+    }
 };
 
 export const reducer = (store = initState, action) => {

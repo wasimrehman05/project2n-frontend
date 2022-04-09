@@ -525,64 +525,172 @@
   },
   "cartProducts": [
     {
-      "card_title": "Philips Selfie Straightener (HP8302/06)",
-      "title": "Philips Selfie Straightener (HP8302/06)",
-      "rating": "4.2",
-      "ratingNum": "2751",
-      "reviews": "655",
-      "price": "1295",
-      "off_price": "1099",
-      "offer": "15",
-      "image1": "https://images-static.nykaa.com/media/catalog/product/2/9/29cd491nyphilips0015as__1_.jpg?tr=w-344,h-344,cm-pad_resize",
-      "image2": "https://images-static.nykaa.com/media/catalog/product/2/9/29cd491nyphilips0015as__2_.jpg?tr=w-344,h-344,cm-pad_resize",
-      "image3": "https://images-static.nykaa.com/media/catalog/product/2/9/29cd491nyphilips0015as__3_.jpg?tr=w-344,h-344,cm-pad_resize",
-      "brand": "Philips India",
-      "category": "Hair_Styling_Tools",
-      "sub_category": "Straighteners",
-      "description": "Straighten and style your hair with this easy to use Philips HP8302/00 Selfie Straightener. With silkpro care technology and advanced keratin ceramic coating, the plates of this straighter are smoother than silk, resulting in less heat exposure and minimal friction. 210 degree C professional styling temperature gives you that perfect look like you've just come from the salon.",
-      "how_to_use": "Warranty: 2 years Philips India warranty from the date of purchase",
-      "id": 1,
-      "quan": "7"
-    },
-    {
-      "card_title": "Ikonic Professional Pro Curler - Black",
-      "title": "Ikonic Professional Pro Curler - Black",
-      "rating": "2.4",
-      "ratingNum": "8",
+      "card_title": "Flawless 3 in 1 electric facial cleanser and massager brush",
+      "title": "Flawless 3 in 1 electric facial cleanser and massager brush",
+      "rating": "1",
+      "ratingNum": "1",
       "reviews": "1",
-      "price": "6750",
-      "off_price": "5400",
-      "offer": "20",
-      "image1": "https://images-static.nykaa.com/media/catalog/product/d/e/ded95fcikoni00000002_1.jpg?tr=w-344,h-344,cm-pad_resize",
-      "image2": "https://images-static.nykaa.com/media/catalog/product/d/e/ded95fcikoni00000002_3.jpg?tr=w-344,h-344,cm-pad_resize",
-      "image3": "https://images-static.nykaa.com/media/catalog/product/d/e/ded95fcikoni00000002_4.jpg?tr=w-344,h-344,cm-pad_resize",
-      "brand": "Ikonic Professional",
-      "category": "Hair_Styling_Tools",
-      "sub_category": "Curling_Irons/Stylers",
-      "description": "Ikonic Pro Curl is an easy-to-operate curling tool with ceramic infrared plates that instantly heat up to provide an even heat distribution. Its adjustable temperature setting and temperature lock feature allows you for a customized hair styling session. This styling tool has a cool LCD digital temperature display shows you the temperature and a cool shot option to set your curls for a long-lasting look.",
-      "how_to_use": "Use on dry hair, after applying heat protectant. Apply hair setting spray for a long lasting hair style.",
-      "id": 5,
-      "quan": "5"
+      "price": "5500",
+      "off_price": "4125",
+      "offer": "25",
+      "image1": "https://images-static.nykaa.com/media/catalog/product/6/7/6725084754502044672%20(2).jpg?tr=w-344,h-344,cm-pad_resize",
+      "image2": "https://images-static.nykaa.com/media/catalog/product/6/7/6725084754502044672%20(2).jpg?tr=w-344,h-344,cm-pad_resize",
+      "image3": "https://images-static.nykaa.com/media/catalog/product/6/7/6725084754502044672%20(3).jpg?tr=w-344,h-344,cm-pad_resize",
+      "brand": "Flawless",
+      "category": "Face/Skin_Tools",
+      "sub_category": "Cleansing_Brushes",
+      "description": "Flawless Cleanse Facial Cleanser and Massager with its silicone head is an ultra-hygienic cleanser and massager that promotes the appearance of radiant, clean, more youthful skin. Flawless Cleanse has 4 modes, gentle cleansing, pulsating, massage, and deep cleanse for the ultimate facial cleaning experience.",
+      "how_to_use": "Wet Face. Rince unit under wet water. Apply desired cleanser to unit. Place unit against skin and turn unit on.",
+      "id": 14,
+      "quan": 10
     },
     {
-      "card_title": "Philips Hair Dryer (HP8120/00)",
-      "title": "Philips Hair Dryer (HP8120/00)",
-      "rating": "4.4",
-      "ratingNum": "341",
-      "reviews": "101",
-      "price": "1345",
-      "off_price": "967",
-      "offer": "28",
-      "image1": "https://images-static.nykaa.com/media/catalog/product/b/d/bdd7491nyphilips0009as__1_.jpg?tr=w-344,h-344,cm-pad_resize",
-      "image2": "https://images-static.nykaa.com/media/catalog/product/b/d/bdd7491nyphilips0009as__2_.jpg?tr=w-344,h-344,cm-pad_resize",
-      "image3": "https://images-static.nykaa.com/media/catalog/product/b/d/bdd7491nyphilips0009as__4_.jpg?tr=w-344,h-344,cm-pad_resize",
-      "brand": "Philips India",
-      "category": "Hair_Styling_Tools",
-      "sub_category": "Hair_Dryers",
-      "description": "Philips HP8120/00 EssentialCare Hair Dryer is cute, compact and powerful. 1200W power enables you to dry hair gently and quickly. Flexible caring settings are designed to meet different drying needs and offer extra care.",
-      "how_to_use": "ThermoProtect temperature setting: Provides the optimal drying temperature while giving additional protection. The ThermoProtect optimal airflow and heat combination allows you to quickly dry your hair without overheating, maintaining your hair's natural moisture level, for shiny healthy looking hair.",
-      "id": 3,
-      "quan": 1
+      "card_title": "IGRiD Blackhead Remover, Acne Extractor Tool",
+      "title": "IGRiD Blackhead Remover, Acne Extractor Tool, Black Head & White Head Remover",
+      "rating": "1",
+      "ratingNum": "5",
+      "reviews": "1",
+      "price": "2999",
+      "off_price": "1529",
+      "offer": "49",
+      "image1": "https://images-static.nykaa.com/media/catalog/product/a/f/af080f1697521184700__2_.jpg?tr=w-344,h-344,cm-pad_resize",
+      "image2": "https://images-static.nykaa.com/media/catalog/product/a/f/af080f1697521184700__6_.jpg?tr=w-344,h-344,cm-pad_resize",
+      "image3": "https://images-static.nykaa.com/media/catalog/product/a/f/af080f1697521184700__7_.jpg?tr=w-344,h-344,cm-pad_resize",
+      "brand": "IGRiD",
+      "category": "Face/Skin_Tools",
+      "sub_category": "Acne_Removal",
+      "description": "The iGRiD IG-3012 powerful deep pore cleanser uses vacuum technology for pore cleansing, and leaves your facial skin looking healthy and ready for the world. It is suitable for all skin types and its range of 3 different attachments makes it a multi-purpose device.",
+      "how_to_use": "Open pores with hot water or steamer for 3-5 mins. Apply moisturizer to avoid skin irritation. Clean pores with iGRiD blackhead remover tool with a suitable level. Close pore with the mask or use cold water.",
+      "id": 17,
+      "quan": "3"
+    }
+  ],
+  "users": [
+    {
+      "id": "92add11c-0b90-4fee-b85a-e7ea2ff5b261",
+      "address": {
+        "country": "",
+        "name": "",
+        "email": "",
+        "phone": "",
+        "postalCode": "",
+        "address": ""
+      },
+      "payment": true,
+      "paymentType": "Google Pay"
+    },
+    {
+      "id": "642c99f6-0590-4b37-9e5e-d18c3bd5aacf",
+      "address": {
+        "country": "India",
+        "name": "saif",
+        "email": "saifhussainansari6@gmail.com",
+        "phone": "07055170328",
+        "postalCode": "122002",
+        "address": "MS bhavan Room number 05, First floor, MS Bhavan , near modern pulic school, nathupur, Gurgao , Hariyana - 122002"
+      },
+      "payment": true,
+      "paymentType": "Card"
+    },
+    {
+      "id": "4458e0b0-90f7-4146-8d94-abf1f3a961e7"
+    },
+    {
+      "id": "144f1ddc-45a3-4948-9dfb-ed9cf1ff47c9",
+      "address": {
+        "country": "",
+        "name": "",
+        "email": "",
+        "phone": "",
+        "postalCode": "",
+        "address": ""
+      }
+    },
+    {
+      "id": "b35f6ae4-8f34-46b1-aaae-3a9f7c3b9d95",
+      "address": {
+        "country": "India",
+        "name": "saif",
+        "email": "saifhussainansari6@gmail.com",
+        "phone": "07055170328",
+        "postalCode": "122002",
+        "address": "MS bhavan Room number 05, First floor, MS Bhavan , near modern pulic school, nathupur, Gurgao , Hariyana - 122002"
+      }
+    },
+    {
+      "id": "eca12990-bb44-4011-a37f-2a871612b67e",
+      "address": {
+        "country": "India",
+        "name": "saif",
+        "email": "saifhussainansari6@gmail.com",
+        "phone": "07055170328",
+        "postalCode": "122002",
+        "address": "MS bhavan Room number 05, First floor, MS Bhavan , near modern pulic school, nathupur, Gurgao , Hariyana - 122002"
+      }
+    },
+    {
+      "id": "0879670e-917f-41cf-a3ad-13a826b3de7d",
+      "address": {
+        "country": "India",
+        "name": "Saif",
+        "email": "saifhussainansari6@gmail.com",
+        "phone": "07055170328",
+        "postalCode": "122002",
+        "address": "MS bhavan Room number 05, First floor, MS Bhavan , near modern pulic school, nathupur, Gurgao , Hariyana - 122002"
+      }
+    },
+    {
+      "id": "3eaa0124-e74c-4242-a77a-e323b7122452",
+      "address": {
+        "country": "India",
+        "name": "Saif",
+        "email": "saifhussainansari6@gmail.com",
+        "phone": "07055170328",
+        "postalCode": "122002",
+        "address": "MS bhavan Room number 05, First floor, MS Bhavan , near modern pulic school, nathupur, Gurgao , Hariyana - 122002"
+      },
+      "payment": true,
+      "paymentType": "Card"
+    },
+    {
+      "id": "66e9026b-862f-4aa4-aebb-9b2860812696",
+      "address": {
+        "country": "India",
+        "name": "react",
+        "email": "saifhussainansari6@gmail.com",
+        "phone": "07055170328",
+        "postalCode": "122002",
+        "address": "MS bhavan Room number 05, First floor, MS Bhavan , near modern pulic school, nathupur, Gurgao , Hariyana - 122002"
+      },
+      "payment": true,
+      "paymentType": "Card"
+    },
+    {
+      "id": "7ca0b57c-8f81-468a-bb6c-d27973002d83",
+      "address": {
+        "country": "India",
+        "name": "saif",
+        "email": "saifhussainansari6@gmail.com",
+        "phone": "07055170328",
+        "postalCode": "122002",
+        "address": "MS bhavan Room number 05, First floor, MS Bhavan , near modern pulic school, nathupur, Gurgao , Hariyana - 122002"
+      },
+      "payment": true,
+      "paymentType": "Card"
+    },
+    {
+      "id": "35d775f2-676c-425d-97d8-440d43a0b6db",
+      "address": {
+        "country": "India",
+        "name": "Saif",
+        "email": "saifhussainansari6@gmail.com",
+        "phone": "07055170328",
+        "postalCode": "122002",
+        "address": "MS bhavan Room number 05, First floor, MS Bhavan , near modern pulic school, nathupur, Gurgao , Hariyana - 122002"
+      },
+      "payment": true,
+      "paymentType": "Card",
+      "amount": 5654
     }
   ],
   "One_Item": {

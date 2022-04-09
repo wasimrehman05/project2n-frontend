@@ -299,7 +299,7 @@ export const Navbar2 = () => {
                 </Div>
             )}
             <div>
-                <div class="navbar">
+                <div className="navbar">
                     <div className="nav-bar-wrapper">
                         <a
                             href="#home"
@@ -318,29 +318,29 @@ export const Navbar2 = () => {
                                 }}
                             />
                         </a>
-                        <div class="subnav">
-                            <button class="subnavbtn">
+                        <div className="subnav">
+                            <button className="subnavbtn">
                                 <Link to={"./"}> Brands </Link>
                             </button>
-                            <div class="subnav-content">
+                            <div className="subnav-content">
                                 <NykaFashion />
                             </div>
                         </div>
-                        <div class="subnav">
-                            <button class="subnavbtn">
+                        <div className="subnav">
+                            <button className="subnavbtn">
                                 {" "}
                                 <Link to={"./"}> Nykaa Fashion </Link>
                             </button>
-                            <div class="subnav-content">
+                            <div className="subnav-content">
                                 <AppliancesSec />
                             </div>
                         </div>
-                        <div class="subnav">
-                            <button class="subnavbtn">
+                        <div className="subnav">
+                            <button className="subnavbtn">
                                 {" "}
                                 <Link to={"./"}> Beauty Advice </Link>
                             </button>
-                            <div class="subnav-content">
+                            <div className="subnav-content">
                                 <AppliancesSec />
                             </div>
                         </div>
@@ -363,7 +363,7 @@ export const Navbar2 = () => {
                         }}
                     >
                         <i
-                            class="fas fa-search light"
+                            className="fas fa-search light"
                             style={{ marginRight: "10px", fontSize: "20px" }}
                         ></i>
                         <input
@@ -379,18 +379,18 @@ export const Navbar2 = () => {
                         />
                     </div>
 
-                    <div class="dropdown">
+                    <div className="dropdown">
                         <p>
                             <i
-                                class="fa-regular fa-user dropbtn"
+                                className="fa-regular fa-user dropbtn"
                                 style={{ marginRight: "5px" }}
                             ></i>
                             Account
                         </p>
-                        <div class="dropdown-content">
+                        <div className="dropdown-content">
                             <p>
                                 <i
-                                    class=" fa fa-regular fa-book-bookmark"
+                                    className=" fa fa-regular fa-book-bookmark"
                                     style={{
                                         marginRight: "10px",
                                         height: "20px",
@@ -405,7 +405,7 @@ export const Navbar2 = () => {
                                         marginRight: "10px",
                                         height: "20px",
                                     }}
-                                    class="fa-regular fa-user"
+                                    className="fa-regular fa-user"
                                 ></i>{" "}
                                 Profile
                             </p>
@@ -413,20 +413,20 @@ export const Navbar2 = () => {
                                 {" "}
                                 <i
                                     style={{ marginRight: "10px" }}
-                                    class="fa fa-wallet fa-light"
+                                    className="fa fa-wallet fa-light"
                                 ></i>{" "}
                                 Wallet
                             </p>
                             <p>
                                 <i
-                                    class="fa-regular fa-heart"
+                                    className="fa-regular fa-heart"
                                     style={{ marginRight: "10px" }}
                                 ></i>{" "}
                                 Favourite
                             </p>
                             <p>
                                 <i
-                                    class="fa fa-light fa-power-off"
+                                    className="fa fa-light fa-power-off"
                                     style={{ marginRight: "10px" }}
                                 ></i>{" "}
                                 Log Out
@@ -435,7 +435,7 @@ export const Navbar2 = () => {
                         <div>
                             <i
                                 onClick={() => setShowBag(true)}
-                                class=" fa fa-light fa-bag-shopping"
+                                className=" fa fa-light fa-bag-shopping"
                                 style={{ marginLeft: "170px", color: "black" }}
                             ></i>
                         </div>
@@ -444,45 +444,45 @@ export const Navbar2 = () => {
                     <div></div>
                 </div>
 
-                <div class="navbar-2">
+                <div className="navbar-2">
                     <div className="navbar-2-wrapper">
-                        <div class="subnav-2">
-                            <button class="subnavbtn-2">
+                        <div className="subnav-2">
+                            <button className="subnavbtn-2">
                                 {" "}
                                 <Link className="subnavbtn-2" to={"./"}>
                                     {" "}
                                     Makeup{" "}
                                 </Link>
                             </button>
-                            <div class="subnav-content-2">
+                            <div className="subnav-content-2">
                                 <Makeup />
                             </div>
                         </div>
-                        <div class="subnav-2">
-                            <button class="subnavbtn-2">
+                        <div className="subnav-2">
+                            <button className="subnavbtn-2">
                                 {" "}
                                 <Link className="subnavbtn-2" to={"./"}>
                                     Skin
                                 </Link>{" "}
                             </button>
-                            <div class="subnav-content-2">
+                            <div className="subnav-content-2">
                                 <AppliancesSec />
                             </div>
                         </div>
-                        <div class="subnav-2">
-                            <button class="subnavbtn-2">
+                        <div className="subnav-2">
+                            <button className="subnavbtn-2">
                                 {" "}
                                 <Link className="subnavbtn-2" to={"./"}>
                                     Hair
                                 </Link>{" "}
                             </button>
-                            <div class="subnav-content-2">
+                            <div className="subnav-content-2">
                                 <AppliancesSec />
                             </div>
                         </div>
 
-                        <div class="subnav-2">
-                            <button class="subnavbtn-2">
+                        <div className="subnav-2">
+                            <button className="subnavbtn-2">
                                 {" "}
                                 <Link
                                     className="subnavbtn-2"
@@ -491,91 +491,91 @@ export const Navbar2 = () => {
                                     Appliances
                                 </Link>{" "}
                             </button>
-                            <div class="subnav-content-2">
+                            <div className="subnav-content-2">
                                 <AppliancesSec />
                             </div>
                         </div>
 
-                        <div class="subnav-2">
-                            <button class="subnavbtn-2">
+                        <div className="subnav-2">
+                            <button className="subnavbtn-2">
                                 {" "}
                                 <Link className="subnavbtn-2" to={"./"}>
                                     Personal Care
                                 </Link>{" "}
                             </button>
-                            <div class="subnav-content-2">
+                            <div className="subnav-content-2">
                                 <AppliancesSec />
                             </div>
                         </div>
 
-                        <div class="subnav-2">
-                            <button class="subnavbtn-2">
+                        <div className="subnav-2">
+                            <button className="subnavbtn-2">
                                 {" "}
                                 <Link className="subnavbtn-2" to={"./"}>
                                     Natural
                                 </Link>{" "}
                             </button>
-                            <div class="subnav-content-2">
+                            <div className="subnav-content-2">
                                 <AppliancesSec />
                             </div>
                         </div>
 
-                        <div class="subnav-2">
-                            <button class="subnavbtn-2">
+                        <div className="subnav-2">
+                            <button className="subnavbtn-2">
                                 {" "}
                                 <Link className="subnavbtn-2" to={"./"}>
                                     Mom & Baby
                                 </Link>{" "}
                             </button>
-                            <div class="subnav-content-2">
+                            <div className="subnav-content-2">
                                 <AppliancesSec />
                             </div>
                         </div>
 
-                        <div class="subnav-2">
-                            <button class="subnavbtn-2">
+                        <div className="subnav-2">
+                            <button className="subnavbtn-2">
                                 {" "}
                                 <Link className="subnavbtn-2" to={"./"}>
                                     Health & Wellness
                                 </Link>{" "}
                             </button>
-                            <div class="subnav-content-2">
+                            <div className="subnav-content-2">
                                 <AppliancesSec />
                             </div>
                         </div>
 
-                        <div class="subnav-2">
-                            <button class="subnavbtn-2">
+                        <div className="subnav-2">
+                            <button className="subnavbtn-2">
                                 {" "}
                                 <Link className="subnavbtn-2" to={"./"}>
                                     Men
                                 </Link>{" "}
                             </button>
-                            <div class="subnav-content-2">
+                            <div className="subnav-content-2">
                                 <AppliancesSec />
                             </div>
                         </div>
 
-                        <div class="subnav-2">
-                            <button class="subnavbtn-2">
+                        <div className="subnav-2">
+                            <button className="subnavbtn-2">
                                 {" "}
                                 <Link className="subnavbtn-2" to={"./"}>
                                     Fragrance
                                 </Link>{" "}
                             </button>
-                            <div class="subnav-content-2">
+                            <div className="subnav-content-2">
                                 <AppliancesSec />
                             </div>
                         </div>
 
-                        <div class="subnav-2">
-                            <button class="subnavbtn-2">
+                        <div className="subnav-2">
+                            <button className="subnavbtn-2">
                                 {" "}
                                 <Link className="subnavbtn-2" to={"./"}>
                                     Luxe
                                 </Link>{" "}
                             </button>
-                            <div class="subnav-content-2">
+                            <div className="subnav-content-2">
                                 <AppliancesSec />
                             </div>
                         </div>

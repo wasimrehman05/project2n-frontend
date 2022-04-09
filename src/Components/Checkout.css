@@ -1,0 +1,300 @@
+:root {
+    --theme-color: #fc2779
+}
+
+a {
+    text-decoration: none;
+}
+
+a:hover {
+    color: var(--theme-color);
+}
+
+.main {
+    background-color: grey;
+}
+
+.checkout {
+    background-color: #f3f3f3;
+}
+
+
+.navbar {
+    height: 100px;
+    background-color: #fff !important;
+}
+
+.nav-item {
+    margin: 8px;
+    border-right: 1px solid #ebebeb;
+    padding: 10px;
+    min-width: 100px;
+}
+
+.item1 {
+    border-left: 1px solid #ebebeb;
+    padding-right: 5px;
+
+}
+
+.inner-nav {
+    min-width: 420px;
+    overflow: visible;
+}
+
+.inner-nav .heading {
+    font-weight: bold;
+    color: #3f414d;
+    font-size: 18px;
+}
+
+.navbar-nav .active {
+    border-bottom: 3px solid var(--theme-color);
+    color: var(--theme-color);
+}
+
+.navbar-nav .active .heading {
+    color: var(--theme-color);
+}
+
+.tabs {
+    list-style: none;
+    margin: 5px;
+    padding: 10px;
+    background-color: #fff;
+}
+
+.tabs>li {
+    padding: 10px;
+    border-bottom: 1px solid #ebebeb;
+    font-size: 16px;
+    font-weight: 600;
+    color: #3f414d;
+    cursor: pointer;
+}
+
+.tabs>li:hover {
+    color: #ebebeb;
+}
+
+.tabs>li.active {
+    color: var(--theme-color);
+    border-right: 3px solid var(--theme-color) !important;
+}
+
+.card {
+    background-color: white;
+    margin: 5px;
+    color: #3f414d;
+    padding: 25px;
+}
+
+.logos {
+    margin: 10px 0;
+}
+
+.logos>img {
+    width: 130px;
+}
+
+.subHeading {
+    font-size: 15px;
+    padding-bottom: 10px;
+    color: #3f414d;
+}
+
+.subHeading .fa {
+    color: green;
+}
+
+.card .button {
+    background-color: var(--theme-color);
+    color: white;
+    padding: 10px;
+    font-weight: 500;
+    text-align: center;
+    cursor: pointer;
+}
+
+.card .subHeadingText {
+    margin-top: 20px;
+    border-bottom: 1px solid #ebebeb;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.bottomText {
+    margin-top: 20px;
+    padding-bottom: 20px;
+}
+
+.button2 {
+    color: var(--theme-color);
+    /* color: white; */
+    text-align: center;
+    border: 1px solid var(--theme-color);
+    padding: 10px;
+    font-weight: 500;
+    cursor: pointer;
+    user-select: none;
+    font-weight: 500;
+}
+
+.sideHeading {
+    color: #fea838;
+    font-weight: 500;
+}
+
+.sideHeading>span {
+    color: var(--theme-color);
+    float: right;
+}
+
+.products {
+    margin-top: 40px;
+    border: 1px solid #f3f3f3;
+}
+
+.products>img {
+    max-height: 100px;
+}
+
+.bill {
+    margin-top: 20px;
+}
+
+.quantity {
+
+    margin-top: 1px;
+}
+
+.content>span {
+    float: right;
+}
+
+.heading {
+    margin-top: 30px;
+    font-weight: 500;
+}
+
+.heading>span {
+    float: right;
+    color: var(--theme-color);
+    font-weight: 500;
+}
+
+.subHeading {
+    margin-top: 10px;
+    font-weight: 500;
+}
+
+.address>p {
+    margin-top: 10px;
+}
+
+.notification {
+    margin: 15px auto;
+    height: 60px;
+    width: 80%;
+    border-radius: 5px;
+    background-color: #e0edff;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.noti-icon {
+    margin: 10px;
+    padding: 10px;
+    width: 10px;
+    height: 10px;
+    font-size: 20px;
+    color: white;
+    font-size: small;
+    border-radius: 50%;
+    background-color: blue;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.address input,
+textarea {
+    width: 100%;
+    margin: 10px auto;
+    border: none;
+    border-bottom: 1px solid #ebebeb;
+    margin-right: 2px;
+}
+
+.address input:focus,
+textarea:focus {
+
+    border: none;
+    border-bottom: 1px solid var(--theme-color);
+
+}
+
+.address textarea {
+    border: 1px solid #ebebeb;
+}
+
+.payment .card {
+    display: none;
+}
+
+.payment .active {
+    display: block;
+}
+
+.payment input,
+textarea {
+    width: 100%;
+    margin: 10px auto;
+    border: none;
+    border-bottom: 1px solid #ebebeb;
+    margin-right: 2px;
+}
+
+.payment input:focus,
+textarea:focus {
+
+    border: none;
+    border-bottom: 1px solid var(--theme-color);
+
+}
+
+.payment textarea {
+    border: 1px solid #ebebeb;
+}
+
+.payment .expiry {
+    display: flex;
+}
+
+.payment .text-muted {
+    margin-bottom: 0px;
+}
+
+.payment p .fa {
+    color: #ffe700;
+}
+
+.payment .other {
+    background: #f3f3f3;
+    font-weight: 500;
+    padding: 10px;
+}
+.thankyou{
+    margin-top: 80px;
+}
+.thankyou .success{
+    margin: 20px;
+    text-align: center;
+    color: green;
+}
+.thankyou .footer{
+    margin: 20px;
+    text-align: center;
+    color: var(--theme-color);
+}
