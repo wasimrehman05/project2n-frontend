@@ -1,22 +1,31 @@
 import React, { useEffect } from "react";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { Div } from "../StyledComponents/NykaaStyles";
 import { useDispatch, useSelector } from "react-redux";
 import Nav from './Nav'
-import { getCartData } from "../../Redux/action";
+import { getCartData, setUser } from "../../Redux/action";
 
+import { v4 } from 'uuid';
+import { save } from "../Globals/CommonFunctions";
 
 const Login = () => {
     const dispatch = useDispatch();
-
+    const history = useNavigate();
+    const cartProducts = useSelector((state) => state.cartProducts);
+    const { amount } = useSelector(state => state.user);
     useEffect(() => {
         dispatch(getCartData());
     }, []);
-    const cartProducts = useSelector((state) => state.cartProducts);
-    console.log(cartProducts);
+
+    function loginHandler() {
+        const payload = { id: v4() };
+        save('http://localhost:3005/users', payload);
+        dispatch(setUser(payload))
+        history('/address');
+    }
     return (
         <Div >
-            <Nav active="login" />
+            <Nav active="login" login={false} />
             <div className="row">
                 <div className="col-md-4 col1">
                     <ul className='tabs'>
@@ -41,24 +50,23 @@ const Login = () => {
                         <div className="bottomText">
                             I do not want any more benefits from Nykaa
                         </div>
-                        <Link className='button2' to='/address'>CONTINUE AS GUEST &gt;</Link>
+                        <div className="button2" onClick={loginHandler}>CONTINUE AS GUEST &gt;</div>
                     </div>
                 </div>
                 {/* sidebar right */}
 
                 <div className="col-md-4">
                     <div className="card">
-                        <div className='sideHeading'>1 Items in your Bag
+                        <div className='sideHeading'>{cartProducts.length} Items in your Bag
                             <span>Edit</span>
                         </div>
-                        {cartProducts.map((e,i) => <div key={i} className="products row">
+                        {cartProducts.map((e, i) => <div key={i} className="products row">
                             <img src={e.image1} alt="product" className='col-md-4' />
                             <div className="col-md-8">
                                 <div className="productNmae">{e.card_title}</div>
-                                <div className="quantity">3ml</div>
                                 <hr />
                                 <div className="productFooter row">
-                                    <div className="qty col-md-6">Qty : 1</div>
+                                    <div className="qty col-md-6">Qty : {e.quan}</div>
                                     <div className="price col-md-6">
                                         <strike>{e.off_price}</strike>
                                         &nbsp;
@@ -71,7 +79,7 @@ const Login = () => {
                         <div className="bill">
                             <div className="content">
                                 Sub Total
-                                <span>424</span>
+                                <span>{amount}</span>
                             </div>
                             <div className="content">
                                 Shipping Charge
@@ -83,18 +91,10 @@ const Login = () => {
                             </div>
                             <div className="content">
                                 Grand Total
-                                <span>424</span>
+                                <span>{amount}</span>
                             </div>
                         </div>
-                        <div className="address">
-                            <div className="heading">
-                                SHIPPING ADDRESS
-                                <span>CHANGE</span>
-                            </div>
-                            <p>ulb
-                                MS bhavan Room number 05, First floor, MS Bhavan , near modern pulic school, nathupur, Gurgao , Hariyana - 122002,  Gurgaon  -  122002,  , India</p>
-                            <div className="subHeading">9897270083</div>
-                        </div>
+
                     </div>
                 </div>
 

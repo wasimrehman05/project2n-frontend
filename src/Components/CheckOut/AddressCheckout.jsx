@@ -1,16 +1,47 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
+import { setUser } from "../../Redux/action";
+import { save } from "../Globals/CommonFunctions";
 import { Div } from "../StyledComponents/NykaaStyles";
 import Nav from './Nav'
 const Address = () => {
-
+    const user = useSelector(state => state.user);
+    const amount = user.amount;
+    const cartProducts = useSelector((state) => state.cartProducts);
+    const navigator = useNavigate();
+    useEffect(() => {
+        if (user.id === '') {
+            navigator('/checkout');
+        }
+    }, []);
+    const init = {
+        country: "",
+        name: "",
+        email: "",
+        phone: "",
+        postalCode: "",
+        address: "",
+    };
+    const [data, setData] = useState(init);
+    const dispatch = useDispatch();
+    function handleChange(e) {
+        setData({ ...data, [e.target.name]: e.target.value });
+    }
+    function handleSubmit(e) {
+        e.preventDefault();
+        const payload = { address: data };
+        save('http://localhost:3005/users', payload, user.id);
+        dispatch(setUser(payload))
+        navigator('/payment');
+    }
     return (
         <Div >
-            <Nav active="address" />
+            <Nav active="address" login={true} />
             <div className="row">
                 <div className="col-md-4">
                     <ul className='tabs'>
                         <li className='active'>New Address</li>
-
                     </ul>
                 </div>
                 <div className="col-md-4">
@@ -18,46 +49,44 @@ const Address = () => {
                         <h5>New Address</h5>
                         <hr />
                         <div className="address">
-                            <form>
-                                <input type="text" name="country" placeholder="Country" />
-                                <input type="text" name="name" placeholder="Name" />
-                                <input type="text" name="email" placeholder="Email" />
-                                <input type="text" name="email" placeholder="Email" />
-                                <input type="text" name="phone" placeholder="Phone" />
-                                <input type="text" name="postalCode" placeholder="Postal Code" />
-                                <textarea name="address" id="address" cols="30" rows="5" placeholder="Address"></textarea>
+                            <form onSubmit={handleSubmit}>
+                                <input type="text" required onChange={handleChange} name="country" placeholder="Country" />
+                                <input type="text" required onChange={handleChange} name="name" placeholder="Name" />
+                                <input type="text" required onChange={handleChange} name="email" placeholder="Email" />
+                                <input type="text" required onChange={handleChange} name="phone" placeholder="Phone" />
+                                <input type="text" required onChange={handleChange} name="postalCode" placeholder="Postal Code" />
+                                <textarea name="address" onChange={handleChange} id="address" cols="30" rows="5" placeholder="Address"></textarea>
                             </form>
-                            <div className="button">SHIP TO THIS ADDRESS  &gt;</div>
+                            <div onClick={handleSubmit} className="button">SHIP TO THIS ADDRESS  &gt;</div>
                         </div>
                     </div>
                 </div>
-                    {/* sidebar right */}
-                    <div className="col-md-4">
-                    <div className="card">
-                        <div className='sideHeading'>1 Items in your Bag
+                {/* sidebar right */}
+                <div className="col-md-4">
+                <div className="card">
+                        <div className='sideHeading'>{cartProducts.length} Items in your Bag
                             <span>Edit</span>
                         </div>
-                        <div className="products row">
-                            <img src="/product1.jpg" alt="product" className='col-md-4' />
+                        {cartProducts.map((e, i) => <div key={i} className="products row">
+                            <img src={e.image1} alt="product" className='col-md-4' />
                             <div className="col-md-8">
-                                <div className="productNmae">Ponds Bright Beauty Vitamin C Face Serum Infused With Lemon .</div>
-                                <div className="quantity">3ml</div>
+                                <div className="productNmae">{e.card_title}</div>
                                 <hr />
                                 <div className="productFooter row">
-                                    <div className="qty col-md-6">Qty : 1</div>
+                                    <div className="qty col-md-6">Qty : {e.quan}</div>
                                     <div className="price col-md-6">
-                                        <strike>499</strike>
+                                        <strike>{e.off_price}</strike>
                                         &nbsp;
-                                        <span>424</span>
+                                        <span>{e.price}</span>
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        </div>)}
 
                         <div className="bill">
                             <div className="content">
                                 Sub Total
-                                <span>424</span>
+                                <span>{amount}</span>
                             </div>
                             <div className="content">
                                 Shipping Charge
@@ -69,18 +98,10 @@ const Address = () => {
                             </div>
                             <div className="content">
                                 Grand Total
-                                <span>424</span>
+                                <span>{amount}</span>
                             </div>
                         </div>
-                        <div className="address">
-                            <div className="heading">
-                                SHIPPING ADDRESS
-                                <span>CHANGE</span>
-                            </div>
-                            <p>ulb
-                                MS bhavan Room number 05, First floor, MS Bhavan , near modern pulic school, nathupur, Gurgao , Hariyana - 122002,  Gurgaon  -  122002,  , India</p>
-                            <div className="subHeading">9897270083</div>
-                        </div>
+
                     </div>
                 </div>
 

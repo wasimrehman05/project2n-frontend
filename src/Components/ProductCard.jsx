@@ -126,7 +126,7 @@ const Div = styled.div`
         }
     }
 `;
- 
+
 export const ProductCard = () => {
     const [cartstatus, setCartstatus] = useState(false);
     const [cartmessage, setCartmessage] = useState("ADDED TO BAG");

@@ -6,9 +6,18 @@ import {
     RELOAD_BAG,
     UPDATE_QUANTITY,
     DELETE_FROM_BAG,
+    SET_USER,
 } from "./action";
 
-const initState = { products: [], item: [], filter: [], cartProducts: [] };
+const initState = {
+    products: [], item: [], filter: [], cartProducts: [], user: {
+        id: '',
+        address: '',
+        payment: false,
+        paymentType: '',
+        amount: '',
+    }
+};
 
 export const reducer = (store = initState, action) => {
     switch (action.type) {
@@ -57,6 +66,11 @@ export const reducer = (store = initState, action) => {
             return {
                 ...store,
                 cartProducts: updated_arr,
+            };
+        case SET_USER:
+            return {
+                ...store,
+                user: { ...store.user, ...action.payload },
             };
         default:
             return store;
