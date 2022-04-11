@@ -5,7 +5,7 @@
     padding-bottom: 2%;
 }
 .navbar2-container {
-    width: 100%;
+    width: 90%;
 
     margin: auto;
 }
@@ -161,8 +161,8 @@
 .home-heading {
     font-size: 30px;
     font-weight: 400;
-    letter-spacing: 0.1rem;
-    color: rgb(70, 69, 69);
+    letter-spacing: .1rem;
+    color:rgb(70, 69, 69)
 }
 
 .home-container {

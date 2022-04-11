@@ -8,8 +8,14 @@ export const NykaFashion = ({ status, handleToggle }) => {
       <div className='colored-div'>
         <h1 className='heading-nav'>Hair Styling Tools</h1>
         <ul>
+
+          <div className='search-div nav-desc' style={{ float: "left", marginRight:"50px", marginTop: "10px", padding: "0.8%",width:"100%", borderRadius:"0", background:"white", border:"1px solid grey"}}>
+            <svg width="20" height="20" viewBox="0  0 24 24" opacity="48%" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M21.54 19.97L16.3 14.73C17.36 13.44 17.99 11.79 17.99 9.99C17.99 5.85 14.64 2.5 10.5 2.5C6.35 2.5 3 5.85 3 9.99C3 14.13 6.35 17.48 10.49 17.48C12.29 17.48 13.94 16.84 15.23 15.79L20.47 21.03C20.62 21.18 20.81 21.25 21 21.25C21.19 21.25 21.38 21.18 21.53 21.03C21.83 20.74 21.83 20.26 21.54 19.97ZM10.49 15.98C7.19 15.98 4.5 13.29 4.5 9.99C4.5 6.69 7.19 4 10.49 4C13.79 4 16.48 6.69 16.48 9.99C16.48 13.3 13.8 15.98 10.49 15.98Z" fill="black"></path></svg>
+            <path d="M21.54 19.97L16.3 14.73C17.36 13.44 17.99 11.79 17.99 9.99C17.99 5.85 14.64 2.5 10.5 2.5C6.35 2.5 3 5.85 3 9.99C3 14.13 6.35 17.48 10.49 17.48C12.29 17.48 13.94 16.84 15.23 15.79L20.47 21.03C20.62 21.18 20.81 21.25 21 21.25C21.19 21.25 21.38 21.18 21.53 21.03C21.83 20.74 21.83 20.26 21.54 19.97ZM10.49 15.98C7.19 15.98 4.5 13.29 4.5 9.99C4.5 6.69 7.19 4 10.49 4C13.79 4 16.48 6.69 16.48 9.99C16.48 13.3 13.8 15.98 10.49 15.98Z" fill="black"></path>
+            {/* <i class="fa fa-light fa-magnifying-glass"  style={{fontSize:"20px", opacity:"48", fill:"grey"}}></i> */}
+            <input type="text" className='search' placeholder='Search on Nykaa' style={{ border: "none", width: "150px", outline: "none", background: "transparent" }} />
+          </div>
           
-          <input type="text" placeholder='SEARCH BRANDS' />
           <li className='nav-desc'>Hair Dryers</li>
           <li className='nav-desc'>Straightners</li>
           <li className='nav-desc'>Curling Ircon/Styles</li>
