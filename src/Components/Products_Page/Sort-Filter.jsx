@@ -6,7 +6,7 @@ import { filterData } from "../../Redux/action";
 
 const FilterDiv = styled.div`
     position: sticky;
-    top: 5.2rem;
+    top: 7.5rem;
     z-index: 1;
 `;
 

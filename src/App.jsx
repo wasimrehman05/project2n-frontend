@@ -9,7 +9,7 @@ import { Item } from "./Components/One_Item_Page/Item";
 import { useDispatch } from "react-redux";
 import { getCartData, getData, showItem } from "./Redux/action";
 import { Checkout } from "./Components/Checkout/Checkout";
-// import { Navbar2 } from "./Components/navbarComp/Navbar2";
+import { ThankYou } from "./Components/ThankYou";
 
 function App() {
     // const [allData, setAllData] = useState({});
@@ -36,6 +36,7 @@ function App() {
                 <Route path={"/Appliances"} element={<ProductsPage />}></Route>
                 <Route path={"/item/:id"} element={<Item />}></Route>
                 <Route path={"/checkout"} element={<Checkout />}></Route>
+                <Route path={"/thankyou"} element={<ThankYou />}></Route>
             </Routes>
         </div>
     );

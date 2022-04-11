@@ -11,16 +11,10 @@ import {
 
 const initState = {
     products: [],
-    item: {},
+    item: [],
     filter: [],
     cartProducts: [],
-    user: {
-        id: "",
-        address: "",
-        payment: false,
-        paymentType: "",
-        amount: "",
-    },
+    user: {},
 };
 
 export const reducer = (store = initState, action) => {
@@ -74,7 +68,7 @@ export const reducer = (store = initState, action) => {
         case SET_USER:
             return {
                 ...store,
-                user: { ...store.user, ...action.payload },
+                user: action.payload,
             };
         default:
             return store;

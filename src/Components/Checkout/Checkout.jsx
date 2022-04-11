@@ -5,6 +5,8 @@ import { useSelector } from "react-redux";
 import { Cart } from "../Cart_Page/Cart";
 import foot from "./foot.png";
 import { useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { setUser } from "../../Redux/action";
 
 const Nav = styled.nav`
     width: 100%;
@@ -114,7 +116,7 @@ const Div = styled.div`
 export const Checkout = () => {
     const cartProducts = useSelector((state) => state.cartProducts);
     const [page, setPage] = useState(0);
-    const [edit, setEdit] = useState(false);
+    const [edit, setEdit] = useState(true);
     const [address, setAddress] = useState({
         Name: "",
         Email: "",
@@ -148,9 +150,11 @@ export const Checkout = () => {
     };
 
     const navigate = useNavigate();
+    const dispatch = useDispatch();
     const checkOutItem = () => {
         alert("Order Placed Successfully!!  Thank You for Ordering");
-        navigate("/");
+        dispatch(setUser(address));
+        navigate("/thankyou");
     };
     return (
         <div

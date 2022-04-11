@@ -195,7 +195,7 @@ export const Home = () => {
                     >
                         {FeaturedBrands.map((item) => (
                             <div>
-                                <div class="card-block">
+                                <div className="card-block">
                                     <div
                                         style={{
                                             backgroundImage: `url(${item.img})`,

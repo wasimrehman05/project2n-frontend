@@ -7,6 +7,8 @@ import { deleteFromBag, updateQuan } from "../../Redux/action";
 const Div = styled.div`
     display: block;
     width: 97%;
+    z-index: 10;
+
     height: 10rem;
     background-color: white;
     margin: 1rem 0.7rem;
@@ -45,6 +47,7 @@ const Div = styled.div`
         display: flex;
         justify-content: space-between;
         padding: 0 1rem;
+        z-index: 10;
 
         & select {
             border: none;

@@ -49,5 +49,8 @@ export const getData = () => (dispatch) => {
 export const getCartData = () => (dispatch) => {
     axios
         .get("http://localhost:3005/cartProducts")
-        .then((res) => dispatch(reloadBag(res.data)));
+        .then((res) => {
+            dispatch(reloadBag(res.data))
+            dispatch(setUser({amount:res.data.reduce((a, b) => +a.off_price + +b.off_price)}))
+        });
 };

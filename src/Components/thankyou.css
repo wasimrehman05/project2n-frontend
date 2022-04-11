@@ -1,0 +1,13 @@
+.thankyou {
+    margin-top: 80px;
+}
+.thankyou .success {
+    margin: 20px;
+    text-align: center;
+    color: green;
+}
+.thankyou .footer {
+    margin: 20px;
+    text-align: center;
+    color: var(--theme-color);
+}
