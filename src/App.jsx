@@ -9,10 +9,8 @@ import { Item } from "./Components/One_Item_Page/Item";
 import { useDispatch } from "react-redux";
 import { getCartData, getData, showItem } from "./Redux/action";
 // import { Navbar2 } from "./Components/navbarComp/Navbar2";
-import Login from "./Components/CheckOut/Login";
-import Address from "./Components/CheckOut/AddressCheckout";
-import Payment from "./Components/CheckOut/Payment";
-import ThankYou from "./Components/ThankYou";
+import { Checkout } from "./Components/CheckOut/Checkout";
+
 
 function App() {
     // const [allData, setAllData] = useState({});
@@ -38,10 +36,8 @@ function App() {
                 <Route path={"/"} element={<Home />}></Route>
                 <Route path={"/Appliances"} element={<ProductsPage />}></Route>
                 <Route path={"/item/:id"} element={<Item />}></Route>
-                <Route path={"/checkout"} element={<Login />}></Route>
-                <Route path={"/address"} element={<Address />}></Route>
-                <Route path={"/payment"} element={<Payment />}></Route>
-                <Route path={"/thankyou"} element={<ThankYou />}></Route>
+                <Route path={"/checkout"} element={<Checkout />}></Route>
+            
             </Routes>
         </div>
     );
