@@ -302,7 +302,7 @@ export const Navbar2 = () => {
                 <div class="navbar">
                     <div className="nav-bar-wrapper">
                         <a
-                            href="#home"
+                            href="/"
                             style={{
                                 // backgroundColor: "red",
                                 height: "2rem",
@@ -437,7 +437,9 @@ export const Navbar2 = () => {
                                 onClick={() => setShowBag(true)}
                                 class=" fa fa-light fa-bag-shopping"
                                 style={{ marginLeft: "170px", color: "black" }}
-                            ></i>
+                            >
+                                {cartProducts.length}
+                            </i>
                         </div>
                     </div>
 
@@ -486,7 +488,7 @@ export const Navbar2 = () => {
                                 {" "}
                                 <Link
                                     className="subnavbtn-2"
-                                    to={"./appliances"}
+                                    to={"/appliances"}
                                 >
                                     Appliances
                                 </Link>{" "}
