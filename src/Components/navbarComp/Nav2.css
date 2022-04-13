@@ -219,6 +219,7 @@
 .subnav-2:hover .subnav-content-2 {
     display: block;
     display: flex;
+    z-index: 5;
 }
 
 .social-div {

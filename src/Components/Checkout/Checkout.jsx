@@ -115,6 +115,9 @@ const Div = styled.div`
 `;
 
 export const Checkout = () => {
+    let body = document.querySelector("body");
+    body.setAttribute("style", "overflow: scroll");
+
     const cartProducts = useSelector((state) => state.cartProducts);
     const [page, setPage] = useState(0);
     const [edit, setEdit] = useState(true);
@@ -637,7 +640,7 @@ export const Checkout = () => {
                                         </p>
                                         <input
                                             type="text"
-                                            value={address.Number}
+                                            placeholder={address.Number}
                                         />
                                     </div>
                                     <button
