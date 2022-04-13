@@ -6,7 +6,8 @@ import { Cart } from "../Cart_Page/Cart";
 import foot from "./foot.png";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
-import { setUser } from "../../Redux/action";
+import { setUser, deleteFromBag } from "../../Redux/action";
+import axios from "axios";
 
 const Nav = styled.nav`
     width: 100%;
@@ -152,6 +153,13 @@ export const Checkout = () => {
     const navigate = useNavigate();
     const dispatch = useDispatch();
     const checkOutItem = () => {
+        for (let i = 0; i < cartProducts.length; i++) {
+            axios
+                .delete(
+                    `http://localhost:3005/cartProducts/${cartProducts[i].id}`
+                )
+                .then((res) => dispatch(deleteFromBag(cartProducts[i].id)));
+        }
         alert("Order Placed Successfully!!  Thank You for Ordering");
         dispatch(setUser(address));
         navigate("/thankyou");
