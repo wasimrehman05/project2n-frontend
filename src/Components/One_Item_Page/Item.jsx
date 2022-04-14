@@ -13,11 +13,10 @@ export const Item = () => {
     const [desc, setDesc] = useState(true);
     const [cartstatus, setCartstatus] = useState(false);
     const [cartmessage, setCartmessage] = useState("ADDED TO BAG");
+    const dispatch = useDispatch();
 
     const item = useSelector((store) => store.item);
     const cartProducts = useSelector((store) => store.cartProducts);
-
-    const dispatch = useDispatch();
 
     const [itemphoto, setItemPhoto] = useState(item.image1);
 
@@ -31,7 +30,7 @@ export const Item = () => {
             }
         }
         axios
-            .post("http://localhost:3005/cartProducts", item)
+            .post("https://nykaa-data.herokuapp.com/cartProducts", item)
             .then((res) => dispatch(addingToBag(item)));
     };
 
@@ -42,6 +41,8 @@ export const Item = () => {
 
     let howtouse = item.how_to_use;
     howtouse = howtouse.split(".");
+
+    console.log(item);
     return (
         <>
             <Navbar2 />

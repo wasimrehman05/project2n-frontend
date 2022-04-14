@@ -18,7 +18,7 @@ const Div = styled.div`
     height: 100vh;
     max-height: fit-content;
     max-height: max-content;
-    z-index: 5;
+    z-index: 7;
     position: fixed;
     display: flex;
 
@@ -416,48 +416,48 @@ export const Navbar2 = () => {
                                 }}
                             />
                         </Link>
-                        <div class="subnav">
-                            <button class="subnavbtn">
+                        <div className="subnav">
+                            <button className="subnavbtn">
                                 <Link to={"/"}> Categories </Link>
                             </button>
-                            <div class="subnav-content">
+                            <div className="subnav-content">
                                 <NykaFashion />
                             </div>
                         </div>
-                        <div class="subnav">
-                            <button class="subnavbtn">
+                        <div className="subnav">
+                            <button className="subnavbtn">
                                 <Link to={"/"}> Brands </Link>
                             </button>
-                            <div class="subnav-content">
+                            <div className="subnav-content">
                                 <NykaFashion />
                             </div>
                         </div>
-                        <div class="subnav">
-                            <button class="subnavbtn">
+                        <div className="subnav">
+                            <button className="subnavbtn">
                                 {" "}
                                 <Link to={"/"}> Nykaa Fashion </Link>
                             </button>
-                            <div class="subnav-content">
+                            <div className="subnav-content">
                                 <AppliancesSec />
                             </div>
                         </div>
 
-                        <div class="subnav">
-                            <button class="subnavbtn">
+                        <div className="subnav">
+                            <button className="subnavbtn">
                                 {" "}
                                 <Link to={"/"}> Beauty Advice </Link>
                             </button>
-                            <div class="subnav-content">
+                            <div className="subnav-content">
                                 <NykaNetwork />
                             </div>
                         </div>
 
-                        <div class="subnav">
-                            <button class="subnavbtn">
+                        <div className="subnav">
+                            <button className="subnavbtn">
                                 {" "}
                                 <Link to={"/"}> Nykaa Network </Link>
                             </button>
-                            <div class="subnav-content"></div>
+                            <div className="subnav-content"></div>
                         </div>
                     </div>
 
@@ -486,7 +486,7 @@ export const Navbar2 = () => {
                             d="M21.54 19.97L16.3 14.73C17.36 13.44 17.99 11.79 17.99 9.99C17.99 5.85 14.64 2.5 10.5 2.5C6.35 2.5 3 5.85 3 9.99C3 14.13 6.35 17.48 10.49 17.48C12.29 17.48 13.94 16.84 15.23 15.79L20.47 21.03C20.62 21.18 20.81 21.25 21 21.25C21.19 21.25 21.38 21.18 21.53 21.03C21.83 20.74 21.83 20.26 21.54 19.97ZM10.49 15.98C7.19 15.98 4.5 13.29 4.5 9.99C4.5 6.69 7.19 4 10.49 4C13.79 4 16.48 6.69 16.48 9.99C16.48 13.3 13.8 15.98 10.49 15.98Z"
                             fill="black"
                         ></path>
-                        {/* <i class="fa fa-light fa-magnifying-glass"  style={{fontSize:"20px", opacity:"48", fill:"grey"}}></i> */}
+                        {/* <i className="fa fa-light fa-magnifying-glass"  style={{fontSize:"20px", opacity:"48", fill:"grey"}}></i> */}
                         <input
                             type="text"
                             className="search"
@@ -556,7 +556,7 @@ export const Navbar2 = () => {
                         <div>
                             <i
                                 onClick={() => setShowBag(true)}
-                                class=" fa fa-light fa-bag-shopping"
+                                className=" fa fa-light fa-bag-shopping"
                                 style={{ marginLeft: "170px", color: "black" }}
                             >
                                 {cartProducts.length}
@@ -570,7 +570,7 @@ export const Navbar2 = () => {
                 <div className="navbar-2">
                     <div className="navbar-2-wrapper">
                         <div className="subnav-2">
-                            <button class="subnavbtn-2">
+                            <button className="subnavbtn-2">
                                 {" "}
                                 <Link
                                     className="subnavbtn-2"
@@ -581,12 +581,12 @@ export const Navbar2 = () => {
                                 </Link>
                             </button>
                             <div className="hover-line"></div>
-                            <div class="subnav-content-2">
+                            <div className="subnav-content-2">
                                 <Makeup />
                             </div>
                         </div>
-                        <div class="subnav-2">
-                            <button class="subnavbtn-2">
+                        <div className="subnav-2">
+                            <button className="subnavbtn-2">
                                 {" "}
                                 <Link
                                     className="subnavbtn-2"
@@ -596,13 +596,13 @@ export const Navbar2 = () => {
                                 </Link>{" "}
                             </button>
                             <div className="hover-line"></div>
-                            <div class="subnav-content-2">
+                            <div className="subnav-content-2">
                                 <Skin />
                             </div>
                         </div>
 
-                        <div class="subnav-2">
-                            <button class="subnavbtn-2">
+                        <div className="subnav-2">
+                            <button className="subnavbtn-2">
                                 {" "}
                                 <Link
                                     className="subnavbtn-2"
@@ -612,13 +612,13 @@ export const Navbar2 = () => {
                                 </Link>{" "}
                             </button>
                             <div className="hover-line"></div>
-                            <div class="subnav-content-2">
+                            <div className="subnav-content-2">
                                 <AppliancesSec />
                             </div>
                         </div>
 
-                        <div class="subnav-2">
-                            <button class="subnavbtn-2">
+                        <div className="subnav-2">
+                            <button className="subnavbtn-2">
                                 {" "}
                                 <Link
                                     className="subnavbtn-2"
@@ -627,13 +627,13 @@ export const Navbar2 = () => {
                                     Appliances
                                 </Link>{" "}
                             </button>
-                            <div class="subnav-content-2">
+                            <div className="subnav-content-2">
                                 <AppliancesSec />
                             </div>
                         </div>
 
-                        <div class="subnav-2">
-                            <button class="subnavbtn-2">
+                        <div className="subnav-2">
+                            <button className="subnavbtn-2">
                                 {" "}
                                 <Link
                                     className="subnavbtn-2"
@@ -644,13 +644,13 @@ export const Navbar2 = () => {
                             </button>
                             <div className="hover-line"></div>
 
-                            <div class="subnav-content-2">
+                            <div className="subnav-content-2">
                                 <Skin />
                             </div>
                         </div>
 
-                        <div class="subnav-2">
-                            <button class="subnavbtn-2">
+                        <div className="subnav-2">
+                            <button className="subnavbtn-2">
                                 {" "}
                                 <Link
                                     className="subnavbtn-2"
@@ -660,13 +660,13 @@ export const Navbar2 = () => {
                                 </Link>{" "}
                             </button>
                             <div className="hover-line"></div>
-                            <div class="subnav-content-2">
+                            <div className="subnav-content-2">
                                 <AppliancesSec />
                             </div>
                         </div>
 
-                        <div class="subnav-2">
-                            <button class="subnavbtn-2">
+                        <div className="subnav-2">
+                            <button className="subnavbtn-2">
                                 {" "}
                                 <Link
                                     className="subnavbtn-2"
@@ -676,13 +676,13 @@ export const Navbar2 = () => {
                                 </Link>{" "}
                             </button>
                             <div className="hover-line"></div>
-                            <div class="subnav-content-2">
+                            <div className="subnav-content-2">
                                 <AppliancesSec />
                             </div>
                         </div>
 
-                        <div class="subnav-2">
-                            <button class="subnavbtn-2">
+                        <div className="subnav-2">
+                            <button className="subnavbtn-2">
                                 {" "}
                                 <Link
                                     className="subnavbtn-2"
@@ -692,13 +692,13 @@ export const Navbar2 = () => {
                                 </Link>{" "}
                             </button>
                             <div className="hover-line"></div>
-                            <div class="subnav-content-2">
+                            <div className="subnav-content-2">
                                 <Skin />
                             </div>
                         </div>
 
-                        <div class="subnav-2">
-                            <button class="subnavbtn-2">
+                        <div className="subnav-2">
+                            <button className="subnavbtn-2">
                                 {" "}
                                 <Link
                                     className="subnavbtn-2"
@@ -708,13 +708,13 @@ export const Navbar2 = () => {
                                 </Link>{" "}
                             </button>
                             <div className="hover-line"></div>
-                            <div class="subnav-content-2">
+                            <div className="subnav-content-2">
                                 <AppliancesSec />
                             </div>
                         </div>
 
-                        <div class="subnav-2">
-                            <button class="subnavbtn-2">
+                        <div className="subnav-2">
+                            <button className="subnavbtn-2">
                                 {" "}
                                 <Link
                                     className="subnavbtn-2"
@@ -724,13 +724,13 @@ export const Navbar2 = () => {
                                 </Link>{" "}
                             </button>
                             <div className="hover-line"></div>
-                            <div class="subnav-content-2">
+                            <div className="subnav-content-2">
                                 <AppliancesSec />
                             </div>
                         </div>
 
-                        <div class="subnav-2">
-                            <button class="subnavbtn-2">
+                        <div className="subnav-2">
+                            <button className="subnavbtn-2">
                                 {" "}
                                 <Link
                                     className="subnavbtn-2"
@@ -740,7 +740,7 @@ export const Navbar2 = () => {
                                 </Link>{" "}
                             </button>
                             <div className="hover-line"></div>
-                            <div class="subnav-content-2">
+                            <div className="subnav-content-2">
                                 <AppliancesSec />
                             </div>
                         </div>

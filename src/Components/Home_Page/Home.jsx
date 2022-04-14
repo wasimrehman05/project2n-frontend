@@ -6,7 +6,7 @@ import { Footer } from "./Footer";
 import { Navbar2 } from "../navbarComp/Navbar2";
 
 export const Home = () => {
-    const baseUrl = "http://localhost:3005/";
+    const baseUrl = "https://nykaa-data.herokuapp.com/";
     const trending = `${baseUrl}trendingStores`;
 
     const [topbrands, setTopbrands] = useState([]);
@@ -28,13 +28,13 @@ export const Home = () => {
     }, []);
 
     const getTopbrands = () => {
-        fetch("http://localhost:3005/topbrands")
+        fetch("https://nykaa-data.herokuapp.com/topbrands")
             .then((res) => (res = res.json()))
             .then((res) => setTopbrands(res));
     };
 
     const getOnlyatNykaa = () => {
-        fetch("http://localhost:3005/onlyAtNykaa")
+        fetch("https://nykaa-data.herokuapp.com/onlyAtNykaa")
             .then((res) => (res = res.json()))
             .then((res) => setOnlyatNykaa(res));
     };
@@ -46,25 +46,25 @@ export const Home = () => {
     };
 
     const getFeaturedBrands = () => {
-        fetch("http://localhost:3005/featuredBrands")
+        fetch("https://nykaa-data.herokuapp.com/featuredBrands")
             .then((res) => (res = res.json()))
             .then((res) => setFeaturedBrands(res));
     };
 
     const getBudgetBuys = () => {
-        fetch(" http://localhost:3005/budgetBuys")
+        fetch(" https://nykaa-data.herokuapp.com/budgetBuys")
             .then((res) => (res = res.json()))
             .then((res) => setBudgetBuys(res));
     };
 
     const getHiddenGems = () => {
-        fetch("http://localhost:3005/hiddenGems")
+        fetch("https://nykaa-data.herokuapp.com/hiddenGems")
             .then((res) => (res = res.json()))
             .then((res) => setHiddenGems(res));
     };
 
     const getEditorsChoice = () => {
-        fetch("http://localhost:3005/editorsChoice")
+        fetch("https://nykaa-data.herokuapp.com/editorsChoice")
             .then((res) => (res = res.json()))
             .then((res) => setEditorsChoice(res));
     };
@@ -85,7 +85,7 @@ export const Home = () => {
                     <h1 className="home-heading">Top Brands</h1>
                     <div className="top-brands">
                         {topbrands.map((item) => (
-                            <div>
+                            <div key={item.id}>
                                 <div>
                                     <div className="card-block">
                                         <div
@@ -132,7 +132,7 @@ export const Home = () => {
                     <h1 className="home-heading">Only At Nykaa</h1>
                     <div className="only-at-nykaa">
                         {OnlyatNykaa.map((item) => (
-                            <div>
+                            <div key={item.id}>
                                 <div className="card-block">
                                     <div
                                         style={{
@@ -177,7 +177,7 @@ export const Home = () => {
                     <h1 className="home-heading">Trending Store and Offers</h1>
                     <div className="trending-store">
                         {TrendingStores.map((item) => (
-                            <div>
+                            <div key={item.id}>
                                 <div
                                     style={{ display: "block" }}
                                     className="card-block"
@@ -194,7 +194,7 @@ export const Home = () => {
                         style={{ marginBottom: "60px" }}
                     >
                         {FeaturedBrands.map((item) => (
-                            <div>
+                            <div key={item.id}>
                                 <div className="card-block">
                                     <div
                                         style={{

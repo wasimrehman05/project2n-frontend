@@ -1,5 +1,7 @@
 .thankyou {
+    margin: auto;
     margin-top: 80px;
+    width: fit-content;
 }
 .thankyou .success {
     margin: 20px;
@@ -10,4 +12,11 @@
     margin: 20px;
     text-align: center;
     color: var(--theme-color);
+}
+
+.thankyou ul {
+    text-align: left;
+}
+.thankyou li {
+    line-height: 25px;
 }

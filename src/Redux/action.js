@@ -43,14 +43,12 @@ export const setUser = (payload) => ({
 
 export const getData = () => (dispatch) => {
     axios
-        .get("http://localhost:3005/data")
+        .get("https://nykaa-data.herokuapp.com/data")
         .then((res) => dispatch(storeData(res.data)));
 };
+
 export const getCartData = () => (dispatch) => {
-    axios
-        .get("http://localhost:3005/cartProducts")
-        .then((res) => {
-            dispatch(reloadBag(res.data))
-            dispatch(setUser({amount:res.data.reduce((a, b) => +a.off_price + +b.off_price)}))
-        });
+    axios.get("https://nykaa-data.herokuapp.com/cartProducts").then((res) => {
+        dispatch(reloadBag(res.data));
+    });
 };

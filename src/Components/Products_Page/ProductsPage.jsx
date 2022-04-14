@@ -66,19 +66,18 @@ export const ProductsPage = () => {
 
     const [slideImgIndex, setSlideImgIndex] = useState(0);
 
-    // const dispatch = useDispatch();
-
-    // useEffect(() => {
-    //     dispatch(getData());
-    //     dispatch(getCartData());
-    // }, []);
-
+    // const hello = async () => {
+    //     let res = await fetch("../../db.json/data");
+    //     let data = await await res.json();
+    //     console.log(data);
+    // };
+    // hello();
     let data;
 
     const products = useSelector((state) => state.products);
 
     // const { products } = Alldata;
-    console.log(products);
+    // console.log(products);
 
     const filter = useSelector((state) => state.filter);
 

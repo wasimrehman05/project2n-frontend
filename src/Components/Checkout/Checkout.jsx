@@ -127,6 +127,7 @@ export const Checkout = () => {
         Number: "",
         Pincode: "",
         Address: "",
+        Amount: "",
         Country: "India",
     });
     const [payOpt, setPayOpt] = useState(0);
@@ -156,15 +157,19 @@ export const Checkout = () => {
     const navigate = useNavigate();
     const dispatch = useDispatch();
     const checkOutItem = () => {
+        setAddress({
+            ...address,
+            Amount: off_price,
+        });
+        dispatch(setUser(address));
         for (let i = 0; i < cartProducts.length; i++) {
             axios
                 .delete(
-                    `http://localhost:3005/cartProducts/${cartProducts[i].id}`
+                    `https://nykaa-data.herokuapp.com/cartProducts/${cartProducts[i].id}`
                 )
                 .then((res) => dispatch(deleteFromBag(cartProducts[i].id)));
         }
         alert("Order Placed Successfully!!  Thank You for Ordering");
-        dispatch(setUser(address));
         navigate("/thankyou");
     };
     return (

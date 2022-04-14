@@ -2,7 +2,7 @@ import React from "react";
 import "./Home.css";
 
 export const Footer = () => {
-    const baseUrl = "http://localhost:3005/";
+    const baseUrl = "https://nykaa-data.herokuapp.com/";
     const footer = `${baseUrl}footer`;
     const [data, setData] = React.useState([]);
 
@@ -16,7 +16,7 @@ export const Footer = () => {
             .then((res) => {
                 setData(res);
             });
-        console.log(data);
+        // console.log(data);
     };
 
     return (
@@ -108,7 +108,10 @@ export const Footer = () => {
                             {data.map((item) => {
                                 if (item.name === "nyka") {
                                     return (
-                                        <p className="footer-text">
+                                        <p
+                                            key={item.text}
+                                            className="footer-text"
+                                        >
                                             {item.text}
                                         </p>
                                     );
@@ -125,7 +128,10 @@ export const Footer = () => {
                             {data.map((item) => {
                                 if (item.name === "help") {
                                     return (
-                                        <p className="footer-text">
+                                        <p
+                                            key={item.text}
+                                            className="footer-text"
+                                        >
                                             {item.text}
                                         </p>
                                     );
@@ -142,7 +148,10 @@ export const Footer = () => {
                             {data.map((item) => {
                                 if (item.name === "inspireMe") {
                                     return (
-                                        <p className="footer-text">
+                                        <p
+                                            key={item.text}
+                                            className="footer-text"
+                                        >
                                             {item.text}
                                         </p>
                                     );
@@ -159,7 +168,10 @@ export const Footer = () => {
                             {data.map((item) => {
                                 if (item.name === "quicklinks") {
                                     return (
-                                        <p className="footer-text">
+                                        <p
+                                            key={item.text}
+                                            className="footer-text"
+                                        >
                                             {item.text}
                                         </p>
                                     );
@@ -176,7 +188,10 @@ export const Footer = () => {
                             {data.map((item) => {
                                 if (item.name === "topcategories") {
                                     return (
-                                        <p className="footer-text">
+                                        <p
+                                            key={item.text}
+                                            className="footer-text"
+                                        >
                                             {item.text}
                                         </p>
                                     );

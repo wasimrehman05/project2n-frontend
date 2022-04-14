@@ -172,7 +172,7 @@ export const ProductCard = () => {
     const sendItem = (item) => {
         dispatch(showItem(item));
 
-        navigate(`/item/${item.id}`);
+        navigate(`/${item.title}`);
     };
 
     // Add to cart
@@ -185,7 +185,7 @@ export const ProductCard = () => {
             }
         }
         axios
-            .post("http://localhost:3005/cartProducts", item)
+            .post("https://nykaa-data.herokuapp.com/cartProducts", item)
             .then((res) => dispatch(addingToBag(item)));
     };
 

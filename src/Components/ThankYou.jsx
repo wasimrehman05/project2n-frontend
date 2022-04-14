@@ -13,14 +13,14 @@ export const ThankYou = () => {
             navigator("/checkout");
         }
     }, []);
-    const cartProducts = useSelector((state) => state.cartProducts);
     // console.log(cartProducts);
 
-    let off_price = 0;
+    // let off_price = 0;
 
-    for (let item of cartProducts) {
-        off_price += +item.off_price * +item.quan;
-    }
+    // for (let item of cartProducts) {
+    //     off_price += +item.off_price * +item.quan;
+    // }
+    console.log(user);
     return (
         <Div>
             <div className="thankyou">
@@ -42,17 +42,6 @@ export const ThankYou = () => {
                     </li>
                     <li>
                         <strong>PIN : </strong> {user.Pincode}
-                    </li>
-                    <li>
-                        <strong>Amount : </strong> {off_price}
-                    </li>
-                    <li>
-                        <strong>Products </strong>
-                        <ul>
-                            {cartProducts.map((e, i) => (
-                                <li key={i}>{e.card_title}</li>
-                            ))}
-                        </ul>
                     </li>
                 </ul>
                 <h3 className="footer">Thank you for your payment</h3>

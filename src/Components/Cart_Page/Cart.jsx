@@ -78,7 +78,7 @@ export const Cart = () => {
         // console.log(val, id);
 
         axios
-            .patch(`http://localhost:3005/cartProducts/${id}`, {
+            .patch(`https://nykaa-data.herokuapp.com/cartProducts/${id}`, {
                 quan: val,
             })
             .then((res) => dispatch(updateQuan({ val, id })));
@@ -86,7 +86,7 @@ export const Cart = () => {
 
     const deleteItem = (id) => {
         axios
-            .delete(`http://localhost:3005/cartProducts/${id}`)
+            .delete(`https://nykaa-data.herokuapp.com/cartProducts/${id}`)
             .then((res) => dispatch(deleteFromBag(id)));
     };
 
