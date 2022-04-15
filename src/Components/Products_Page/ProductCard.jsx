@@ -172,7 +172,7 @@ export const ProductCard = () => {
     const sendItem = (item) => {
         dispatch(showItem(item));
 
-        navigate(`/${item.title}`);
+        navigate(`/item/${item.id}`);
     };
 
     // Add to cart

@@ -42,7 +42,7 @@ export const Item = () => {
     let howtouse = item.how_to_use;
     howtouse = howtouse.split(".");
 
-    console.log(item);
+    // console.log(item);
     return (
         <>
             <Navbar2 />
@@ -308,9 +308,11 @@ export const Item = () => {
                             <div className="decs_text">
                                 {howtouse.map((e) =>
                                     e.length > 1 ? (
-                                        <p> • {e}.</p>
+                                        <p key={e}> • {e}.</p>
                                     ) : (
-                                        "• Read more on Product Description."
+                                        <p key={"99"}>
+                                            • Read more on Product Description.
+                                        </p>
                                     )
                                 )}
                             </div>

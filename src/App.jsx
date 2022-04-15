@@ -34,7 +34,7 @@ function App() {
             <Routes>
                 <Route path={"/"} element={<Home />}></Route>
                 <Route path={"/Appliances"} element={<ProductsPage />}></Route>
-                <Route path={"/:title"} element={<Item />}></Route>
+                <Route path={"/item/:id"} element={<Item />}></Route>
                 <Route path={"/checkout"} element={<Checkout />}></Route>
                 <Route path={"/thankyou"} element={<ThankYou />}></Route>
             </Routes>
