@@ -1,7 +1,16 @@
 .App {
     top: 0;
-    text-align: center; 
-    width: 98.5%;
+    text-align: center;
+    width: 100vw;
     background-color: rgb(243, 243, 243);
     position: absolute;
+    margin: auto;
+    overflow-x: hidden;
+}
+
+@media all and (max-width: 500px) {
+    .App {
+        width: 100%;
+        overflow-x: hidden;
+    }
 }

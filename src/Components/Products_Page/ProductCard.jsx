@@ -11,6 +11,7 @@ import { StarRatingShow } from "./StarRatings";
 
 import axios from "axios";
 import styled from "styled-components";
+import { API_KEY } from "../../config";
 
 const Div = styled.div`
     display: grid;
@@ -22,9 +23,18 @@ const Div = styled.div`
         background-color: #ffffff;
         height: fit-content;
         overflow: hidden;
+
+        @media all and (max-width: 500px) {
+            text-align: left;
+        }
     }
     & > div > div:nth-child(1) {
         padding: 0 10%;
+
+        @media all and (max-width: 500px) {
+            padding: 0%;
+            padding-left: 5%;
+        }
     }
 
     & .card > div > div:nth-child(1) {
@@ -38,6 +48,10 @@ const Div = styled.div`
     & img {
         width: 100%;
         object-fit: cover;
+
+        @media all and (max-width: 500px) {
+            width: 80%;
+        }
     }
     & h4 {
         font-weight: 500;
@@ -52,6 +66,12 @@ const Div = styled.div`
         gap: 5px;
         font-size: 13px;
         color: rgb(101, 119, 134);
+
+        @media all and (max-width: 500px) {
+            justify-content: left;
+            font-size: 10px;
+            margin-bottom: 0.5rem;
+        }
     }
 
     & .rating > div:nth-child(2) {
@@ -62,22 +82,29 @@ const Div = styled.div`
         color: rgb(92, 104, 116);
         display: flex;
         justify-content: center;
-        gap: 5px;
         font-size: 15px;
 
-        @media all and (max-width: 1280px) {
-            gap: px;
+        & > div {
+            display: flex;
+            gap: 5px;
+        }
+
+        @media all and (max-width: 500px) {
+            margin-top: 2px;
+            justify-content: left;
+            font-size: 15px;
+            display: block;
         }
     }
 
-    & .price > span:nth-child(1) {
+    & .price > div > span:nth-child(1) {
         text-decoration: line-through;
     }
-    & .price > span:nth-child(2) {
+    & .price > div > span:nth-child(2) {
         font-weight: 600;
         color: black;
     }
-    & .price > span:nth-child(3) {
+    & .price > div > span:nth-child(3) {
         margin-left: 2px;
         color: rgb(0, 137, 69);
     }
@@ -86,11 +113,20 @@ const Div = styled.div`
         display: none;
         bottom: 0;
         height: 3rem;
+
+        @media all and (max-width: 500px) {
+            height: 2rem;
+            display: flex;
+        }
     }
     & .btn > div {
         display: none;
         bottom: 0;
         height: 3rem;
+
+        @media all and (max-width: 500px) {
+            height: 2rem;
+        }
     }
 
     & .btn > button {
@@ -100,15 +136,32 @@ const Div = styled.div`
         font-size: 17px;
         font-weight: 600;
         width: 75%;
+        text-transform: uppercase;
+
+        @media all and (max-width: 500px) {
+            color: rgb(252, 39, 121);
+            background-color: white;
+            text-transform: none;
+            font-size: 15px;
+            text-align: right;
+        }
     }
 
     & .btn > button:nth-child(1) {
         background-color: white;
         padding: 10px 10px 5px 10px;
         width: 25%;
+
+        @media all and (max-width: 500px) {
+            padding: 5px 10px 5px 5px;
+        }
     }
     & .btn > button:nth-child(1) > img {
         width: 70%;
+
+        @media all and (max-width: 500px) {
+            width: 75%;
+        }
     }
 
     & .title {
@@ -118,6 +171,10 @@ const Div = styled.div`
     & .card:hover {
         & .rating {
             margin-bottom: 2rem;
+
+            @media all and (max-width: 500px) {
+                margin-bottom: 0.5rem;
+            }
         }
 
         & .btn {
@@ -133,11 +190,20 @@ const Div = styled.div`
             font-size: 17px;
             font-weight: 600;
             color: white;
+
+            @media all and (max-width: 500px) {
+                font-size: 12px;
+                padding: 9px;
+            }
         }
     }
 
     @media all and (max-width: 1024px) {
         grid-template-columns: repeat(2, 1fr);
+    }
+    @media all and (max-width: 500px) {
+        width: 100%;
+        grid-gap: 0rem;
     }
 `;
 
@@ -175,6 +241,7 @@ export const ProductCard = () => {
         navigate(`/item/${item.id}`);
     };
 
+    let loginData = JSON.parse(localStorage.getItem("loginData"));
     // Add to cart
     const addtobag = (item) => {
         setCartstatus(true);
@@ -184,9 +251,14 @@ export const ProductCard = () => {
                 return;
             }
         }
+
+        item.userId = loginData._id;
+        item.productId = item._id;
+
+        delete item._id;
         axios
-            .post("https://nykaa-data.herokuapp.com/cartProducts", item)
-            .then((res) => dispatch(addingToBag(item)));
+            .post(`${API_KEY}/addtocart`, item)
+            .then((res) => dispatch(addingToBag(res.data[0])));
     };
 
     // addtobag btn status change
@@ -207,9 +279,12 @@ export const ProductCard = () => {
                             <h4>{item.card_title}</h4>
                         </div>
                         <div className="price">
-                            MRP: <span>₹{item.price}</span>{" "}
-                            <span>₹{item.off_price}</span>
-                            <span>{item.offer}% Off</span>
+                            MRP:
+                            <div>
+                                <span>₹{item.price}</span>
+                                <span>₹{item.off_price}</span>
+                                <span>{item.offer}% Off</span>
+                            </div>
                         </div>
                         <div className="rating">
                             <StarRatingShow value={`${item.rating}`} />{" "}
@@ -239,7 +314,7 @@ export const ProductCard = () => {
                                 />
                             </button>
                             <button onClick={() => addtobag(item)}>
-                                ADD TO BAG
+                                Add To Bag
                             </button>
                         </div>
                     )}

@@ -6,8 +6,9 @@ import { Cart } from "../Cart_Page/Cart";
 import foot from "./foot.png";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
-import { setUser, deleteFromBag } from "../../Redux/action";
+import { setUser, empty_bag } from "../../Redux/action";
 import axios from "axios";
+import { API_KEY } from "../../config";
 
 const Nav = styled.nav`
     width: 100%;
@@ -119,16 +120,17 @@ export const Checkout = () => {
     body.setAttribute("style", "overflow: scroll");
 
     const cartProducts = useSelector((state) => state.cartProducts);
-    const [page, setPage] = useState(0);
+    const Navigate = useNavigate();
+
     const [edit, setEdit] = useState(true);
     const [address, setAddress] = useState({
-        Name: "",
-        Email: "",
-        Number: "",
-        Pincode: "",
-        Address: "",
-        Amount: "",
-        Country: "India",
+        name: "",
+        email: "",
+        number: "",
+        pincode: "",
+        address: "",
+        amount: "",
+        country: "India",
     });
     const [payOpt, setPayOpt] = useState(0);
 
@@ -146,29 +148,33 @@ export const Checkout = () => {
         off_price += +item.off_price * +item.quan;
     }
 
+    let loginData = JSON.parse(localStorage.getItem("loginData"));
+
+    let isLogin = localStorage.getItem("isLogin");
+
     const checkAdd = () => {
-        if (address.Number.length !== 10 && address.Pincode.length !== 6) {
+        if (address.number.length !== 10 && address.pincode.length !== 6) {
             alert("Enter Correct Mobile Number and Pincode");
             return;
         }
+
         setPage(2);
     };
+
+    const [page, setPage] = useState(isLogin === "true" ? 1 : 0);
 
     const navigate = useNavigate();
     const dispatch = useDispatch();
     const checkOutItem = () => {
         setAddress({
             ...address,
-            Amount: off_price,
+            amount: off_price,
         });
         dispatch(setUser(address));
-        for (let i = 0; i < cartProducts.length; i++) {
-            axios
-                .delete(
-                    `https://nykaa-data.herokuapp.com/cartProducts/${cartProducts[i].id}`
-                )
-                .then((res) => dispatch(deleteFromBag(cartProducts[i].id)));
-        }
+        axios
+            .post(`${API_KEY}/emptycart`, { id: loginData._id })
+            .then((res) => dispatch(empty_bag([])));
+
         alert("Order Placed Successfully!!  Thank You for Ordering");
         navigate("/thankyou");
     };
@@ -200,6 +206,7 @@ export const Checkout = () => {
                         }}
                         src="https://logos-download.com/wp-content/uploads/2021/01/Nykaa_Logo.png"
                         alt="Nykaa-logo"
+                        onClick={() => Navigate("/")}
                     />
                 </div>
                 <div
@@ -216,7 +223,14 @@ export const Checkout = () => {
                         }`,
                     }}
                 >
-                    <h3>1-{page === 0 ? "LOGIN" : "GUEST CHECKOUT"}</h3>
+                    <h3>
+                        1-
+                        {page === 0
+                            ? "LOGIN"
+                            : isLogin === "true"
+                            ? ` Welcome ${loginData.name.split(" ")[0]}`
+                            : "GUEST CHECKOUT"}
+                    </h3>
                 </div>
                 <div
                     style={{
@@ -232,7 +246,7 @@ export const Checkout = () => {
                         }`,
                     }}
                 >
-                    <h3>2-ADDRESS</h3>
+                    <h3>2- ADDRESS</h3>
                 </div>
                 <div
                     style={{
@@ -248,7 +262,7 @@ export const Checkout = () => {
                         }`,
                     }}
                 >
-                    <h3>3-PAYMENT</h3>
+                    <h3>3- PAYMENT</h3>
                 </div>
                 <div
                     style={{
@@ -360,14 +374,14 @@ export const Checkout = () => {
                                 <br />
                                 <input
                                     type="text"
-                                    name="Name"
+                                    name="name"
                                     placeholder="Name"
                                     onChange={handleInput}
                                 />
                                 <br />
                                 <input
                                     type="email"
-                                    name="Email"
+                                    name="email"
                                     placeholder="Email"
                                     onChange={handleInput}
                                 />
@@ -376,21 +390,21 @@ export const Checkout = () => {
                                 <input
                                     style={{ width: "75%" }}
                                     type="number"
-                                    name="Number"
+                                    name="number"
                                     placeholder="Number"
                                     onChange={handleInput}
                                 />
                                 <br />
                                 <input
                                     type="number"
-                                    name="Pincode"
+                                    name="pincode"
                                     placeholder="Postal Code"
                                     onChange={handleInput}
                                 />
                                 <br />
                                 <input
                                     type="text"
-                                    name="Address"
+                                    name="address"
                                     placeholder="Address"
                                     style={{
                                         height: "5rem",
@@ -809,12 +823,12 @@ export const Checkout = () => {
                                         CHANGE
                                     </button>
                                 </div>
-                                <p>{address.Name}</p>
+                                <p>{address.name}</p>
                                 <p>
-                                    {address.Address} - {address.Pincode},
-                                    {address.Country}
+                                    {address.address} - {address.pincode},
+                                    {address.country}
                                 </p>
-                                <p>+91-{address.Number}</p>
+                                <p>+91-{address.number}</p>
                             </div>
                         </div>
                     </Div>

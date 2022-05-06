@@ -5,10 +5,25 @@ const Star = styled.span`
     display: inline-block;
     cursor: pointer;
     color: rgb(0, 0, 0);
+    width: 15px;
+    height: 15px;
+    font-size: 15px;
 
     & > svg {
         margin-bottom: -3px;
         width: 10.5px;
+        height: 16px;
+
+        @media all and (max-width: 500px) {
+            margin-bottom: 0px;
+            width: 8px;
+            height: 8px;
+        }
+    }
+    @media all and (max-width: 500px) {
+        width: 11px;
+        height: 11px;
+        font-size: 11px;
     }
 `;
 
@@ -24,8 +39,6 @@ const StarRatings = ({ count, value, size = 24 }) => {
                     s = (
                         <svg
                             xmlns="http://www.w3.org/2000/svg"
-                            width="16"
-                            height="16"
                             fill="currentColor"
                             className="bi bi-star-half"
                             viewBox="0 0 16 16"
@@ -37,15 +50,7 @@ const StarRatings = ({ count, value, size = 24 }) => {
                     s = "☆";
                 }
                 return (
-                    <Star
-                        className={"star"}
-                        key={index}
-                        style={{
-                            width: size,
-                            height: size,
-                            fontSize: size,
-                        }}
-                    >
+                    <Star className={"star"} key={index}>
                         {s}
                     </Star>
                 );
@@ -57,7 +62,7 @@ const StarRatings = ({ count, value, size = 24 }) => {
 export const StarRatingShow = (props) => {
     return (
         <>
-            <StarRatings count={5} size={15} value={+props.value} />
+            <StarRatings count={5} value={+props.value} />
         </>
     );
 };

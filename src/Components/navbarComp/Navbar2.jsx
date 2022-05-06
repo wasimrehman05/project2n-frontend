@@ -1,17 +1,15 @@
 import React, { useState } from "react";
-import { useSelector } from "react-redux";
-import { Link, useNavigate } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { Link, useNavigate, useLocation } from "react-router-dom";
 import "./Nav2.css";
 import { AppliancesSec } from "./AppliancesSec";
 import Makeup from "./Makeup";
 import { NykaFashion } from "./NykaFashion";
-
 import styled from "styled-components";
 import { Cart } from "../Cart_Page/Cart";
 import { Skin } from "./Skin";
 import { NykaNetwork } from "./NykaNetwork";
-// import { SearchIcon } from "@heroicons/react/outline"
-// import { Brands } from './navbarComp/Brands'
+import { last, reloadBag } from "../../Redux/action";
 
 const Div = styled.div`
     width: 100%;
@@ -24,11 +22,14 @@ const Div = styled.div`
 
     .transparent {
         width: 74%;
+        dispaly: block;
         height: 100%;
         opacity: 40%;
         background-color: #000;
-    }
 
+        
+    }
+    
     .display {
         width: 26%;
         min-width:400px;
@@ -42,7 +43,7 @@ const Div = styled.div`
         -ms-overflow-style: none;
         scrollbar-width: none;
         // text-align: justify;
-
+        
         & > header {
             width: 24.85%;
             min-width:400px;
@@ -52,8 +53,8 @@ const Div = styled.div`
             background-color: white;
             position: fixed;
             box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px,
-                rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
-
+            rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+            
             & > button {
                 margin-left: 1%;
                 border: none;
@@ -79,7 +80,7 @@ const Div = styled.div`
             & > .total_price {
                 background-color: white;
                 box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-
+                
                 & > div:nth-child(1) {
                     padding: 0.8rem 0;
                     font-weight: 600;
@@ -99,7 +100,7 @@ const Div = styled.div`
                         }
                     }
                 }
-
+                
                 & > div:nth-child(3) {
                     background-color: white;
                     padding-bottom: 1rem;
@@ -117,7 +118,7 @@ const Div = styled.div`
                         outline: none;
                         border: none;
                     }
-
+                    
                     & > button {
                         height: 35.1px;
                         cursor: pointer;
@@ -136,7 +137,7 @@ const Div = styled.div`
                 }
             }
         }
-
+        
         & > footer {
             width: 24.85%;
             min-width:400px;
@@ -174,7 +175,6 @@ const Div = styled.div`
                 color: white;
                 background-color: rgb(252, 39, 121);
             }
-
             
     }
     @media all and (max-width: 1280px) {
@@ -202,12 +202,13 @@ const Div = styled.div`
             width: 45%;
         }
     }
-    @media all and (max-width: 480px) {
+    @media all and (max-width: 500px) {
         .transparent {
-            width: 50%;
+            width: 0%;
+            display: none;
         }
         .display {
-            width: 50%;
+            width: 100%;
         }
     }
 `;
@@ -216,7 +217,9 @@ export const Navbar2 = () => {
     const cartProducts = useSelector((state) => state.cartProducts);
     const [showBag, setShowBag] = useState(false);
 
+    const Dispatch = useDispatch();
     const Navigate = useNavigate();
+    const location = useLocation();
 
     let body = document.querySelector("body");
 
@@ -240,6 +243,22 @@ export const Navbar2 = () => {
         setShowBag(false);
         Navigate("/checkout");
     };
+
+    const handleLogin = () => {
+        Dispatch(last(`${location.pathname}`));
+        Navigate("/login");
+    };
+
+    let name = localStorage.getItem("isLogin");
+    let loginData = JSON.parse(localStorage.getItem("loginData"));
+
+    const logOut = () => {
+        localStorage.setItem("isLogin", false);
+        localStorage.setItem("loginData", JSON.stringify({}));
+        Dispatch(reloadBag([]));
+        Navigate("/");
+    };
+
     return (
         <>
             {showBag && (
@@ -249,58 +268,92 @@ export const Navbar2 = () => {
                         <header>
                             <button onClick={() => setShowBag(false)}>❮</button>{" "}
                             <button>
-                                Shopping Bag ({cartProducts.length})
+                                Shopping Bag
+                                {cartProducts.length > 0
+                                    ? `(${cartProducts.length})`
+                                    : ""}
                             </button>
                         </header>
-                        <div>
-                            <Cart />
-                            <div className="total_price">
-                                <div>Payment Details</div>
-                                <div>
-                                    <p>
-                                        <span>Bag Total</span>
-                                        <span>₹{price}</span>
-                                    </p>
-                                    <p>
-                                        <span>Bag Discount</span>
-                                        <span>-₹{discont}</span>
-                                    </p>
-                                    <p>
-                                        <span>Sub Total</span>
-                                        <span>₹{off_price}</span>
-                                    </p>
-                                    <p>
-                                        <span>Shipping Charge</span>
-                                        <span>🛈 Free</span>
-                                    </p>
-                                    <h3>
-                                        <span>Grand Total</span>
-                                        <span>₹{off_price}</span>
-                                    </h3>
-                                </div>
-                                <div>
-                                    <input
-                                        type="text"
-                                        placeholder="Have a coupon?"
-                                    />
-                                    <button>Views Coupon</button>
-                                    <div></div>
+                        {cartProducts.length > 0 ? (
+                            <div>
+                                <Cart />
+                                <div className="total_price">
+                                    <div>Payment Details</div>
+                                    <div>
+                                        <p>
+                                            <span>Bag Total</span>
+                                            <span>₹{price}</span>
+                                        </p>
+                                        <p>
+                                            <span>Bag Discount</span>
+                                            <span>-₹{discont}</span>
+                                        </p>
+                                        <p>
+                                            <span>Sub Total</span>
+                                            <span>₹{off_price}</span>
+                                        </p>
+                                        <p>
+                                            <span>Shipping Charge</span>
+                                            <span>🛈 Free</span>
+                                        </p>
+                                        <h3>
+                                            <span>Grand Total</span>
+                                            <span>₹{off_price}</span>
+                                        </h3>
+                                    </div>
+                                    <div>
+                                        <input
+                                            type="text"
+                                            placeholder="Have a coupon?"
+                                        />
+                                        <button>Views Coupon</button>
+                                        <div></div>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <footer>
-                            <button>
-                                <p>Grand Total:</p>
-                                <p>₹{off_price}</p>
-                            </button>
-                            <button onClick={proceedToCheckout}>
-                                Procced ❯
-                            </button>
-                        </footer>
+                        ) : (
+                            <div>
+                                <i
+                                    className=" fa fa-light fa-bag-shopping"
+                                    style={{
+                                        fontSize: "170px",
+                                        marginTop: "50px",
+                                        color: "rgb(205,205,205)",
+                                    }}
+                                ></i>
+                                <p>Your Shopping Bag is empty</p>
+                                <button
+                                    onClick={() => setShowBag(false)}
+                                    style={{
+                                        width: "40%",
+                                        height: "40px",
+                                        fontSize: "15px",
+                                        border: "none",
+                                        color: "white",
+                                        backgroundColor: "rgb(252, 39, 121)",
+                                        boxShadow:
+                                            "rgba(0, 0, 0, 0.24) 0px 3px 8px",
+                                    }}
+                                >
+                                    Start Shopping ᐳ
+                                </button>
+                            </div>
+                        )}
+                        {cartProducts.length > 0 && (
+                            <footer>
+                                <button>
+                                    <p>Grand Total:</p>
+                                    <p>₹{off_price}</p>
+                                </button>
+                                <button onClick={proceedToCheckout}>
+                                    Procced ❯
+                                </button>
+                            </footer>
+                        )}
                     </div>
                 </Div>
             )}
-            <div>
+            <div className="navvbarr">
                 <div className="navbar5">
                     <div className="uppperNav" style={{ height: "40px" }}>
                         <div className="offer-banner" style={{ width: "100%" }}>
@@ -308,13 +361,13 @@ export const Navbar2 = () => {
                                 className="right-div"
                                 style={{
                                     float: "right",
-                                    width: "500px",
+                                    width: "100%",
                                     height: "40px",
                                 }}
                             >
                                 <ul
                                     style={{
-                                        marginTop: "-6px",
+                                        marginTop: "3px",
                                         display: "inline-block",
                                     }}
                                 >
@@ -412,7 +465,7 @@ export const Navbar2 = () => {
                                     height: "100px",
                                     width: "100%",
                                     display: "block",
-                                    marginTop: "-20px",
+                                    marginTop: "-30px",
                                 }}
                             />
                         </Link>
@@ -459,112 +512,124 @@ export const Navbar2 = () => {
                             </button>
                             <div className="subnav-content"></div>
                         </div>
-                    </div>
 
-                    <div
-                        className="search-div"
-                        style={{
-                            float: "left",
-                            marginTop: "10px",
-                            padding: "0.6%",
-                        }}
-                    >
-                        <svg
-                            width="20"
-                            height="20"
-                            viewBox="0  0 24 24"
-                            opacity="48%"
-                            fill="none"
-                            xmlns="http://www.w3.org/2000/svg"
-                        >
-                            <path
-                                d="M21.54 19.97L16.3 14.73C17.36 13.44 17.99 11.79 17.99 9.99C17.99 5.85 14.64 2.5 10.5 2.5C6.35 2.5 3 5.85 3 9.99C3 14.13 6.35 17.48 10.49 17.48C12.29 17.48 13.94 16.84 15.23 15.79L20.47 21.03C20.62 21.18 20.81 21.25 21 21.25C21.19 21.25 21.38 21.18 21.53 21.03C21.83 20.74 21.83 20.26 21.54 19.97ZM10.49 15.98C7.19 15.98 4.5 13.29 4.5 9.99C4.5 6.69 7.19 4 10.49 4C13.79 4 16.48 6.69 16.48 9.99C16.48 13.3 13.8 15.98 10.49 15.98Z"
-                                fill="black"
-                            ></path>
-                        </svg>
-                        <path
-                            d="M21.54 19.97L16.3 14.73C17.36 13.44 17.99 11.79 17.99 9.99C17.99 5.85 14.64 2.5 10.5 2.5C6.35 2.5 3 5.85 3 9.99C3 14.13 6.35 17.48 10.49 17.48C12.29 17.48 13.94 16.84 15.23 15.79L20.47 21.03C20.62 21.18 20.81 21.25 21 21.25C21.19 21.25 21.38 21.18 21.53 21.03C21.83 20.74 21.83 20.26 21.54 19.97ZM10.49 15.98C7.19 15.98 4.5 13.29 4.5 9.99C4.5 6.69 7.19 4 10.49 4C13.79 4 16.48 6.69 16.48 9.99C16.48 13.3 13.8 15.98 10.49 15.98Z"
-                            fill="black"
-                        ></path>
-                        {/* <i className="fa fa-light fa-magnifying-glass"  style={{fontSize:"20px", opacity:"48", fill:"grey"}}></i> */}
-                        <input
-                            type="text"
-                            className="search"
-                            placeholder="Search on Nykaa"
+                        {/*               */}
+                        <div
+                            className="search-div"
                             style={{
-                                border: "none",
-                                width: "150px",
-                                outline: "none",
-                                background: "transparent",
+                                float: "left",
+                                marginTop: "12px",
+                                padding: "0.5%",
+                                height: "2rem",
                             }}
-                        />
-                    </div>
+                        >
+                            <img
+                                src="https://cdn1.iconfinder.com/data/icons/hawcons/32/698956-icon-111-search-256.png"
+                                alt="search"
+                                style={{
+                                    width: "30px",
+                                    marginBottom: "-10px",
+                                }}
+                            />
+                            <input
+                                type="text"
+                                className="search"
+                                placeholder=" Search on Nykaa"
+                                style={{
+                                    border: "none",
+                                    width: "55%",
+                                    outline: "none",
+                                    background: "transparent",
+                                }}
+                            />
+                        </div>
 
-                    <div className="dropdown">
-                        <p>
-                            <i
-                                className="fa-regular fa-user dropbtn"
-                                style={{ marginRight: "5px" }}
-                            ></i>
-                            Account
-                        </p>
-                        <div className="dropdown-content">
-                            <p>
+                        <div className="dropdown">
+                            <div className="accInfo">
                                 <i
-                                    className=" fa fa-regular fa-book-bookmark"
+                                    className="fa-regular fa-user dropbtn"
                                     style={{
-                                        marginRight: "10px",
-                                        height: "20px",
+                                        marginRight: "5px",
+                                        marginTop: "18px",
+                                        marginLeft: "-10px",
                                     }}
+                                    onClick={handleLogin}
                                 ></i>
-                                Orders
-                            </p>
-                            <p href="#">
-                                {" "}
-                                <i
-                                    style={{
-                                        marginRight: "10px",
-                                        height: "20px",
-                                    }}
-                                    className="fa-regular fa-user"
-                                ></i>{" "}
-                                Profile
-                            </p>
-                            <p href="#">
-                                {" "}
-                                <i
-                                    style={{ marginRight: "10px" }}
-                                    className="fa fa-wallet fa-light"
-                                ></i>{" "}
-                                Wallet
-                            </p>
-                            <p>
-                                <i
-                                    className="fa-regular fa-heart"
-                                    style={{ marginRight: "10px" }}
-                                ></i>{" "}
-                                Favourite
-                            </p>
-                            <p>
-                                <i
-                                    className="fa fa-light fa-power-off"
-                                    style={{ marginRight: "10px" }}
-                                ></i>{" "}
-                                Log Out
-                            </p>
-                        </div>
-                        <div>
-                            <i
-                                onClick={() => setShowBag(true)}
-                                className=" fa fa-light fa-bag-shopping"
-                                style={{ marginLeft: "170px", color: "black" }}
-                            >
-                                {cartProducts.length}
-                            </i>
-                        </div>
-                    </div>
+                                {name === "true"
+                                    ? `${loginData.name.split(" ")[0]}`
+                                    : "Account"}
+                                {name === "true" && (
+                                    <div className="dropdown-content">
+                                        <p>
+                                            <i
+                                                className=" fa fa-regular fa-bookmark"
+                                                style={{
+                                                    marginRight: "10px",
+                                                    height: "20px",
+                                                }}
+                                            ></i>
+                                            Orders
+                                        </p>
+                                        <p href="#">
+                                            {" "}
+                                            <i
+                                                style={{
+                                                    marginRight: "10px",
+                                                    height: "20px",
+                                                }}
+                                                className="fa-regular fa-user"
+                                            ></i>{" "}
+                                            Profile
+                                        </p>
+                                        <p href="#">
+                                            {" "}
+                                            <i
+                                                style={{ marginRight: "10px" }}
+                                                className="fa fa-wallet fa-light"
+                                            ></i>{" "}
+                                            Wallet
+                                        </p>
+                                        <p>
+                                            <i
+                                                className="fa-regular fa-heart"
+                                                style={{ marginRight: "10px" }}
+                                            ></i>{" "}
+                                            Favourite
+                                        </p>
+                                        <button
+                                            className="logOutbtn"
+                                            onClick={logOut}
+                                        >
+                                            <i
+                                                className="fa fa-light fa-power-off"
+                                                style={{
+                                                    marginRight: "10px",
+                                                }}
+                                            ></i>{" "}
+                                            Log Out
+                                        </button>
+                                    </div>
+                                )}
+                            </div>
 
-                    <div></div>
+                            <p>
+                                <i
+                                    onClick={() => setShowBag(true)}
+                                    className=" fa fa-light fa-bag-shopping"
+                                    style={{
+                                        marginLeft: "170px",
+                                        marginTop: "15px",
+                                        color: "black",
+                                    }}
+                                >
+                                    {cartProducts.length > 0
+                                        ? cartProducts.length
+                                        : ""}
+                                </i>
+                            </p>
+                        </div>
+                        {/*               */}
+                    </div>
                 </div>
 
                 <div className="navbar-2">

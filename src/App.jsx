@@ -10,6 +10,9 @@ import { useDispatch } from "react-redux";
 import { getCartData, getData, showItem } from "./Redux/action";
 import { Checkout } from "./Components/Checkout/Checkout";
 import { ThankYou } from "./Components/ThankYou";
+import { Login } from "./Components/Login/Login";
+import { LoginCheck } from "./Components/Login/LoginCheck";
+import { Register } from "./Components/Login/Register";
 
 function App() {
     // const [allData, setAllData] = useState({});
@@ -37,6 +40,9 @@ function App() {
                 <Route path={"/item/:id"} element={<Item />}></Route>
                 <Route path={"/checkout"} element={<Checkout />}></Route>
                 <Route path={"/thankyou"} element={<ThankYou />}></Route>
+                <Route path={"/login"} element={<Login />}></Route>
+                <Route path={"/verify"} element={<LoginCheck />}></Route>
+                <Route path={"/register"} element={<Register />}></Route>
             </Routes>
         </div>
     );

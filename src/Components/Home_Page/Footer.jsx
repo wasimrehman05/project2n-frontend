@@ -1,9 +1,9 @@
+import axios from "axios";
 import React from "react";
+import { API_KEY } from "../../config";
 import "./Home.css";
 
 export const Footer = () => {
-    const baseUrl = "https://nykaa-data.herokuapp.com/";
-    const footer = `${baseUrl}footer`;
     const [data, setData] = React.useState([]);
 
     React.useEffect(() => {
@@ -11,12 +11,9 @@ export const Footer = () => {
     }, []);
 
     const getFooter = () => {
-        fetch(footer)
-            .then((res) => (res = res.json()))
-            .then((res) => {
-                setData(res);
-            });
-        // console.log(data);
+        axios.get(`${API_KEY}/footers`).then((res) => {
+            setData(res.data);
+        });
     };
 
     return (
@@ -109,7 +106,7 @@ export const Footer = () => {
                                 if (item.name === "nyka") {
                                     return (
                                         <p
-                                            key={item.text}
+                                            key={item._id}
                                             className="footer-text"
                                         >
                                             {item.text}
@@ -129,7 +126,7 @@ export const Footer = () => {
                                 if (item.name === "help") {
                                     return (
                                         <p
-                                            key={item.text}
+                                            key={item._id}
                                             className="footer-text"
                                         >
                                             {item.text}
@@ -149,7 +146,7 @@ export const Footer = () => {
                                 if (item.name === "inspireMe") {
                                     return (
                                         <p
-                                            key={item.text}
+                                            key={item._id}
                                             className="footer-text"
                                         >
                                             {item.text}
@@ -169,7 +166,7 @@ export const Footer = () => {
                                 if (item.name === "quicklinks") {
                                     return (
                                         <p
-                                            key={item.text}
+                                            key={item._id}
                                             className="footer-text"
                                         >
                                             {item.text}
@@ -189,7 +186,7 @@ export const Footer = () => {
                                 if (item.name === "topcategories") {
                                     return (
                                         <p
-                                            key={item.text}
+                                            key={item._id}
                                             className="footer-text"
                                         >
                                             {item.text}

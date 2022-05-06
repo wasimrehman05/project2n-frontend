@@ -64,22 +64,14 @@ export const Sort = () => {
     }
     const [status, setStatus] = useState(true);
 
-    const sortfunc = (e) => {
-        // let option = document.getElementsByName("toSort");
+    const sortfunc = (tar) => {
 
         setStatus(false);
-        let toSort = e.value;
-        if (e.checked === false) {
+        let toSort = tar.value;
+        if (tar.checked === false) {
             setStatus(true);
             toSort = "Popularity";
         }
-
-        // for (var i = 0; i < option.size; i++) {
-        //     if (option[i].value != e.value) {
-        //         option[i].checked = false;
-        //     }
-        //     console.log(option[i].value);
-        // }
 
         var arr = [...data];
 

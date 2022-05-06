@@ -7,6 +7,8 @@ import {
     UPDATE_QUANTITY,
     DELETE_FROM_BAG,
     SET_USER,
+    LAST,
+    EMPTY_BAG,
 } from "./action";
 
 const initState = {
@@ -15,6 +17,7 @@ const initState = {
     filter: [],
     cartProducts: [],
     user: {},
+    last: "/",
 };
 
 export const reducer = (store = initState, action) => {
@@ -22,7 +25,7 @@ export const reducer = (store = initState, action) => {
         case STORE_DATA:
             return {
                 ...store,
-                products: action.payload.products,
+                products: action.payload,
             };
         case SHOW_ITEM:
             return {
@@ -48,7 +51,7 @@ export const reducer = (store = initState, action) => {
             let updatedarr = [...store.cartProducts];
 
             updatedarr.map((ele) => {
-                if (ele.id === action.payload.id) {
+                if (ele._id === action.payload.id) {
                     ele.quan = action.payload.val;
                 }
             });
@@ -59,7 +62,7 @@ export const reducer = (store = initState, action) => {
             };
         case DELETE_FROM_BAG:
             const updated_arr = store.cartProducts.filter((item) => {
-                return item.id !== action.payload;
+                return item._id !== action.payload;
             });
             return {
                 ...store,
@@ -69,6 +72,16 @@ export const reducer = (store = initState, action) => {
             return {
                 ...store,
                 user: action.payload,
+            };
+        case LAST:
+            return {
+                ...store,
+                last: action.payload,
+            };
+        case EMPTY_BAG:
+            return {
+                ...store,
+                cartProducts: action.payload,
             };
         default:
             return store;

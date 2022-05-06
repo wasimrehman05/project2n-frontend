@@ -2,6 +2,7 @@ import axios from "axios";
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import styled from "styled-components";
+import { API_KEY } from "../../config";
 import { deleteFromBag, updateQuan } from "../../Redux/action";
 
 const Div = styled.div`
@@ -58,7 +59,7 @@ const Div = styled.div`
                 font-size: 18px;
             }
         }
-        & select:avtive {
+        & select:active {
             border: none;
         }
         & select option:disabled {
@@ -74,19 +75,33 @@ export const Cart = () => {
 
     //changing quantities
 
+    // http://localhost:3006/addtocart
+
+    let loginData = JSON.parse(localStorage.getItem("loginData"));
+
     const changeQuantity = (val, id) => {
         // console.log(val, id);
+        val = parseInt(val);
+        let body = {
+            uid: loginData._id,
+            pid: id,
+            num: val,
+        };
+
+        // console.log(body);
 
         axios
-            .patch(`https://nykaa-data.herokuapp.com/cartProducts/${id}`, {
-                quan: val,
-            })
+            .post(`${API_KEY}/updateCart`, body)
             .then((res) => dispatch(updateQuan({ val, id })));
     };
 
     const deleteItem = (id) => {
+        let body = {
+            uid: loginData._id,
+            pid: id,
+        };
         axios
-            .delete(`https://nykaa-data.herokuapp.com/cartProducts/${id}`)
+            .post(`${API_KEY}/deleteitem`, body)
             .then((res) => dispatch(deleteFromBag(id)));
     };
 
@@ -105,7 +120,7 @@ export const Cart = () => {
                             <img
                                 src="https://cdn4.iconfinder.com/data/icons/linecon/512/delete-128.png"
                                 alt="delete"
-                                onClick={() => deleteItem(item.id)}
+                                onClick={() => deleteItem(item._id)}
                             />
                         </div>
                     </div>
@@ -116,7 +131,7 @@ export const Cart = () => {
                             <select
                                 name="quan"
                                 onChange={(e) =>
-                                    changeQuantity(e.target.value, item.id)
+                                    changeQuantity(e.target.value, item._id)
                                 }
                             >
                                 <option

@@ -3,10 +3,11 @@ import axios from "axios";
 import { useSelector, useDispatch } from "react-redux";
 import { StarRatingShow } from "../Products_Page/StarRatings";
 import photo from "./Capture.PNG";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { addingToBag } from "../../Redux/action";
 import { Navbar2 } from "../navbarComp/Navbar2";
 import { Footer } from "../Home_Page/Footer";
+import { API_KEY } from "../../config";
 
 export const Item = () => {
     const [change, setChange] = useState(false);
@@ -20,7 +21,8 @@ export const Item = () => {
 
     const [itemphoto, setItemPhoto] = useState(item.image1);
 
-    // Add to cart
+    let loginData = JSON.parse(localStorage.getItem("loginData"));
+
     const addtobag = (item) => {
         setCartstatus(true);
         for (var i = 0; i < cartProducts.length; i++) {
@@ -29,8 +31,10 @@ export const Item = () => {
                 return;
             }
         }
+
+        item.userId = loginData._id;
         axios
-            .post("https://nykaa-data.herokuapp.com/cartProducts", item)
+            .post(`${API_KEY}/addtocart`, item)
             .then((res) => dispatch(addingToBag(item)));
     };
 

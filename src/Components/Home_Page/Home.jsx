@@ -1,127 +1,67 @@
-// import "./Home.css";
 import "./Home.css";
 import { useState, useEffect } from "react";
-// import {Carousels} from "./Carousels";
 import { Footer } from "./Footer";
 import { Navbar2 } from "../navbarComp/Navbar2";
+import axios from "axios";
+import { API_KEY } from "../../config";
 
 export const Home = () => {
-    const baseUrl = "https://nykaa-data.herokuapp.com/";
-    const trending = `${baseUrl}trendingStores`;
+    // const baseUrl = "https://nykaa-data.herokuapp.com/";
+    // const trending = `${baseUrl}trendingStores`;
 
     const [topbrands, setTopbrands] = useState([]);
     const [OnlyatNykaa, setOnlyatNykaa] = useState([]);
     const [TrendingStores, setTrendingStores] = useState([]);
     const [FeaturedBrands, setFeaturedBrands] = useState([]);
-    const [BudgetBuys, setBudgetBuys] = useState([]);
-    const [HiddenGems, setHiddenGems] = useState([]);
-    const [EditorsChoice, setEditorsChoice] = useState([]);
 
     useEffect(() => {
         getTopbrands();
         getOnlyatNykaa();
         getTrendingStores();
         getFeaturedBrands();
-        getBudgetBuys();
-        getHiddenGems();
-        getEditorsChoice();
     }, []);
 
     const getTopbrands = () => {
-        fetch("https://nykaa-data.herokuapp.com/topbrands")
-            .then((res) => (res = res.json()))
-            .then((res) => setTopbrands(res));
+        axios.get(`${API_KEY}/topBrands`).then((res) => setTopbrands(res.data));
     };
 
     const getOnlyatNykaa = () => {
-        fetch("https://nykaa-data.herokuapp.com/onlyAtNykaa")
-            .then((res) => (res = res.json()))
-            .then((res) => setOnlyatNykaa(res));
+        axios
+            .get(`${API_KEY}/OnlyAtNykaa`)
+            .then((res) => setOnlyatNykaa(res.data));
     };
 
     const getTrendingStores = () => {
-        fetch(trending)
-            .then((res) => (res = res.json()))
-            .then((res) => setTrendingStores(res));
+        axios
+            .get(`${API_KEY}/trendingStores`)
+            .then((res) => setTrendingStores(res.data));
     };
 
     const getFeaturedBrands = () => {
-        fetch("https://nykaa-data.herokuapp.com/featuredBrands")
-            .then((res) => (res = res.json()))
-            .then((res) => setFeaturedBrands(res));
+        axios
+            .get(`${API_KEY}/featuredBrands`)
+            .then((res) => setFeaturedBrands(res.data));
     };
-
-    const getBudgetBuys = () => {
-        fetch(" https://nykaa-data.herokuapp.com/budgetBuys")
-            .then((res) => (res = res.json()))
-            .then((res) => setBudgetBuys(res));
-    };
-
-    const getHiddenGems = () => {
-        fetch("https://nykaa-data.herokuapp.com/hiddenGems")
-            .then((res) => (res = res.json()))
-            .then((res) => setHiddenGems(res));
-    };
-
-    const getEditorsChoice = () => {
-        fetch("https://nykaa-data.herokuapp.com/editorsChoice")
-            .then((res) => (res = res.json()))
-            .then((res) => setEditorsChoice(res));
-    };
-
     return (
         <>
             <Navbar2 />
             <div>
-                {/* <Navbar /> */}
                 <div className="home-container">
-                    {/* <Carousels /> */}
-                    {/* <div>
-                        <img
-                            src="https://images-static.nykaa.com/uploads/db9f968e-665c-4633-8bdd-8906a97a7f6a.jpg?tr=w-1200,cm-pad_resize"
-                            alt=""
-                        />
-                    </div> */}
                     <h1 className="home-heading">Top Brands</h1>
                     <div className="top-brands">
                         {topbrands.map((item) => (
-                            <div key={item.id}>
+                            <div key={item._id}>
                                 <div>
                                     <div className="card-block">
                                         <div
+                                            className="card-img"
                                             style={{
                                                 backgroundImage: `url(${item.img})`,
-                                                width: "100%",
-                                                height: "300px",
-                                                backgroundRepeat: "no-repeat",
-                                                backgroundSize: "700px 400px",
-                                                borderRadius: "5px",
-                                                display: "block",
                                             }}
                                         ></div>
                                     </div>
-                                    <div
-                                        className="offer-desc"
-                                        style={{
-                                            marginTop: "-80px",
-                                            backgroundColor: "white",
-                                            width: "95%",
-                                            height: "80px",
-                                            marginLeft: "17px",
-                                            borderRadius: "5px",
-                                            paddingTop: "0.5%",
-                                        }}
-                                    >
-                                        <p
-                                            style={{
-                                                // marginTop: "-rem",
-                                                color: "#fc2779",
-                                                fontSize: "22px",
-                                                // marginTop: "1rem",
-                                            }}
-                                        >
-                                            {item.desc1}
-                                        </p>
+                                    <div className="offer-desc">
+                                        <p>{item.desc1}</p>
                                         <p>{item.desc2}</p>
                                     </div>
                                 </div>
@@ -132,42 +72,17 @@ export const Home = () => {
                     <h1 className="home-heading">Only At Nykaa</h1>
                     <div className="only-at-nykaa">
                         {OnlyatNykaa.map((item) => (
-                            <div key={item.id}>
+                            <div key={item._id}>
                                 <div className="card-block">
                                     <div
+                                        className="card-img"
                                         style={{
                                             backgroundImage: `url(${item.img})`,
-                                            width: "100%",
-                                            height: "300px",
-                                            backgroundRepeat: "no-repeat",
-                                            backgroundSize: "700px 400px",
-                                            borderRadius: "5px",
-                                            display: "block",
                                         }}
-                                    >
-                                        {/* <img src={item.img} alt="" /> */}
-                                    </div>
+                                    ></div>
                                 </div>
-                                <div
-                                    className="offer-desc"
-                                    style={{
-                                        marginTop: "-80px",
-                                        backgroundColor: "white",
-                                        width: "95%",
-                                        height: "80px",
-                                        marginLeft: "17px",
-                                        borderRadius: "5px",
-                                        paddingTop: "0.5%",
-                                    }}
-                                >
-                                    <p
-                                        style={{
-                                            color: "#fc2779",
-                                            fontSize: "22px",
-                                        }}
-                                    >
-                                        {item.desc1}
-                                    </p>
+                                <div className="offer-desc">
+                                    <p>{item.desc1}</p>
                                     <p>{item.desc2}</p>
                                 </div>
                             </div>
@@ -177,7 +92,7 @@ export const Home = () => {
                     <h1 className="home-heading">Trending Store and Offers</h1>
                     <div className="trending-store">
                         {TrendingStores.map((item) => (
-                            <div key={item.id}>
+                            <div key={item._id}>
                                 <div
                                     style={{ display: "block" }}
                                     className="card-block"
@@ -194,55 +109,19 @@ export const Home = () => {
                         style={{ marginBottom: "60px" }}
                     >
                         {FeaturedBrands.map((item) => (
-                            <div key={item.id}>
-                                <div className="card-block">
+                            <div key={item._id}>
+                                <div className="card-block card-f">
                                     <div
+                                        className="card-img"
                                         style={{
                                             backgroundImage: `url(${item.img})`,
-                                            width: "100%",
-                                            height: "300px",
-                                            backgroundRepeat: "no-repeat",
-                                            backgroundSize: "700px 400px",
-                                            borderRadius: "5px",
-                                            display: "block",
                                         }}
                                     ></div>
                                 </div>
-                                <div
-                                    className="offer-desc"
-                                    style={{
-                                        marginTop: "-80px",
-                                        backgroundColor: "white",
-                                        width: "100%",
-                                        height: "80px",
-                                        lineHeight: "0.5em",
-                                        borderRadius: "5px",
-                                        paddingTop: "0.1px",
-                                    }}
-                                >
-                                    <a
-                                        href=""
-                                        style={{ textDecoration: "none" }}
-                                    >
-                                        <p
-                                            style={{
-                                                color: "#fc2779",
-                                                fontSize: "17px",
-                                            }}
-                                        >
-                                            {item.desc1}
-                                        </p>
+                                <div className="offer-desc">
+                                    <p>{item.desc1}</p>
 
-                                        <p
-                                            style={{
-                                                fontSize: "14px",
-                                                color: "black",
-                                                lineHeight: "1.5em",
-                                            }}
-                                        >
-                                            {item.desc2}
-                                        </p>
-                                    </a>
+                                    <p className="p">{item.desc2}</p>
                                 </div>
                             </div>
                         ))}
