@@ -55,6 +55,11 @@ export const empty_bag = (payload) => ({
 });
 
 export const getData = (val) => (dispatch) => {
+    let isLogin = localStorage.getItem("isLogin");
+    if (isLogin === null) {
+        localStorage.setItem("isLogin", false);
+        localStorage.setItem("loginData", JSON.stringify({}));
+    }
     if (val === undefined) {
         val = 1;
     }
