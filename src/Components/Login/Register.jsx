@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import { useNavigate } from "react-router-dom";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import axios from "axios";
 import { getCartData } from "../../Redux/action";
 import { API_KEY } from "../../config";
@@ -113,6 +113,14 @@ const Div = styled.div`
             background-color: rgb(252, 39, 121);
             border: 1px solid rgb(252, 39, 121);
         }
+
+        @media all and (max-width: 500px) {
+            margin-top: 10px;
+        }
+        @media all and (max-width: 300px) {
+            margin-top: 0px;
+            width: 100%;
+        }
     }
 `;
 
@@ -125,6 +133,7 @@ export const Register = () => {
         password: "",
     });
     const Navigate = useNavigate();
+    const dispatch = useDispatch();
 
     const handleInput = (e) => {
         const { id } = e.target;
@@ -138,8 +147,7 @@ export const Register = () => {
     };
 
     const signUp = () => {
-        console.log(input);
-        axios.post(`${API_KEY}/signUn`, input).then((res) => {
+        axios.post(`${API_KEY}/signUp`, input).then((res) => {
             if (res.data.length === 0) {
                 alert("Something Went Wrong");
                 Navigate("/register");
@@ -147,8 +155,10 @@ export const Register = () => {
                 alert("Register Successful");
                 alert("Login Successful");
                 localStorage.setItem("isLogin", true);
-                localStorage.setItem("loginData", JSON.stringify(res.data[0]));
-                getCartData();
+                let data = { ...res.data[0] };
+                delete data.password;
+                localStorage.setItem("loginData", JSON.stringify(data));
+                dispatch(getCartData());
                 Navigate(`${last}`);
             }
         });

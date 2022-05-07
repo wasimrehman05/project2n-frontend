@@ -5,6 +5,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { filterData } from "../../Redux/action";
 
 const FilterDiv = styled.div`
+    position: -webkit-sticky;
     position: sticky;
     top: 7.5rem;
     z-index: 1;
@@ -16,10 +17,6 @@ const SortCheck = styled.div`
     justify-content: space-between;
     background-color: white;
     padding: 0.8rem 1rem;
-
-    // & > input[type="checkbox"] {
-    //     border-radius: 50%;
-    // }
 `;
 const Hr2 = styled.div`
     width: 100%;
@@ -38,10 +35,6 @@ const Check = styled.div`
     justify-content: space-between;
     background-color: white;
     padding: 0.7rem 1rem 0.7rem 3rem;
-
-    // & > input[type="checkbox"] {
-    //     border-radius: 50%;
-    // }
 `;
 
 const Hr1 = styled.div`
@@ -65,7 +58,6 @@ export const Sort = () => {
     const [status, setStatus] = useState(true);
 
     const sortfunc = (tar) => {
-
         setStatus(false);
         let toSort = tar.value;
         if (tar.checked === false) {
@@ -150,14 +142,6 @@ export const Filter = () => {
     // let data;
 
     const data = useSelector((state) => state.products);
-
-    // const filter = useSelector((state) => state.filter);
-
-    // if (filter.length === 0) {
-    //     data = products;
-    // } else {
-    //     data = filter;
-    // }
 
     const dispatch = useDispatch();
 

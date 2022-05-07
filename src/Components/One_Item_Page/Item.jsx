@@ -97,21 +97,30 @@ export const Item = () => {
                     <div className="right">
                         <div className="right_upper">
                             <div className="inside_right_1">
-                                <div style={{ fontSize: "25px" }}>
-                                    {item.title}
-                                </div>
+                                <div>{item.title}</div>
                                 <div>
                                     <span>
-                                        <StarRatingShow
-                                            value={`${item.rating}`}
-                                        />
+                                        <div className="star">
+                                            <StarRatingShow
+                                                value={`${item.rating}`}
+                                            />
+                                        </div>
+                                        <div className="numStar">
+                                            {item.rating} ★
+                                        </div>
                                     </span>
                                     <span style={{ fontSize: "15px" }}>
                                         {item.rating}/5
                                     </span>
                                     <span style={{ fontWeight: "550" }}>
-                                        {item.ratingNum} ratings &{" "}
-                                        {item.reviews} reviews
+                                        <div className="ab500">
+                                            {item.ratingNum} ratings &{" "}
+                                            {item.reviews} reviews
+                                        </div>
+                                        <div className="bl500">
+                                            {" "}
+                                            based on {item.ratingNum} Ratings
+                                        </div>
                                     </span>
                                     <span style={{ fontWeight: "550" }}>
                                         Q&As
@@ -127,7 +136,10 @@ export const Item = () => {
                                         {" "}
                                         ₹{item.price}
                                     </span>
-                                    <span style={{ fontWeight: "bold" }}>
+                                    <span
+                                        className="off_pricw"
+                                        style={{ fontWeight: "bold" }}
+                                    >
                                         ₹{item.off_price}
                                     </span>
                                     <span style={{ color: "green" }}>
@@ -344,6 +356,30 @@ export const Item = () => {
                         </button>
                     </div>
                 </div>
+                <>
+                    {cartstatus ? (
+                        <div className="floatbtn" onMouseLeave={changeState}>
+                            <button
+                                style={{
+                                    backgroundColor: `${
+                                        cartmessage === "ADDED TO BAG"
+                                            ? "#f06418"
+                                            : "black"
+                                    }`,
+                                }}
+                            >
+                                {cartmessage}
+                            </button>
+                        </div>
+                    ) : (
+                        <div
+                            className="floatbtn"
+                            onClick={() => addtobag(item)}
+                        >
+                            <button>ADD TO BAG</button>
+                        </div>
+                    )}
+                </>
             </div>
             <Footer />
         </>

@@ -195,6 +195,7 @@ img {
 }
 
 .footer-container {
+    display: block;
     bottom: 0px;
     margin-bottom: -2rem;
     margin-top: 2rem;
@@ -307,5 +308,16 @@ img {
         text-align: left;
         margin-left: 5%;
         font-size: 20px;
+    }
+}
+.minifooter {
+    display: none;
+}
+@media all and (max-width: 500px) {
+    .footer-container {
+        display: none;
+    }
+    .minifooter {
+        display: block;
     }
 }

@@ -54,9 +54,15 @@ export const empty_bag = (payload) => ({
     payload,
 });
 
-export const getData = () => (dispatch) => {
+export const getData = (val) => (dispatch) => {
+    if (val === undefined) {
+        val = 1;
+    }
+    let body = {
+        limit: val,
+    };
     axios
-        .get(`${API_KEY}/products`)
+        .post(`${API_KEY}/products`, body)
         .then((res) => dispatch(storeData(res.data)));
 };
 

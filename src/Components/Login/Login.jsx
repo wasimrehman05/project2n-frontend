@@ -4,11 +4,16 @@ import G from "./G.PNG";
 import Google from "./Google.PNG";
 import styled from "styled-components";
 import { useNavigate } from "react-router-dom";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { GoogleLogin } from "react-google-login";
 import axios from "axios";
+import { API_KEY, CL_ID } from "../../config";
+import { getCartData } from "../../Redux/action";
+import { genPassword } from "./passwordGen";
 
 const Div = styled.div`
     top: 0;
+    width: 100%;
     min-height: 95vh;
     text-align: left;
 
@@ -80,12 +85,21 @@ const Div = styled.div`
                 width: 25%;
             }
         }
+
+        @media all and (max-width: 500px) {
+            margin-top: 10px;
+        }
+        @media all and (max-width: 300px) {
+            margin-top: 0px;
+            width: 100%;
+        }
     }
 `;
 
 export const Login = () => {
     const last = useSelector((state) => state.last);
     const Navigate = useNavigate();
+    const dispatch = useDispatch();
 
     const goBack = () => {
         Navigate(`${last}`);
@@ -95,13 +109,48 @@ export const Login = () => {
         Navigate("/verify");
     };
 
-    const googleAuth = () => {
-        // window.location.href = "http://localhost:3006/google";
-        // axios.get("http://localhost:3006/google").then((res) => {
-        //     window.location.href = "http://localhost:3000/";
-        //     console.log(res);
-        // });
-        alert("google Oauth");
+    const googleAuth = (req) => {
+        let body = {
+            id: req.profileObj.email,
+        };
+        axios.post(`${API_KEY}/signIn`, body).then((res) => {
+            if (res.data.length === 0) {
+                let genPass = genPassword();
+                let details = {
+                    name: req.profileObj.name,
+                    email: req.profileObj.email,
+                    phoneNumber: "-1",
+                    password: genPass,
+                };
+                axios.post(`${API_KEY}/signUp`, details).then((res) => {
+                    if (res.data.length === 0) {
+                        alert("Something Went Wrong");
+                        Navigate("/login");
+                    } else {
+                        alert("Register Successful");
+                        alert("Login Successful");
+                        localStorage.setItem("isLogin", true);
+                        let data = { ...res.data[0] };
+                        delete data.password;
+                        localStorage.setItem("loginData", JSON.stringify(data));
+                        dispatch(getCartData());
+                        Navigate(`${last}`);
+                    }
+                });
+            } else {
+                alert("Login Successful");
+                let data = { ...res.data[0] };
+                delete data.password;
+                localStorage.setItem("isLogin", true);
+                localStorage.setItem("loginData", JSON.stringify(data));
+                dispatch(getCartData());
+                Navigate(`${last}`);
+            }
+        });
+    };
+
+    const onFailuresucces = (res) => {
+        alert("Facing Issues");
     };
     return (
         <Div>
@@ -121,10 +170,20 @@ export const Login = () => {
                     Enter Phone Number or Email
                 </button>
                 <br />
-                <button className="lgn2" onClick={googleAuth}>
-                    <img src={G} alt="G-logo" />
-                    <img src={Google} alt="Google-logo" />
-                </button>
+                <GoogleLogin
+                    clientId={CL_ID}
+                    render={(renderProps) => (
+                        <button className="lgn2" onClick={renderProps.onClick}>
+                            <img src={G} alt="G-logo" />
+                            <img src={Google} alt="Google-logo" />
+                        </button>
+                    )}
+                    buttonText="Login"
+                    onSuccess={googleAuth}
+                    onFailure={onFailuresucces}
+                    cookiePolicy={"single_host_origin"}
+                />
+
                 {/* <div class="g-signin2" data-onsuccess="onSignIn"></div> */}
                 <p>
                     By continuing, you agree that you have read and accept

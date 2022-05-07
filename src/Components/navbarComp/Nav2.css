@@ -364,6 +364,10 @@
     display: block;
     width: 100vw;
 }
+.miniNavbbar {
+    display: none;
+    width: 100%;
+}
 
 @media all and (max-width: 1350px) {
     .nav-bar-wrapper {
@@ -420,5 +424,8 @@
 @media all and (max-width: 500px) {
     .navvbarr {
         display: none;
+    }
+    .miniNavbbar {
+        display: block;
     }
 }

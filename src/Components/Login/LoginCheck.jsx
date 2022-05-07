@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { getCartData } from "../../Redux/action";
 import { API_KEY } from "../../config";
 
@@ -69,6 +69,14 @@ const Div = styled.div`
             background-color: rgb(252, 39, 121);
             border: 1px solid rgb(252, 39, 121);
         }
+
+        @media all and (max-width: 500px) {
+            margin-top: 10px;
+        }
+        @media all and (max-width: 300px) {
+            margin-top: 0px;
+            width: 100%;
+        }
     }
 `;
 
@@ -82,6 +90,7 @@ export const LoginCheck = () => {
         password: "",
     });
     const Navigate = useNavigate();
+    const dispatch = useDispatch();
 
     const handleID = (e) => {
         const { name } = e.target;
@@ -118,9 +127,10 @@ export const LoginCheck = () => {
         if (data.password === pass.password) {
             alert("Login Successful");
             localStorage.setItem("isLogin", true);
+            delete data.password;
             localStorage.setItem("loginData", JSON.stringify(data));
             setData({});
-            getCartData();
+            dispatch(getCartData());
             Navigate(`${last}`);
         } else {
             alert("Invalid Credential");

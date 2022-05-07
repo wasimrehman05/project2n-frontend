@@ -1,12 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
 import { Footer } from "../Home_Page/Footer";
 import styled from "styled-components";
 import { ProductCard } from "./ProductCard";
 import { Sort, Filter } from "./Sort-Filter";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { Navbar2 } from "../navbarComp/Navbar2";
 import "./Products.css";
 import { SlideImg } from "./SlideImg";
+import { getData } from "../../Redux/action";
 // import { getCartData, getData } from "../../Redux/action";
 
 const Div = styled.div`
@@ -48,6 +49,31 @@ const Div = styled.div`
     }
 `;
 
+const DivBtn = styled.div`
+    bottom: 5px;
+    display: block;
+    width: 30%;
+    margin: auto;
+    margin-top: 20px;
+
+    & > button {
+        width: 15%;
+        margin-right: 20px;
+        aspect-ratio: 1/1;
+        border-radius: 50%;
+        font-size: 20px;
+        border: none;
+    }
+
+    @media all and (max-width: 500px) {
+        width: 50%;
+        margin-bottom: 20px;
+        & > button {
+            width: 20%;
+        }
+    }
+`;
+
 const P1 = styled.p`
     font-size: 1.7rem;
     margin-bottom: 3rem;
@@ -64,6 +90,9 @@ export const ProductsPage = () => {
 
     const products = useSelector((state) => state.products);
     const filter = useSelector((state) => state.filter);
+    const [page, setPage] = useState(1);
+
+    let dispatch = useDispatch();
 
     if (filter.length === 0) {
         data = products;
@@ -71,12 +100,18 @@ export const ProductsPage = () => {
         data = filter;
     }
 
+    const Pagination = (val) => {
+        setPage(val);
+
+        dispatch(getData(val));
+    };
+
     return (
         <>
             <Navbar2 />
             <Div>
                 <h2>
-                    Appliances <div>({data.length})</div>
+                    Appliances <div>({data.length > 0 ? 26 : 0})</div>
                 </h2>
                 <section>
                     <SlideImg />
@@ -109,6 +144,41 @@ export const ProductsPage = () => {
                         </div>
                         <ProductCard />
                     </div>
+                    <DivBtn className="pageBtn">
+                        <button
+                            onClick={() => Pagination(1)}
+                            style={{
+                                color: `${page === 1 ? "white" : "black"}`,
+                                backgroundColor: `${
+                                    page === 1 ? "rgb(250,90,152)" : "white"
+                                }`,
+                            }}
+                        >
+                            1
+                        </button>
+                        <button
+                            onClick={() => Pagination(2)}
+                            style={{
+                                color: `${page === 2 ? "white" : "black"}`,
+                                backgroundColor: `${
+                                    page === 2 ? "rgb(250,90,152)" : "white"
+                                }`,
+                            }}
+                        >
+                            2
+                        </button>
+                        <button
+                            onClick={() => Pagination(3)}
+                            style={{
+                                color: `${page === 3 ? "white" : "black"}`,
+                                backgroundColor: `${
+                                    page === 3 ? "rgb(250,90,152)" : "white"
+                                }`,
+                            }}
+                        >
+                            3
+                        </button>
+                    </DivBtn>
                 </section>
             </Div>
             <Footer />

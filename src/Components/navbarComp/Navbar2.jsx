@@ -10,7 +10,9 @@ import { Cart } from "../Cart_Page/Cart";
 import { Skin } from "./Skin";
 import { NykaNetwork } from "./NykaNetwork";
 import { last, reloadBag } from "../../Redux/action";
+import logo from "./nykaa-black.png";
 
+// Cart PAge
 const Div = styled.div`
     width: 100%;
     height: 100vh;
@@ -213,9 +215,138 @@ const Div = styled.div`
     }
 `;
 
+// Mini Navbar
+
+const Nav = styled.div`
+    width: 100%;
+    background-color: rgb(255, 255, 255);
+    z-index: 4;
+    position: fixed;
+
+    & > .nav-cont {
+        width: 95%;
+        height: 40px;
+        padding: 10px 0;
+        display: flex;
+        justify-content: space-between;
+        margin: auto;
+
+        & > .left-cont {
+            display: flex;
+            gap: 20px;
+
+            & > .Imglogo {
+                & > img {
+                    width: 90px;
+                }
+            }
+        }
+
+        .right-cont {
+            display: flex;
+            gap: 20px;
+            align-items: right;
+        }
+
+        & i {
+            margin-top: 7px;
+            font-size: 20px;
+        }
+    }
+
+    & > .searchbar {
+        width: 95%;
+        height: 40px;
+        margin: auto;
+
+        & > input {
+            width: 96%;
+            height: 30px;
+            border-radius: 3px;
+            background-color: rgb(247, 247, 247);
+            padding: 0 2%;
+            border: 1px solid rgb(229, 229, 229);
+        }
+    }
+`;
+
+const Menu = styled.div`
+    * {
+        box-sizing: border-box;
+    }
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    z-index: 5;
+    position: fixed;
+
+    & > .transparent {
+        width: 30%;
+        dispaly: block;
+        height: 100%;
+        opacity: 40%;
+        background-color: #000;
+    }
+    & > .contentblock {
+        width: 70%;
+        background-color: white;
+
+        & > .headblock {
+            width: 100%;
+            display: flex;
+            padding: 0 5%;
+            justify-content: space-between;
+            gap: 2%;
+            margin: auto;
+
+            & > div {
+                width: 48%;
+                margin-top: 3vh;
+                padding-bottom: 3vh;
+                font-size: 18px;
+                font-weight: 500;
+                border-bottom: 2px solid white;
+            }
+        }
+
+        & > .bodyblock {
+            width: 100%;
+            padding: 2vh 10% 0vh;
+            text-align: left;
+
+            & > .cat {
+                & > div {
+                    width: 100%;
+                    margin-top: 3vh;
+                    font-size: 17px;
+                    display: flex;
+                    justify-content: space-between;
+
+                    & > div:nth-child(2) {
+                        color: rgb(252, 39, 121);
+                    }
+                }
+            }
+
+            & > .brnd {
+                & > div {
+                    width: 100%;
+                    margin-top: 3vh;
+                    font-size: 17px;
+                }
+            }
+        }
+    }
+`;
+
 export const Navbar2 = () => {
     const cartProducts = useSelector((state) => state.cartProducts);
-    const [showBag, setShowBag] = useState(false);
+    const [showBag, setShowBag] = useState(false); //for Cart Page
+    let name = localStorage.getItem("isLogin");
+    let loginData = JSON.parse(localStorage.getItem("loginData"));
+
+    const [menu, setMenu] = useState(false); //for mini Navbar
+    const [cat, setCat] = useState(true); //for mini Navbar
 
     const Dispatch = useDispatch();
     const Navigate = useNavigate();
@@ -223,7 +354,7 @@ export const Navbar2 = () => {
 
     let body = document.querySelector("body");
 
-    if (showBag) {
+    if (showBag || menu) {
         body.setAttribute("style", "overflow: hidden");
     } else {
         body.setAttribute("style", "overflow: scroll");
@@ -246,17 +377,23 @@ export const Navbar2 = () => {
 
     const handleLogin = () => {
         Dispatch(last(`${location.pathname}`));
-        Navigate("/login");
+        if (name === "true") {
+            Navigate("/myProfile");
+        } else {
+            Navigate("/login");
+        }
     };
-
-    let name = localStorage.getItem("isLogin");
-    let loginData = JSON.parse(localStorage.getItem("loginData"));
-
     const logOut = () => {
         localStorage.setItem("isLogin", false);
         localStorage.setItem("loginData", JSON.stringify({}));
         Dispatch(reloadBag([]));
         Navigate("/");
+    };
+
+    // Mini Navbar
+
+    const openPage = () => {
+        Navigate("/Appliances");
     };
 
     return (
@@ -353,6 +490,7 @@ export const Navbar2 = () => {
                     </div>
                 </Div>
             )}
+            {/* Main Navbar */}
             <div className="navvbarr">
                 <div className="navbar5">
                     <div className="uppperNav" style={{ height: "40px" }}>
@@ -811,6 +949,203 @@ export const Navbar2 = () => {
                         </div>
                     </div>
                 </div>
+            </div>
+            {/* Mini Navbar */}
+            <div className="miniNavbbar">
+                {menu && (
+                    <Menu>
+                        <div className="contentblock">
+                            <div className="headblock">
+                                <div
+                                    style={{
+                                        borderBottom: `${
+                                            cat
+                                                ? "2px solid rgb(252,39,121)"
+                                                : "2px solid white"
+                                        }`,
+                                        color: `${
+                                            cat ? "rgb(252,39,121)" : "black"
+                                        }`,
+                                    }}
+                                    onClick={() => setCat(true)}
+                                >
+                                    Categories
+                                </div>
+                                <div
+                                    style={{
+                                        borderBottom: `${
+                                            cat
+                                                ? "2px solid white"
+                                                : "2px solid rgb(252,39,121)"
+                                        }`,
+                                        color: `${
+                                            cat ? "black" : "rgb(252,39,121)"
+                                        }`,
+                                    }}
+                                    onClick={() => setCat(false)}
+                                >
+                                    Brands
+                                </div>
+                            </div>
+                            <div className="bodyblock">
+                                {cat ? (
+                                    <div className="cat">
+                                        <div
+                                            style={{
+                                                backgroundColor:
+                                                    "rgb(235,235,235)",
+                                                marginTop: "0vh",
+                                            }}
+                                        >
+                                            OFFER
+                                        </div>
+                                        <div onClick={openPage}>
+                                            <div>Makeup</div>
+                                            <div>+</div>
+                                        </div>
+                                        <div onClick={openPage}>
+                                            <div>Skin</div>
+                                            <div>+</div>
+                                        </div>
+                                        <div onClick={openPage}>
+                                            <div>Hair</div>
+                                            <div>+</div>
+                                        </div>
+                                        <div onClick={openPage}>
+                                            <div>Personal Care</div>
+                                            <div>+</div>
+                                        </div>
+                                        <div onClick={openPage}>
+                                            <div>Fragrance</div>
+                                            <div>+</div>
+                                        </div>
+                                        <div onClick={openPage}>
+                                            <div>Appliances</div>
+                                            <div>+</div>
+                                        </div>
+                                        <div onClick={openPage}>
+                                            <div>Nykaa Luxe</div>
+                                            <div>+</div>
+                                        </div>
+                                        <div onClick={openPage}>
+                                            <div>Natural</div>
+                                            <div>+</div>
+                                        </div>
+                                        <div onClick={openPage}>
+                                            <div>Men's Store</div>
+                                            <div>+</div>
+                                        </div>
+                                        <div onClick={openPage}>
+                                            <div>Mon & Baby</div>
+                                            <div>+</div>
+                                        </div>
+                                        <div onClick={openPage}>
+                                            <div>Health & Wellness</div>
+                                            <div>+</div>
+                                        </div>
+                                        <div onClick={openPage}>
+                                            <div>Pop Ups</div>
+                                            <div>+</div>
+                                        </div>
+                                    </div>
+                                ) : (
+                                    <div className="brnd">
+                                        <div
+                                            style={{
+                                                backgroundColor:
+                                                    "rgb(235,235,235)",
+                                                height: "3vh",
+                                                marginTop: "0vh",
+                                            }}
+                                        >
+                                            Top Breans
+                                        </div>
+                                        <div>Philips India</div>
+                                        <div>Nykaa Naturals</div>
+                                        <div>Ikonic Professional</div>
+                                        <div>Braun</div>
+                                        <div>CARRERA</div>
+                                        <div>Bronson Professional</div>
+                                        <div>Flawless</div>
+                                        <div>Veet</div>
+                                        <div>Agaro</div>
+                                        <div>Novo</div>
+                                        <div>ZLADE</div>
+                                        <div>Gorgio Professional</div>
+                                        <div>IGRiD</div>
+                                    </div>
+                                )}
+                            </div>
+                        </div>
+                        <div
+                            className="transparent"
+                            onClick={() => setMenu(false)}
+                        ></div>
+                    </Menu>
+                )}
+                <Nav
+                    style={{
+                        height: `${
+                            location.pathname === "/" ? "100px" : "60px"
+                        }`,
+                    }}
+                >
+                    <div className="nav-cont">
+                        <div className="left-cont">
+                            <div className="menu">
+                                <i
+                                    className="fa-solid fa-bars"
+                                    onClick={() => setMenu(true)}
+                                ></i>
+                            </div>
+                            <div className="Imglogo">
+                                <img
+                                    src={logo}
+                                    alt="logo"
+                                    onClick={() => Navigate("/")}
+                                />
+                            </div>
+                        </div>
+                        <div className="right-cont">
+                            <div className="cart-cont">
+                                <i
+                                    onClick={() => setShowBag(true)}
+                                    className=" fa fa-light fa-bag-shopping"
+                                ></i>
+                                {cartProducts.length > 0
+                                    ? cartProducts.length
+                                    : ""}
+                            </div>
+                            <div className="account-cont">
+                                <i
+                                    onClick={handleLogin}
+                                    className="fa-regular fa-user"
+                                ></i>
+
+                                {/* {name === "true"
+                                    ? `${loginData.name.split(" ")[0]}`
+                                    : "Account"} */}
+                            </div>
+                        </div>
+                    </div>
+                    {location.pathname === "/" && (
+                        <div className="searchbar">
+                            <input
+                                type="text"
+                                placeholder="Search Products, Brands, etc"
+                            />
+                        </div>
+                    )}
+                </Nav>
+                <div
+                    style={{
+                        width: "100%",
+                        height: `${
+                            location.pathname === "/" ? "100px" : "60px"
+                        }`,
+                    }}
+                    className="backNav"
+                ></div>
             </div>
         </>
     );
