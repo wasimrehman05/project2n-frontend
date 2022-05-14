@@ -6,7 +6,7 @@ import { ProductsPage } from "./Components/Products_Page/ProductsPage";
 import { Item } from "./Components/One_Item_Page/Item";
 import { useDispatch } from "react-redux";
 import { getCartData, getData, showItem } from "./Redux/action";
-import { Checkout } from "./Components/Checkout/Checkout";
+import { Checkout } from "./Components/CheckOut/Checkout";
 import { ThankYou } from "./Components/ThankYou";
 import { Login } from "./Components/Login/Login";
 import { LoginCheck } from "./Components/Login/LoginCheck";

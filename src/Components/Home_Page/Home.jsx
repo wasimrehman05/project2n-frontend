@@ -45,34 +45,12 @@ export const Home = () => {
     return (
         <>
             <Navbar2 />
-            <div>
-                <div className="home-container">
-                    <h1 className="home-heading">Top Brands</h1>
-                    <div className="top-brands">
-                        {topbrands.map((item) => (
-                            <div key={item._id}>
-                                <div>
-                                    <div className="card-block">
-                                        <div
-                                            className="card-img"
-                                            style={{
-                                                backgroundImage: `url(${item.img})`,
-                                            }}
-                                        ></div>
-                                    </div>
-                                    <div className="offer-desc">
-                                        <p>{item.desc1}</p>
-                                        <p>{item.desc2}</p>
-                                    </div>
-                                </div>
-                            </div>
-                        ))}
-                    </div>
-
-                    <h1 className="home-heading">Only At Nykaa</h1>
-                    <div className="only-at-nykaa">
-                        {OnlyatNykaa.map((item) => (
-                            <div key={item._id}>
+            <div className="home-container">
+                <h1 className="home-heading">Top Brands</h1>
+                <div className="top-brands">
+                    {topbrands.map((item) => (
+                        <div key={item._id}>
+                            <div>
                                 <div className="card-block">
                                     <div
                                         className="card-img"
@@ -86,49 +64,69 @@ export const Home = () => {
                                     <p>{item.desc2}</p>
                                 </div>
                             </div>
-                        ))}
-                    </div>
-
-                    <h1 className="home-heading">Trending Store and Offers</h1>
-                    <div className="trending-store">
-                        {TrendingStores.map((item) => (
-                            <div key={item._id}>
-                                <div
-                                    style={{ display: "block" }}
-                                    className="card-block"
-                                >
-                                    <img src={item.img} alt={item.desc1} />
-                                </div>
-                            </div>
-                        ))}
-                    </div>
-
-                    <h1 className="home-heading">Featured Brands</h1>
-                    <div
-                        className="featured-brands"
-                        style={{ marginBottom: "60px" }}
-                    >
-                        {FeaturedBrands.map((item) => (
-                            <div key={item._id}>
-                                <div className="card-block card-f">
-                                    <div
-                                        className="card-img"
-                                        style={{
-                                            backgroundImage: `url(${item.img})`,
-                                        }}
-                                    ></div>
-                                </div>
-                                <div className="offer-desc">
-                                    <p>{item.desc1}</p>
-
-                                    <p className="p">{item.desc2}</p>
-                                </div>
-                            </div>
-                        ))}
-                    </div>
+                        </div>
+                    ))}
                 </div>
-                <Footer />
+
+                <h1 className="home-heading">Only At Nykaa</h1>
+                <div className="only-at-nykaa">
+                    {OnlyatNykaa.map((item) => (
+                        <div key={item._id}>
+                            <div className="card-block">
+                                <div
+                                    className="card-img"
+                                    style={{
+                                        backgroundImage: `url(${item.img})`,
+                                    }}
+                                ></div>
+                            </div>
+                            <div className="offer-desc">
+                                <p>{item.desc1}</p>
+                                <p>{item.desc2}</p>
+                            </div>
+                        </div>
+                    ))}
+                </div>
+
+                <h1 className="home-heading">Trending Store and Offers</h1>
+                <div className="trending-store">
+                    {TrendingStores.map((item) => (
+                        <div key={item._id}>
+                            <div
+                                style={{ display: "block" }}
+                                className="card-block"
+                            >
+                                <img src={item.img} alt={item.desc1} />
+                            </div>
+                        </div>
+                    ))}
+                </div>
+
+                <h1 className="home-heading">Featured Brands</h1>
+                <div
+                    className="featured-brands"
+                    style={{ marginBottom: "60px" }}
+                >
+                    {FeaturedBrands.map((item) => (
+                        <div key={item._id}>
+                            <div className="card-block card-f">
+                                <div
+                                    className="card-img"
+                                    style={{
+                                        backgroundImage: `url(${item.img})`,
+                                    }}
+                                ></div>
+                            </div>
+                            <div className="offer-desc">
+                                <p>{item.desc1}</p>
+
+                                <p className="p">{item.desc2}</p>
+                            </div>
+                        </div>
+                    ))}
+                </div>
             </div>
+            <Footer />
         </>
     );
 };

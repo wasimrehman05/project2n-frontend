@@ -66,6 +66,11 @@ const Div = styled.div`
             display: none;
         }
     }
+
+    @media all and (max-width: 500px) {
+        margin: 1rem 1rem 1rem 0.7rem;
+        width: 92%;
+    }
 `;
 
 export const Cart = () => {
