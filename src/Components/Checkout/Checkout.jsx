@@ -255,7 +255,7 @@ export const Checkout = () => {
             <Nav>
                 <div className="below500">
                     <div style={{ marginRight: "90px" }} onClick={Previous}>
-                        🠔
+                        🡸
                     </div>
                     <div style={{ fontSize: "20px", fontWeight: "600" }}>
                         {page === 0

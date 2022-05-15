@@ -4,6 +4,7 @@ import { Footer } from "./Footer";
 import { Navbar2 } from "../navbarComp/Navbar2";
 import axios from "axios";
 import { API_KEY } from "../../config";
+import { Carousel } from "./Carousel";
 
 export const Home = () => {
     // const baseUrl = "https://nykaa-data.herokuapp.com/";
@@ -45,6 +46,7 @@ export const Home = () => {
     return (
         <>
             <Navbar2 />
+            <Carousel />
             <div className="home-container">
                 <h1 className="home-heading">Top Brands</h1>
                 <div className="top-brands">

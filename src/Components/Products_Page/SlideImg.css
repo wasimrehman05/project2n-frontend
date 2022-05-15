@@ -1,24 +1,7 @@
-/* #app { height: 100% }
-html,
-body {
-  position: relative;
-  height: 100%;
-} */
-
-/* body {
-  background: #eee;
-  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
-  font-size: 14px;
-  color: #000;
-  margin: 0;
-  padding: 0;
-} */
-
 .swiper {
     width: 100%;
     height: 100%;
 }
-
 .swiper-slide {
     text-align: center;
     font-size: 18px;
@@ -40,11 +23,10 @@ body {
     align-items: center;
 }
 
-.swiper-slide img {
+.ads_img2 {
     display: block;
     width: 100%;
-    height: 100%;
-    object-fit: cover;
+    aspect-ratio: 6/1.1;
 }
 
 .swiper {
@@ -89,11 +71,11 @@ body {
         display: none;
     }
     .swiper-slide {
-        aspect-ratio: 3/1;
         padding-bottom: 35px;
     }
 
-    .swiper-slide > img {
+    .ads_img2 {
+        aspect-ratio: 4/1;
         object-fit: fill;
     }
     .swiper-pagination {

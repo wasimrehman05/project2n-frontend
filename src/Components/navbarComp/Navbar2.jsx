@@ -28,13 +28,11 @@ const Div = styled.div`
         height: 100%;
         opacity: 40%;
         background-color: #000;
-
-        
     }
-    
+
     .display {
         width: 26%;
-        min-width:400px;
+        min-width: 400px;
         height: 100%;
         background-color: white;
         margin: 1px;
@@ -45,18 +43,18 @@ const Div = styled.div`
         -ms-overflow-style: none;
         scrollbar-width: none;
         // text-align: justify;
-        
+
         & > header {
             width: 24.85%;
-            min-width:400px;
+            min-width: 400px;
             height: 2.6rem;
             display: flex;
             text-align: center;
             background-color: white;
             position: fixed;
             box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px,
-            rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
-            
+                rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+
             & > button {
                 margin-left: 1%;
                 border: none;
@@ -82,7 +80,7 @@ const Div = styled.div`
             & > .total_price {
                 background-color: white;
                 box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-                
+
                 & > div:nth-child(1) {
                     padding: 0.8rem 0;
                     font-weight: 600;
@@ -102,7 +100,7 @@ const Div = styled.div`
                         }
                     }
                 }
-                
+
                 & > div:nth-child(3) {
                     background-color: white;
                     padding-bottom: 1rem;
@@ -120,7 +118,7 @@ const Div = styled.div`
                         outline: none;
                         border: none;
                     }
-                    
+
                     & > button {
                         height: 35.1px;
                         cursor: pointer;
@@ -139,10 +137,10 @@ const Div = styled.div`
                 }
             }
         }
-        
+
         & > footer {
             width: 24.85%;
-            min-width:400px;
+            min-width: 400px;
             height: 3.3rem;
             position: fixed;
             bottom: 0;
@@ -177,7 +175,7 @@ const Div = styled.div`
                 color: white;
                 background-color: rgb(252, 39, 121);
             }
-            
+        }
     }
     @media all and (max-width: 1280px) {
         .transparent {
@@ -186,7 +184,6 @@ const Div = styled.div`
         .display {
             width: 30%;
         }
-
     }
     @media all and (max-width: 1024px) {
         .transparent {
@@ -205,12 +202,23 @@ const Div = styled.div`
         }
     }
     @media all and (max-width: 500px) {
+        width: 100%;
         .transparent {
             width: 0%;
             display: none;
         }
         .display {
             width: 100%;
+
+            & > div {
+                width: 100%;
+
+                & > .total_price {
+                    width: 85%;
+                    margin: auto;
+                    margin: 1rem 1.2rem 1rem 0.5rem;
+                }
+            }
         }
     }
 `;

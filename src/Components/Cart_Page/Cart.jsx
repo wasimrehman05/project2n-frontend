@@ -68,8 +68,8 @@ const Div = styled.div`
     }
 
     @media all and (max-width: 500px) {
-        margin: 1rem 1rem 1rem 0.7rem;
-        width: 92%;
+        margin: 1rem 1.2rem 1rem 0.5rem;
+        width: 85%;
     }
 `;
 
