@@ -23,6 +23,7 @@
     grid-template-columns: 25% 75%;
     padding: 0rem 1rem;
     gap: 1rem;
+    width: 100%;
 }
 
 .func {
@@ -31,6 +32,60 @@
     flex-direction: column;
     /* position: relative; */
 }
+
+.loader {
+    margin-top: 46vh;
+    margin-bottom: 46vh;
+    width: 40px;
+    -webkit-animation: rotate 1.5s normal linear infinite;
+    animation: rotate 1.5s normal linear infinite;
+}
+
+@keyframes rotate {
+    0% {
+        -webkit-transform: rotate3d(0, 0, 1, 0deg);
+        transform: rotate3d(0, 0, 1, 0deg);
+    }
+    25% {
+        -webkit-transform: rotate3d(0, 0, 1, 90deg);
+        transform: rotate3d(0, 0, 1, 90deg);
+    }
+    50% {
+        -webkit-transform: rotate3d(0, 0, 1, 180deg);
+        transform: rotate3d(0, 0, 1, 180deg);
+    }
+    75% {
+        -webkit-transform: rotate3d(0, 0, 1, 270deg);
+        transform: rotate3d(0, 0, 1, 270deg);
+    }
+    100% {
+        -webkit-transform: rotate3d(0, 0, 1, 360deg);
+        transform: rotate3d(0, 0, 1, 360deg);
+    }
+}
+
+#divPopUp {
+    display: none;
+    justify-content: space-between;
+    border-radius: 5px;
+    background-color: black;
+    width: 25%;
+    position: fixed;
+    margin-left: 30%;
+    z-index: 1000;
+    bottom: 10px;
+    padding: 15px;
+    font-size: 1.2vw;
+    color: white;
+    text-align: left;
+    font-weight: 500;
+    text-transform: capitalize;
+    box-sizing: border-box;
+}
+#divPopUp > span {
+    color: rgb(241, 146, 162);
+}
+
 @media all and (max-width: 1280px) {
     .Content > div:nth-child(1) {
         width: 30%;
@@ -107,6 +162,11 @@
     .banner {
         display: none;
     }
+    #divPopUp {
+        width: 90%;
+        margin-left: 5%;
+        font-size: 14px;
+    }
 }
 @media all and (max-width: 1280px) {
     .Content > div:nth-child(1) {
@@ -126,3 +186,6 @@
         width: 100%;
     }
 }
+
+/* @media all and (max-width: 500px) {
+} */

@@ -50,7 +50,7 @@ export const reducer = (store = initState, action) => {
         case UPDATE_QUANTITY:
             let updatedarr = [...store.cartProducts];
 
-            updatedarr.map((ele) => {
+            updatedarr.forEach((ele) => {
                 if (ele._id === action.payload.id) {
                     ele.quan = action.payload.val;
                 }

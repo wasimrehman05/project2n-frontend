@@ -1,10 +1,5 @@
-import React, { useState, useEffect } from "react";
-import {
-    addingToBag,
-    getCartData,
-    getData,
-    showItem,
-} from "../../Redux/action";
+import React, { useState } from "react";
+import { addingToBag, showItem, updateQuan } from "../../Redux/action";
 import { useSelector, useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { StarRatingShow } from "./StarRatings";
@@ -110,7 +105,7 @@ const Div = styled.div`
         color: rgb(0, 137, 69);
     }
 
-    & .btn {
+    & #btn {
         display: none;
         bottom: 0;
         height: 3rem;
@@ -119,18 +114,45 @@ const Div = styled.div`
             height: 2rem;
             display: flex;
         }
-    }
-    & .btn > div {
-        display: none;
-        bottom: 0;
-        height: 3rem;
 
-        @media all and (max-width: 500px) {
-            height: 2rem;
+        & .btnStatus {
+            bottom: 0;
+            height: 3rem;
+            box-sizing: border-box;
+
+            width: 100%;
+            padding: 14px;
+            background-color: #f06418;
+            justify-content: center;
+            padding: auto 0;
+            font-size: 17px;
+            font-weight: 600;
+            color: white;
+
+            @media all and (max-width: 500px) {
+                font-size: 12px;
+                padding: 9px;
+            }
+
+            @media all and (max-width: 500px) {
+                height: 2rem;
+                display: flex;
+            }
         }
     }
 
-    & .btn > button {
+    #btn > div {
+        width: 100%;
+        height: 3rem;
+        box-sizing: border-box;
+
+        @media all and (max-width: 500px) {
+            height: 2rem;
+            margin-bottom: 5px;
+        }
+    }
+
+    & #btn > div > button {
         border: none;
         background-color: rgb(252, 39, 121);
         color: white;
@@ -138,6 +160,7 @@ const Div = styled.div`
         font-weight: 600;
         width: 75%;
         text-transform: uppercase;
+        height: 3rem;
 
         @media all and (max-width: 500px) {
             color: rgb(252, 39, 121);
@@ -148,7 +171,7 @@ const Div = styled.div`
         }
     }
 
-    & .btn > button:nth-child(1) {
+    & #btn > div > button:nth-child(1) {
         background-color: white;
         padding: 10px 10px 5px 10px;
         width: 25%;
@@ -157,7 +180,7 @@ const Div = styled.div`
             padding: 5px 10px 5px 5px;
         }
     }
-    & .btn > button:nth-child(1) > img {
+    & #btn > div > button:nth-child(1) > img {
         width: 70%;
 
         @media all and (max-width: 500px) {
@@ -178,24 +201,8 @@ const Div = styled.div`
             }
         }
 
-        & .btn {
+        & #btn {
             display: flex;
-        }
-        & .btn > div {
-            display: flex;
-            width: 100%;
-            padding: 14px;
-            background-color: #f06418;
-            justify-content: center;
-            padding: auto 0;
-            font-size: 17px;
-            font-weight: 600;
-            color: white;
-
-            @media all and (max-width: 500px) {
-                font-size: 12px;
-                padding: 9px;
-            }
         }
     }
 
@@ -209,16 +216,8 @@ const Div = styled.div`
 `;
 
 export const ProductCard = () => {
-    const [cartstatus, setCartstatus] = useState(false);
-    const [cartmessage, setCartmessage] = useState("ADDED TO BAG");
-
     const navigate = useNavigate();
     const dispatch = useDispatch();
-
-    useEffect(() => {
-        dispatch(getData(1));
-        dispatch(getCartData());
-    }, []);
 
     const cartProducts = useSelector((state) => state.cartProducts);
 
@@ -245,10 +244,22 @@ export const ProductCard = () => {
 
     // Add to cart
     const addtobag = (item) => {
-        setCartstatus(true);
+        document.getElementById(`${item._id}`).style.display = "none";
+        document.getElementById(`${item.id}`).style.display = "flex";
+        document.getElementById("divPopUp").style.display = "flex";
+        setTimeout(function () {
+            document.getElementById("divPopUp").style.display = "none";
+        }, 5000);
+
+        setTimeout(() => {
+            document.getElementById(`${item._id}`).style.display = "flex";
+            document.getElementById(`${item.id}`).style.display = "none";
+        }, 7000);
         for (var i = 0; i < cartProducts.length; i++) {
             if (cartProducts[i].id === item.id) {
-                setCartmessage("ALREADY IN THE BAG");
+                console.log(cartProducts[i]);
+                console.log(item);
+                changeQuantity(cartProducts[i].quan + 1, cartProducts[i]._id);
                 return;
             }
         }
@@ -262,31 +273,25 @@ export const ProductCard = () => {
             .then((res) => dispatch(addingToBag(res.data[0])));
     };
 
-    // addtobag btn status change
+    const changeQuantity = (val, id) => {
+        val = parseInt(val);
+        console.log(val, typeof id);
+        let body = {
+            uid: loginData._id,
+            pid: id,
+            num: val,
+        };
 
-    const changeState = () => {
-        setCartstatus(false);
-        setCartmessage("ADDED TO BAG");
+        axios
+            .post(`${API_KEY}/updateCart`, body)
+            .then((res) => dispatch(updateQuan({ val, id })));
     };
-
-    // const Pagination = (val) => {
-    //     let body = {
-    //         limit: val,
-    //     };
-    //     axios
-    //         .post(`${API_KEY}/products`, body)
-    //         .then((res) => dispatch(storeData(res.data)));
-    // };
 
     return (
         <>
             <Div>
                 {data.map((item) => (
-                    <div
-                        key={item.id}
-                        className="card"
-                        onMouseLeave={changeState}
-                    >
+                    <div key={item.id} className="card">
                         <div onClick={() => sendItem(item)}>
                             <div>BESTSELLER</div>
                             <img src={item.image1} alt="product_img" />
@@ -306,22 +311,18 @@ export const ProductCard = () => {
                                 <div>({item.ratingNum})</div>
                             </div>
                         </div>
-                        {cartstatus ? (
-                            <div className="btn">
-                                <div
-                                    style={{
-                                        backgroundColor: `${
-                                            cartmessage === "ADDED TO BAG"
-                                                ? "#f06418"
-                                                : "black"
-                                        }`,
-                                    }}
-                                >
-                                    {cartmessage}
-                                </div>
+
+                        <div id="btn">
+                            <div
+                                id={`${item.id}`}
+                                className="btnStatus"
+                                style={{
+                                    display: "none",
+                                }}
+                            >
+                                Added To Bag
                             </div>
-                        ) : (
-                            <div className="btn">
+                            <div id={`${item._id}`} style={{ display: "flex" }}>
                                 <button>
                                     <img
                                         src="https://cdn1.iconfinder.com/data/icons/valentine-s-day-21/100/heart-256.png"
@@ -332,10 +333,13 @@ export const ProductCard = () => {
                                     Add To Bag
                                 </button>
                             </div>
-                        )}
+                        </div>
                     </div>
                 ))}
             </Div>
+            <div id="divPopUp">
+                Product Added To Cart! <span>View Bag</span>
+            </div>
         </>
     );
 };

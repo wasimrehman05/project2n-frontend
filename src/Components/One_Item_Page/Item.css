@@ -223,10 +223,11 @@
     justify-content: center;
     text-align: left;
     margin-top: 10px;
+    height: fit-content;
 }
 
 .Description_div {
-    height: 220px;
+    height: fit-content;
     width: 59%;
     background-color: white;
     padding: 10px;

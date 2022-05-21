@@ -189,7 +189,6 @@
     background-color: white;
     font-weight: 600;
     color: #fc2779;
-    /* text-decoration: underline 4px #fc2779; */
 }
 
 .subnav-content-2 {
@@ -200,7 +199,7 @@
     margin-left: 63px;
     line-height: 20px;
     width: 90%;
-    top: 190px;
+    top: 175px;
 }
 
 .hover-line {

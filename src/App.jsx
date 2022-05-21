@@ -21,21 +21,25 @@ function App() {
         dispatch(getCartData());
         dispatch(showItem());
     }, []);
-
     return (
-        <div className="App">
-            <Routes>
-                <Route path={"/"} element={<Home />}></Route>
-                <Route path={"/Appliances"} element={<ProductsPage />}></Route>
-                <Route path={"/item/:id"} element={<Item />}></Route>
-                <Route path={"/checkout"} element={<Checkout />}></Route>
-                <Route path={"/thankyou"} element={<ThankYou />}></Route>
-                <Route path={"/login"} element={<Login />}></Route>
-                <Route path={"/verify"} element={<LoginCheck />}></Route>
-                <Route path={"/register"} element={<Register />}></Route>
-                <Route path={"/myProfile"} element={<Myprofile />}></Route>
-            </Routes>
-        </div>
+        <>
+            <div className="App">
+                <Routes>
+                    <Route path={"/"} element={<Home />}></Route>
+                    <Route
+                        path={"/Appliances"}
+                        element={<ProductsPage />}
+                    ></Route>
+                    <Route path={"/item/:id"} element={<Item />}></Route>
+                    <Route path={"/checkout"} element={<Checkout />}></Route>
+                    <Route path={"/thankyou"} element={<ThankYou />}></Route>
+                    <Route path={"/login"} element={<Login />}></Route>
+                    <Route path={"/verify"} element={<LoginCheck />}></Route>
+                    <Route path={"/register"} element={<Register />}></Route>
+                    <Route path={"/myProfile"} element={<Myprofile />}></Route>
+                </Routes>
+            </div>
+        </>
     );
 }
 

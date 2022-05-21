@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Footer } from "../Home_Page/Footer";
 import styled from "styled-components";
 import { ProductCard } from "./ProductCard";
@@ -88,6 +88,7 @@ export const ProductsPage = () => {
     const shop = "Shop Now >";
     let data;
 
+    const [post, setPost] = useState(true);
     const products = useSelector((state) => state.products);
     const filter = useSelector((state) => state.filter);
     const [page, setPage] = useState(1);
@@ -100,88 +101,117 @@ export const ProductsPage = () => {
         data = filter;
     }
 
-    const Pagination = (val) => {
-        setPage(val);
+    useEffect(() => {
+        if (data.length > 0) {
+            setPost(false);
+        }
+    });
 
-        dispatch(getData(val));
+    const Pagination = async (val) => {
+        await setPost(true);
+        await setPage(val);
+        await dispatch(getData(val)).then(() => setPost(false));
     };
-
+    // console.log(post);
     return (
         <>
-            <Navbar2 />
-            <Div>
-                <h2>
-                    Appliances <div>({data.length > 0 ? 26 : 0})</div>
-                </h2>
-                <section>
-                    <SlideImg />
-                </section>
-                <section>
-                    <div className="banner">
-                        <div className="banner-info">
-                            <P1>The Must-Have Beauty Tools Guide</P1>
-                            <p>
-                                Beauty appliances are essential in every beauty
-                                wardrobe! Check out these beauty tools that
-                                simplify (and beautify) your life.
-                            </p>
-                            <A href="/">{shop}</A>
-                        </div>
-                        <div className="banner-img">
-                            <img
-                                src="https://www.nykaa.com/media/categoryInfo/art_banner_image/musthavebeautytoolscontentbanner.jpg"
-                                alt="ad-banner"
-                            />
-                        </div>
-                    </div>
-                </section>
-                <section>
-                    <h2>All Products</h2>
-                    <div className="Content">
-                        <div className="func">
-                            <Sort />
-                            <Filter />
-                        </div>
-                        <ProductCard />
-                    </div>
-                    <DivBtn className="pageBtn">
-                        <button
-                            onClick={() => Pagination(1)}
-                            style={{
-                                color: `${page === 1 ? "white" : "black"}`,
-                                backgroundColor: `${
-                                    page === 1 ? "rgb(250,90,152)" : "white"
-                                }`,
-                            }}
-                        >
-                            1
-                        </button>
-                        <button
-                            onClick={() => Pagination(2)}
-                            style={{
-                                color: `${page === 2 ? "white" : "black"}`,
-                                backgroundColor: `${
-                                    page === 2 ? "rgb(250,90,152)" : "white"
-                                }`,
-                            }}
-                        >
-                            2
-                        </button>
-                        <button
-                            onClick={() => Pagination(3)}
-                            style={{
-                                color: `${page === 3 ? "white" : "black"}`,
-                                backgroundColor: `${
-                                    page === 3 ? "rgb(250,90,152)" : "white"
-                                }`,
-                            }}
-                        >
-                            3
-                        </button>
-                    </DivBtn>
-                </section>
-            </Div>
-            <Footer />
+            {post ? (
+                <img
+                    className="loader"
+                    src="//images-static.nykaa.com/media/favicon/default/nykaa_favicon_a.png"
+                    alt="Loading"
+                />
+            ) : (
+                <>
+                    <Navbar2 />
+                    <Div>
+                        <h2>
+                            Appliances <div>({data.length > 0 ? 26 : 0})</div>
+                        </h2>
+                        <section>
+                            <SlideImg />
+                        </section>
+                        <section>
+                            <div className="banner">
+                                <div className="banner-info">
+                                    <P1>The Must-Have Beauty Tools Guide</P1>
+                                    <p>
+                                        Beauty appliances are essential in every
+                                        beauty wardrobe! Check out these beauty
+                                        tools that simplify (and beautify) your
+                                        life.
+                                    </p>
+                                    <A href="/">{shop}</A>
+                                </div>
+                                <div className="banner-img">
+                                    <img
+                                        src="https://www.nykaa.com/media/categoryInfo/art_banner_image/musthavebeautytoolscontentbanner.jpg"
+                                        alt="ad-banner"
+                                    />
+                                </div>
+                            </div>
+                        </section>
+                        <section>
+                            <h2>All Products</h2>
+                            <div className="Content">
+                                <div className="func">
+                                    <Sort />
+                                    <Filter />
+                                </div>
+                                <ProductCard />
+                            </div>
+                            <DivBtn className="pageBtn">
+                                <button
+                                    onClick={() => Pagination(1)}
+                                    style={{
+                                        color: `${
+                                            page === 1 ? "white" : "black"
+                                        }`,
+                                        backgroundColor: `${
+                                            page === 1
+                                                ? "rgb(250,90,152)"
+                                                : "white"
+                                        }`,
+                                    }}
+                                >
+                                    1
+                                </button>
+                                <button
+                                    onClick={() => Pagination(2)}
+                                    style={{
+                                        color: `${
+                                            page === 2 ? "white" : "black"
+                                        }`,
+                                        backgroundColor: `${
+                                            page === 2
+                                                ? "rgb(250,90,152)"
+                                                : "white"
+                                        }`,
+                                    }}
+                                >
+                                    2
+                                </button>
+                                <button
+                                    onClick={() => Pagination(3)}
+                                    style={{
+                                        color: `${
+                                            page === 3 ? "white" : "black"
+                                        }`,
+                                        backgroundColor: `${
+                                            page === 3
+                                                ? "rgb(250,90,152)"
+                                                : "white"
+                                        }`,
+                                    }}
+                                >
+                                    3
+                                </button>
+                            </DivBtn>
+                        </section>
+                    </Div>
+                    <Footer />
+                </>
+            )}
         </>
     );
 };

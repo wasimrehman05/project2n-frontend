@@ -85,15 +85,13 @@ export const Cart = () => {
     let loginData = JSON.parse(localStorage.getItem("loginData"));
 
     const changeQuantity = (val, id) => {
-        // console.log(val, id);
         val = parseInt(val);
+        console.log(val, typeof id);
         let body = {
             uid: loginData._id,
             pid: id,
             num: val,
         };
-
-        // console.log(body);
 
         axios
             .post(`${API_KEY}/updateCart`, body)
