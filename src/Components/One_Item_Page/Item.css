@@ -2,11 +2,13 @@
     /* top: 0; */
     margin-top: 5vh;
     background-color: whitesmoke;
+    width: 100%;
+    position: relative;
 }
 
 .main_div {
     height: 400px;
-    width: 1140px;
+    width: 74%;
     margin: auto;
     background-color: rgb(243, 243, 243);
     display: flex;
@@ -17,18 +19,17 @@
 }
 .left {
     background-color: white;
-    width: 428px;
+    width: 40%;
     display: flex;
 }
 .right {
     background-color: white;
-    width: 712px;
+    width: 60%;
     /* display: block; */
 }
 .small_photo {
     background-color: white;
     width: 21%;
-    /* padding-top: 4rem; */
     margin: auto;
 }
 .small_photo > div {
@@ -44,13 +45,12 @@
     display: block;
 }
 .large_photo > .Photo {
-    background-color: white;
-    height: 40%;
+    height: 50%;
     width: 95%;
     margin: auto;
-    padding-top: 3rem;
 }
 .Photo > img {
+    margin-top: -5%;
     height: 150%;
     width: 100%;
 }
@@ -59,7 +59,6 @@
     width: 25px;
     margin-left: 85%;
     padding-top: 1rem;
-    margin-bottom: 8px;
 }
 .left_image > img {
     height: 80%;
@@ -111,6 +110,7 @@
     height: 70%;
 }
 .inside_right_2_button {
+    display: block;
     background-color: white;
     width: 50%;
     height: 90%;
@@ -127,6 +127,8 @@
 }
 .inside_right_2_search {
     background-color: white;
+    margin-top: 0px;
+    margin-bottom: 0px;
     width: 50%;
     height: 90%;
 }
@@ -214,17 +216,18 @@
 }
 
 .final_div {
+    width: 100%;
     display: flex;
     gap: 10px;
     display: flex;
     justify-content: center;
     text-align: left;
     margin-top: 10px;
+    height: fit-content;
 }
 
 .Description_div {
-    /* border: 1px solid black; */
-    height: 220px;
+    height: fit-content;
     width: 59%;
     background-color: white;
     padding: 10px;
@@ -236,6 +239,7 @@
 }
 .Product_div {
     /* border: 1px solid black; */
+    display: block;
     height: 320px;
     width: 15%;
     text-align: center;
@@ -271,4 +275,115 @@
 }
 .price_item {
     background-color: white;
+}
+.star {
+    margin-top: -2.5px;
+    display: block;
+}
+.ab500 {
+    display: block;
+}
+.bl500 {
+    font-weight: 500;
+    display: none;
+}
+.numStar {
+    background-color: green;
+    color: white;
+    font-size: 18px;
+    margin-top: -4px;
+    display: none;
+    border-radius: 5px;
+    padding: 1px 5px;
+}
+.off_pricw {
+    margin: -2px 0px 0px;
+    font-size: 18px;
+}
+.inside_right_1 > div:nth-child(1) {
+    font-size: 25px;
+}
+
+.floatbtn {
+    display: none;
+}
+
+@media all and (max-width: 500px) {
+    .main_div {
+        display: block;
+        height: fit-content;
+    }
+    .left,
+    .right {
+        width: 100%;
+    }
+    .small_photo {
+        margin-top: 50px;
+    }
+
+    .Photo > img {
+        margin-top: -10%;
+    }
+    .large_photo > div {
+        margin-left: -22%;
+    }
+
+    .inside_right_1 > div:nth-child(1) {
+        font-size: 18px;
+    }
+    .inside_right_1 > div:nth-child(2) > span {
+        display: none;
+    }
+    .inside_right_1 > div:nth-child(2) > span:nth-child(1),
+    .inside_right_1 > div:nth-child(2) > span:nth-child(3) {
+        display: block;
+    }
+    .star,
+    .ab500,
+    .Product_div,
+    .inside_right_2_button {
+        display: none;
+    }
+    .numStar,
+    .bl500 {
+        display: block;
+    }
+    .off_pricw {
+        margin: -5px 5px 0px;
+        font-size: 22px;
+    }
+
+    .inside_right_2_search {
+        margin-bottom: 20px;
+        margin-top: -20px;
+        width: 100%;
+    }
+    .Description_div {
+        /* border: 1px solid black; */
+        height: 220px;
+        width: 85%;
+        background-color: white;
+        padding: 10px;
+    }
+    .floatbtn {
+        display: block;
+        position: fixed;
+        bottom: 10px;
+        width: 100%;
+        z-index: 2;
+    }
+    .floatbtn > button {
+        border: none;
+        background-color: rgb(252, 39, 121);
+        color: white;
+        font-size: 17px;
+        font-weight: 600;
+        width: 90%;
+        height: 50px;
+        margin-top: 4.3rem;
+        border-radius: 5px;
+        box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+            rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+            rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    }
 }

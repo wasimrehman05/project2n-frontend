@@ -6,8 +6,10 @@ import { Cart } from "../Cart_Page/Cart";
 import foot from "./foot.png";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
-import { setUser, deleteFromBag } from "../../Redux/action";
+import { setUser, empty_bag } from "../../Redux/action";
 import axios from "axios";
+import { API_KEY } from "../../config";
+import { Collapisble, Collapisble2 } from "../Products_Page/Collapisble";
 
 const Nav = styled.nav`
     width: 100%;
@@ -18,7 +20,7 @@ const Nav = styled.nav`
     position: fixed;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 
-    & > div {
+    & > .above500 {
         margin: auto;
         padding-left: 10px;
         text-align: left;
@@ -27,6 +29,22 @@ const Nav = styled.nav`
         & > h3 {
             padding-top: 6px;
         }
+    }
+
+    & > .below500 {
+        display: none;
+    }
+
+    @media all and (max-width: 500px) {
+        & > .above500 {
+            display: none;
+        }
+        & > .below500 {
+            display: flex;
+            height: 50px;
+            padding: 15px 10% 0;
+        }
+        height: 50px;
     }
 `;
 
@@ -112,6 +130,43 @@ const Div = styled.div`
             }
         }
     }
+    .payment500 {
+        display: none;
+        width: 100%;
+    }
+
+    @media all and (max-width: 500px) {
+        .opt,
+        .display,
+        .pyOpt,
+        .middlePay {
+            display: none;
+            width: 0%;
+        }
+        .middle {
+            width: 100%;
+            & > input {
+                width: 50%;
+            }
+        }
+        width: 96%;
+        margin-left: 2%;
+        margin-right: 2%;
+
+        & > .payment500 {
+            display: block;
+            min-whidth: 200%;
+            margin: auto;
+            background-color: rgb(243, 243, 243);
+            height: 500px;
+            overflow-y: scroll;
+            overflow-x: hidden;
+
+            & > .col {
+                height: fit-content;
+            }
+        }
+    }
 `;
 
 export const Checkout = () => {
@@ -119,16 +174,17 @@ export const Checkout = () => {
     body.setAttribute("style", "overflow: scroll");
 
     const cartProducts = useSelector((state) => state.cartProducts);
-    const [page, setPage] = useState(0);
+    const Navigate = useNavigate();
+
     const [edit, setEdit] = useState(true);
     const [address, setAddress] = useState({
-        Name: "",
-        Email: "",
-        Number: "",
-        Pincode: "",
-        Address: "",
-        Amount: "",
-        Country: "India",
+        name: "",
+        email: "",
+        number: "",
+        pincode: "",
+        address: "",
+        amount: "",
+        country: "India",
     });
     const [payOpt, setPayOpt] = useState(0);
 
@@ -146,31 +202,45 @@ export const Checkout = () => {
         off_price += +item.off_price * +item.quan;
     }
 
+    let loginData = JSON.parse(localStorage.getItem("loginData"));
+
+    let isLogin = localStorage.getItem("isLogin");
+
     const checkAdd = () => {
-        if (address.Number.length !== 10 && address.Pincode.length !== 6) {
+        if (address.number.length !== 10 && address.pincode.length !== 6) {
             alert("Enter Correct Mobile Number and Pincode");
             return;
         }
+
         setPage(2);
     };
+
+    const [page, setPage] = useState(isLogin === "true" ? 1 : 0);
 
     const navigate = useNavigate();
     const dispatch = useDispatch();
     const checkOutItem = () => {
         setAddress({
             ...address,
-            Amount: off_price,
+            amount: off_price,
         });
         dispatch(setUser(address));
-        for (let i = 0; i < cartProducts.length; i++) {
-            axios
-                .delete(
-                    `https://nykaa-data.herokuapp.com/cartProducts/${cartProducts[i].id}`
-                )
-                .then((res) => dispatch(deleteFromBag(cartProducts[i].id)));
-        }
+        axios
+            .post(`${API_KEY}/emptycart`, { id: loginData._id })
+            .then((res) => dispatch(empty_bag([])));
+
         alert("Order Placed Successfully!!  Thank You for Ordering");
         navigate("/thankyou");
+    };
+
+    const Previous = () => {
+        if (page === 1 && isLogin === "true") {
+            Navigate("/");
+        } else if (page === 0) {
+            Navigate("/");
+        } else {
+            setPage(page - 1);
+        }
     };
     return (
         <div
@@ -183,7 +253,20 @@ export const Checkout = () => {
             {/*  Navbar */}
 
             <Nav>
+                <div className="below500">
+                    <div style={{ marginRight: "90px" }} onClick={Previous}>
+                        🡸
+                    </div>
+                    <div style={{ fontSize: "20px", fontWeight: "600" }}>
+                        {page === 0
+                            ? "Login/Register"
+                            : page === 1
+                            ? "Enter Address"
+                            : "Select And Pay"}
+                    </div>
+                </div>
                 <div
+                    className="above500"
                     style={{
                         width: "27.5%",
                         height: "99.999%",
@@ -200,9 +283,11 @@ export const Checkout = () => {
                         }}
                         src="https://logos-download.com/wp-content/uploads/2021/01/Nykaa_Logo.png"
                         alt="Nykaa-logo"
+                        onClick={() => Navigate("/")}
                     />
                 </div>
                 <div
+                    className="above500"
                     style={{
                         width: "15%",
                         height: "100%",
@@ -216,9 +301,17 @@ export const Checkout = () => {
                         }`,
                     }}
                 >
-                    <h3>1-{page === 0 ? "LOGIN" : "GUEST CHECKOUT"}</h3>
+                    <h3>
+                        1-
+                        {page === 0
+                            ? "LOGIN"
+                            : isLogin === "true"
+                            ? ` Welcome ${loginData.name.split(" ")[0]}`
+                            : "GUEST CHECKOUT"}
+                    </h3>
                 </div>
                 <div
+                    className="above500"
                     style={{
                         width: "15%",
                         height: "100%",
@@ -232,9 +325,10 @@ export const Checkout = () => {
                         }`,
                     }}
                 >
-                    <h3>2-ADDRESS</h3>
+                    <h3>2- ADDRESS</h3>
                 </div>
                 <div
+                    className="above500"
                     style={{
                         width: "15%",
                         height: "100%",
@@ -248,9 +342,10 @@ export const Checkout = () => {
                         }`,
                     }}
                 >
-                    <h3>3-PAYMENT</h3>
+                    <h3>3- PAYMENT</h3>
                 </div>
                 <div
+                    className="above500"
                     style={{
                         width: "27.5%",
                         height: "99.999%",
@@ -343,7 +438,7 @@ export const Checkout = () => {
                         <div className="opt">
                             <div>New Address</div>
                         </div>
-                        <div>
+                        <div className="middle">
                             <h3 style={{ padding: "0 5%" }}>New Address</h3>
                             <hr
                                 style={{
@@ -360,14 +455,14 @@ export const Checkout = () => {
                                 <br />
                                 <input
                                     type="text"
-                                    name="Name"
+                                    name="name"
                                     placeholder="Name"
                                     onChange={handleInput}
                                 />
                                 <br />
                                 <input
                                     type="email"
-                                    name="Email"
+                                    name="email"
                                     placeholder="Email"
                                     onChange={handleInput}
                                 />
@@ -376,21 +471,21 @@ export const Checkout = () => {
                                 <input
                                     style={{ width: "75%" }}
                                     type="number"
-                                    name="Number"
+                                    name="number"
                                     placeholder="Number"
                                     onChange={handleInput}
                                 />
                                 <br />
                                 <input
                                     type="number"
-                                    name="Pincode"
+                                    name="pincode"
                                     placeholder="Postal Code"
                                     onChange={handleInput}
                                 />
                                 <br />
                                 <input
                                     type="text"
-                                    name="Address"
+                                    name="address"
                                     placeholder="Address"
                                     style={{
                                         height: "5rem",
@@ -587,8 +682,50 @@ export const Checkout = () => {
                                 Gift Card <hr />
                             </div>
                         </div>
-                        <div>
-                            {payOpt === 1 ? (
+                        <div className="middlePay">
+                            {payOpt === 0 ? (
+                                <>
+                                    <h3 style={{ padding: "0 5%" }}>
+                                        Credit/Debit Card
+                                    </h3>
+                                    <hr
+                                        style={{
+                                            borderBlockColor:
+                                                "rgb(235,235,235)",
+                                            opacity: "40%",
+                                        }}
+                                    />
+                                    <input
+                                        type="text"
+                                        placeholder="Card Number"
+                                    />
+                                    <div style={{ display: "flex", gap: "2%" }}>
+                                        <input
+                                            type="text"
+                                            placeholder="Expiry (MM/YY)"
+                                        />
+                                        <input type="text" placeholder="CVV" />
+                                    </div>
+                                    <button
+                                        style={{
+                                            width: "90%",
+                                            margin: "0 5%",
+                                            height: "3rem",
+                                            color: "white",
+                                            backgroundColor:
+                                                "rgb(252, 39, 121)",
+                                            fontWeight: "600",
+                                            marginTop: "5%",
+                                            marginBottom: "6%",
+                                            fontSize: "17px",
+                                            borderRadius: "5px",
+                                        }}
+                                        onClick={checkOutItem}
+                                    >
+                                        Pay ₹{off_price} Now
+                                    </button>
+                                </>
+                            ) : payOpt === 1 ? (
                                 <>
                                     <h3 style={{ padding: "0 5%" }}>UPI</h3>
                                     <hr
@@ -809,13 +946,154 @@ export const Checkout = () => {
                                         CHANGE
                                     </button>
                                 </div>
-                                <p>{address.Name}</p>
+                                <p>{address.name}</p>
                                 <p>
-                                    {address.Address} - {address.Pincode},
-                                    {address.Country}
+                                    {address.address} - {address.pincode}, " "
+                                    {address.country}
                                 </p>
-                                <p>+91-{address.Number}</p>
+                                <p>+91 - {address.number}</p>
                             </div>
+                        </div>
+                        <div className="payment500">
+                            <div
+                                style={{
+                                    backgroundColor: "rgb(243,243,243)",
+                                    padding: "0 5%",
+                                }}
+                            >
+                                <div
+                                    style={{
+                                        display: "flex",
+                                        justifyContent: "space-between",
+                                    }}
+                                >
+                                    <h4>SHIPPING ADDRESS</h4>
+                                    <button
+                                        style={{
+                                            border: "none",
+                                            backgroungColor: "white",
+                                            color: "rgb(252, 39, 121)",
+                                        }}
+                                        onClick={() => setPage(1)}
+                                    >
+                                        CHANGE
+                                    </button>
+                                </div>
+                                <p>{address.name}</p>
+                                <p>
+                                    {address.address} - {address.pincode}
+                                    <br />
+                                    {address.country}
+                                </p>
+                                <p>+91 - {address.number}</p>
+                            </div>
+                            <Collapisble name="Google Pay" className="col">
+                                <div style={{ margin: "4% 0" }}>
+                                    <p
+                                        style={{
+                                            padding: "0 5%",
+                                            fontSize: "12px",
+                                            opacity: "60%",
+                                        }}
+                                    >
+                                        Enter Mobile Number/ Google Pay UPI ID
+                                    </p>
+                                    <input
+                                        type="text"
+                                        placeholder={address.number}
+                                    />
+                                </div>
+                                <button
+                                    style={{
+                                        width: "90%",
+                                        margin: "0 5%",
+                                        height: "3rem",
+                                        color: "white",
+                                        backgroundColor: "rgb(252, 39, 121)",
+                                        fontWeight: "600",
+                                        marginBottom: "6%",
+                                        borderRadius: "5px",
+                                    }}
+                                    onClick={checkOutItem}
+                                >
+                                    Pay ₹{off_price} Now
+                                </button>
+                            </Collapisble>
+                            <Collapisble name="UPI" className="col">
+                                <div>
+                                    <input
+                                        type="text"
+                                        placeholder="VPA/UPI ID (eg. 9876543210@upi)"
+                                    />
+                                </div>
+                                <button
+                                    style={{
+                                        width: "90%",
+                                        margin: "0 5%",
+                                        height: "3rem",
+                                        color: "white",
+                                        backgroundColor: "rgb(252, 39, 121)",
+                                        fontWeight: "600",
+                                        marginBottom: "5%",
+                                        borderRadius: "5px",
+                                    }}
+                                    onClick={checkOutItem}
+                                >
+                                    Pay ₹{off_price} Now
+                                </button>
+                            </Collapisble>
+                            <Collapisble
+                                name="Credit/Debit Card"
+                                className="col"
+                            >
+                                <input type="text" placeholder="Card Number" />
+                                <div style={{ display: "flex", gap: "2%" }}>
+                                    <input
+                                        type="text"
+                                        placeholder="Expiry (MM/YY)"
+                                    />
+                                    <input type="text" placeholder="CVV" />
+                                </div>
+                                <button
+                                    style={{
+                                        width: "90%",
+                                        margin: "0 5%",
+                                        height: "3rem",
+                                        color: "white",
+                                        backgroundColor: "rgb(252, 39, 121)",
+                                        fontWeight: "600",
+                                        marginTop: "5%",
+                                        marginBottom: "6%",
+                                        fontSize: "17px",
+                                        borderRadius: "5px",
+                                    }}
+                                    onClick={checkOutItem}
+                                >
+                                    Pay ₹{off_price} Now
+                                </button>
+                            </Collapisble>
+                            <Collapisble
+                                name="Cash On Delivery"
+                                className="col"
+                            >
+                                <button
+                                    style={{
+                                        width: "90%",
+                                        margin: "0 5%",
+                                        height: "3rem",
+                                        color: "white",
+                                        backgroundColor: "rgb(252, 39, 121)",
+                                        fontWeight: "600",
+                                        marginTop: "5%",
+                                        marginBottom: "6%",
+                                        fontSize: "17px",
+                                        borderRadius: "5px",
+                                    }}
+                                    onClick={checkOutItem}
+                                >
+                                    Pay ₹{off_price} by Cash
+                                </button>
+                            </Collapisble>
                         </div>
                     </Div>
                 )}
@@ -824,7 +1102,7 @@ export const Checkout = () => {
             {/* Footer*/}
             <div>
                 <img
-                    style={{ width: "70%", marginLeft: "15%", marginTop: "1%" }}
+                    style={{ width: "94%", marginLeft: "3%", marginTop: "1%" }}
                     src={foot}
                     alt="footer"
                 />
