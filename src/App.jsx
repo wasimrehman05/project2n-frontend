@@ -8,7 +8,7 @@ import { Item } from "./Components/One_Item_Page/Item";
 // import { Cart } from "./Components/Cart";
 import { useDispatch } from "react-redux";
 import { getCartData, getData, showItem } from "./Redux/action";
-import { Checkout } from "./Components/Checkout/Checkout";
+import { Checkout } from "./Components/CheckOut/Checkout";
 import { ThankYou } from "./Components/ThankYou";
 
 function App() {
