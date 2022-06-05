@@ -20,7 +20,7 @@ ReactRoot.render(
             </Provider>
         </BrowserRouter>
     </React.StrictMode>
-); 
+);
 
 // ReactDOM.render( 
 //   <React.StrictMode>
