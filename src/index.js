@@ -10,7 +10,7 @@ import { BrowserRouter } from "react-router-dom";
 import reportWebVitals from "./reportWebVitals";
 
 const root = document.getElementById("root");
-
+ 
 const ReactRoot = ReactDOM.createRoot(root);
 ReactRoot.render(
     <React.StrictMode>
