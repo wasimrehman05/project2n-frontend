@@ -22,7 +22,7 @@ ReactRoot.render(
     </React.StrictMode>
 ); 
 
-// ReactDOM.render(
+// ReactDOM.render( 
 //   <React.StrictMode>
 //     <App />
 //   </React.StrictMode>,
