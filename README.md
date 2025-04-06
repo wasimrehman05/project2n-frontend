@@ -1,6 +1,6 @@
 # Backend API's
 
-Github Repo [project2-backend](https://github.com/WasimRehmn/project2-backend)
+Github Repo [project2n-backend](https://github.com/WasimRehmn/project2n-backend)
 
 # Getting Started with Create React App
 
