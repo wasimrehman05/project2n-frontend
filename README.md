@@ -1,6 +1,6 @@
 # Backend API's
 
-Github Repo [Nykaa-backend](https://github.com/WasimRehmn/project2-backend)
+Github Repo [project2-backend](https://github.com/WasimRehmn/project2-backend)
 
 # Getting Started with Create React App
 
